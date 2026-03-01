@@ -1,0 +1,184 @@
+{
+  "nav": {
+    "home": "Home",
+    "categories": "Categories",
+    "accessories": "Accessories",
+    "cema": "CEMA",
+    "services": "Services",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Transform your image.",
+      "subtitle": "Discover the best version of yourself with exclusive image consulting for those who value elegance, authenticity, and presence.",
+      "cta_primary": "Explore Services",
+      "cta_secondary": "Get in Touch"
+    },
+    "about": {
+      "title": "About Aline Loof",
+      "text": "I am an image consultant specializing in working with discerning clients who wish to align their appearance, personality, and purpose. Through my exclusive method, I analyze colorimetry, style, makeup, and accessories to craft an authentic and impactful visual identity.",
+      "cta": "Learn More"
+    },
+    "services_preview": {
+      "title": "What I can do for you",
+      "subtitle": "Services designed to elevate your presence in every detail.",
+      "items": [
+        { "title": "Closet Cleanse", "desc": "Organize and curate the pieces that truly enhance your image." },
+        { "title": "Color Palette", "desc": "Discover the colors that harmonize with your natural colorimetry." },
+        { "title": "Color Day Session", "desc": "A practical and transformative immersion into your personal palette." },
+        { "title": "Event Styling", "desc": "Personalized styling for special moments that call for sophistication." }
+      ]
+    }
+  },
+  "categories": {
+    "title": "Style Categories",
+    "subtitle": "Each person has a unique visual language. Discover yours.",
+    "intro": "Style categories are archetypes that represent the visual and behavioral essence of each person. Identifying your category is the first step to building an authentic and powerful image.",
+    "items": [
+      {
+        "name": "Classic",
+        "desc": "Timeless, elegant, and refined. The classic style favors quality pieces, well-defined cuts, and a sophisticated neutral palette. Ideal for those who value tradition and understated authority.",
+        "words": ["Elegance", "Sophistication", "Timelessness"]
+      },
+      {
+        "name": "Romantic",
+        "desc": "Delicate, feminine, and poetic. Pastel tones, flowing fabrics, floral details, and soft silhouettes compose this universe of sensitivity and charm.",
+        "words": ["Delicacy", "Femininity", "Charm"]
+      },
+      {
+        "name": "Natural",
+        "desc": "Comfortable, authentic, and uncomplicated. The natural style values organic fabrics, earthy tones, and an effortless approach — genuine presence without apparent effort.",
+        "words": ["Comfort", "Authenticity", "Naturalness"]
+      },
+      {
+        "name": "Dramatic",
+        "desc": "Impactful, bold, and memorable. Strong lines, striking contrasts, and a presence that commands any environment. For those who are not afraid to be seen.",
+        "words": ["Impact", "Boldness", "Presence"]
+      },
+      {
+        "name": "Creative",
+        "desc": "Original, expressive, and unexpected. The creative style mixes references, textures, and colors in surprising ways, transforming clothing into art.",
+        "words": ["Originality", "Expression", "Art"]
+      },
+      {
+        "name": "Sporty",
+        "desc": "Dynamic, functional, and modern. Practicality meets style in versatile pieces that move effortlessly between casual and elegant.",
+        "words": ["Dynamism", "Functionality", "Versatility"]
+      }
+    ],
+    "cta": "Discover your category with a consultation"
+  },
+  "accessories": {
+    "title": "Accessories",
+    "subtitle": "The details that complete and elevate every composition.",
+    "intro": "Accessories are not extras — they are the signature of your image. Knowing how to choose and combine bags, shoes, jewelry, scarves, and other adornments can completely transform a look.",
+    "sections": [
+      {
+        "title": "Jewelry & Fashion Jewelry",
+        "desc": "From metal choice to piece volume, every jewel speaks about who you are. Learn to select the right pieces for each occasion and your lifestyle."
+      },
+      {
+        "title": "Bags",
+        "desc": "The bag is one of the most strategic accessories in your wardrobe. Proportion, material, and function — every choice counts."
+      },
+      {
+        "title": "Footwear",
+        "desc": "The right shoe can elongate the silhouette, convey authority, or communicate lightness. Understand how footwear impacts your visual language."
+      },
+      {
+        "title": "Scarves & Wraps",
+        "desc": "Versatile and elegant, scarves are key pieces for those who want to vary their look intelligently. Discover ways to wear them and the ideal fabrics for each style."
+      }
+    ],
+    "cta": "I want an accessories consultation"
+  },
+  "cema": {
+    "title": "CEMA Method",
+    "subtitle": "A complete analysis for an impeccable image.",
+    "intro": "CEMA is an exclusive consulting method that integrates four fundamental pillars of personal image, creating a 360° view of your visual potential.",
+    "pillars": [
+      {
+        "letter": "C",
+        "name": "Colorimetry",
+        "desc": "Identification of the colors that best harmonize with your skin, eyes, and hair, creating a personal palette that enhances your natural beauty and conveys the right emotions."
+      },
+      {
+        "letter": "E",
+        "name": "Style",
+        "desc": "Mapping of your visual essence and identification of your predominant style category, creating a cohesive and authentic identity for every sphere of your life."
+      },
+      {
+        "letter": "M",
+        "name": "Makeup",
+        "desc": "Guidance on techniques, products, and palettes that highlight your unique characteristics, focused on expressing your personality and meeting your daily routine needs."
+      },
+      {
+        "letter": "A",
+        "name": "Accessories",
+        "desc": "Curation of the right pieces to complement each composition — from jewelry to bags, from footwear to scarves — with harmony, proportion, and intention."
+      }
+    ],
+    "cta": "I want the complete CEMA method"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Each service is designed to deliver real and transformative results.",
+    "items": [
+      {
+        "slug": "closet-cleanse",
+        "title": "Closet Cleanse",
+        "desc": "A practical and revealing session where we analyze each piece in your wardrobe. We identify what stays, what goes, and what is missing — building a functional, harmonious closet aligned with who you are today.",
+        "highlights": ["Analysis of each garment", "Smart decluttering criteria", "Key wardrobe pieces list", "Versatility and styling guidance"]
+      },
+      {
+        "slug": "color-palette",
+        "title": "Color Palette",
+        "desc": "Through colorimetry analysis, I identify the colors that best favor your skin, eyes, and hair. You receive your personalized palette with guidance on how to apply it in everyday life.",
+        "highlights": ["In-person colorimetry test", "Printed personalized palette", "Usage and combinations guide", "Application for fashion, makeup, and accessories"]
+      },
+      {
+        "slug": "color-day-session",
+        "title": "Color Day Session",
+        "desc": "A complete immersion in the world of color. Throughout the day, we experience in practice how different tones impact your appearance and energy — a transformative and very special experience.",
+        "highlights": ["Full day dedicated to your image", "Practical tests with different palettes", "Photographic record", "Personalized report at the end"]
+      },
+      {
+        "slug": "events",
+        "title": "Event Styling",
+        "desc": "For moments when every detail matters. We take care of your complete look — from clothing to accessories — so you appear with confidence, sophistication, and full alignment with the event.",
+        "highlights": ["Event briefing and dress code", "Custom selection or personal shopping", "Complete look composition", "Final adjustments and usage guidance"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let us build together an image that represents the best of you.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "service": "Service of interest",
+      "message": "Message",
+      "submit": "Send message",
+      "placeholder_name": "Your full name",
+      "placeholder_email": "your@email.com",
+      "placeholder_phone": "+55 (11) 99999-9999",
+      "placeholder_message": "Tell me a little about yourself and what you are looking for...",
+      "select_service": "Select a service",
+      "success": "Message sent! I will get back to you shortly.",
+      "error": "An error occurred. Please try again."
+    },
+    "info": {
+      "instagram": "Instagram",
+      "response_time": "Response within 24 hours",
+      "location": "In-person and online consultations"
+    }
+  },
+  "footer": {
+    "tagline": "Image Consultant",
+    "rights": "All rights reserved.",
+    "links_title": "Navigation",
+    "follow": "Follow on social"
+  }
+}

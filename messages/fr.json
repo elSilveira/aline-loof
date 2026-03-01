@@ -1,0 +1,184 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "categories": "Catégories",
+    "accessories": "Accessoires",
+    "cema": "CEMA",
+    "services": "Services",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Transformez votre image.",
+      "subtitle": "Découvrez la meilleure version de vous-même grâce à un conseil en image exclusif pour celles qui valorisent l'élégance, l'authenticité et la présence.",
+      "cta_primary": "Découvrir les Services",
+      "cta_secondary": "Me Contacter"
+    },
+    "about": {
+      "title": "À propos d'Aline Loof",
+      "text": "Je suis consultante en image spécialisée dans l'accompagnement de clients exigeants qui souhaitent aligner leur apparence, leur personnalité et leur objectif. Grâce à ma méthode exclusive, j'analyse la colorimétrie, le style, le maquillage et les accessoires pour créer une identité visuelle authentique et percutante.",
+      "cta": "En Savoir Plus"
+    },
+    "services_preview": {
+      "title": "Ce que je peux faire pour vous",
+      "subtitle": "Des services pensés pour élever votre présence dans chaque détail.",
+      "items": [
+        { "title": "Tri du Dressing", "desc": "Organisez et sélectionnez les pièces qui valorisent vraiment votre image." },
+        { "title": "Palette de Couleurs", "desc": "Découvrez les couleurs qui s'harmonisent avec votre colorimétrie naturelle." },
+        { "title": "Journée Couleurs", "desc": "Une immersion pratique et transformatrice dans votre palette personnelle." },
+        { "title": "Événements", "desc": "Styling personnalisé pour des moments spéciaux qui requièrent sophistication." }
+      ]
+    }
+  },
+  "categories": {
+    "title": "Catégories de Style",
+    "subtitle": "Chaque personne a un langage visuel unique. Découvrez le vôtre.",
+    "intro": "Les catégories de style sont des archétypes qui représentent l'essence visuelle et comportementale de chaque personne. Identifier votre catégorie est la première étape pour construire une image authentique et puissante.",
+    "items": [
+      {
+        "name": "Classique",
+        "desc": "Intemporel, élégant et raffiné. Le style classique privilégie les pièces de qualité, les coupes bien définies et une palette neutre et sophistiquée. Idéal pour celles qui valorisent la tradition et la discrétion avec autorité.",
+        "words": ["Élégance", "Sophistication", "Intemporalité"]
+      },
+      {
+        "name": "Romantique",
+        "desc": "Délicat, féminin et poétique. Des tons pastels, des tissus fluides, des détails floraux et des silhouettes douces composent cet univers de sensibilité et de charme.",
+        "words": ["Délicatesse", "Féminité", "Charme"]
+      },
+      {
+        "name": "Naturel",
+        "desc": "Confortable, authentique et sans complications. Le style naturel valorise les tissus organiques, les tons terreux et une approche sans excès — une présence réelle sans effort apparent.",
+        "words": ["Confort", "Authenticité", "Naturel"]
+      },
+      {
+        "name": "Dramatique",
+        "desc": "Impactant, audacieux et mémorable. Des lignes fortes, des contrastes marqués et une présence qui commande tout environnement. Pour celles qui n'ont pas peur d'être vues.",
+        "words": ["Impact", "Audace", "Présence"]
+      },
+      {
+        "name": "Créatif",
+        "desc": "Original, expressif et inattendu. Le style créatif mélange références, textures et couleurs de façons surprenantes, transformant les vêtements en art.",
+        "words": ["Originalité", "Expression", "Art"]
+      },
+      {
+        "name": "Sportif",
+        "desc": "Dynamique, fonctionnel et moderne. La praticité rencontre le style dans des pièces polyvalentes qui passent naturellement du casual à l'élégant.",
+        "words": ["Dynamisme", "Fonctionnalité", "Polyvalence"]
+      }
+    ],
+    "cta": "Découvrez votre catégorie avec une consultation"
+  },
+  "accessories": {
+    "title": "Accessoires",
+    "subtitle": "Les détails qui complètent et élèvent chaque composition.",
+    "intro": "Les accessoires ne sont pas des extras — ils sont la signature de votre image. Savoir choisir et combiner sacs, chaussures, bijoux, foulards et autres ornements peut transformer complètement un look.",
+    "sections": [
+      {
+        "title": "Bijoux & Fantaisies",
+        "desc": "Du choix du métal au volume des pièces, chaque bijou parle de qui vous êtes. Apprenez à sélectionner les bonnes pièces pour chaque occasion et votre style de vie."
+      },
+      {
+        "title": "Sacs",
+        "desc": "Le sac est l'un des accessoires les plus stratégiques de votre garde-robe. Proportion, matière et fonction — chaque choix compte."
+      },
+      {
+        "title": "Chaussures",
+        "desc": "La bonne chaussure peut allonger la silhouette, transmettre de l'autorité ou communiquer de la légèreté. Comprenez comment les chaussures impactent votre langage visuel."
+      },
+      {
+        "title": "Foulards & Écharpes",
+        "desc": "Polyvalents et élégants, les foulards sont des pièces clés pour celles qui souhaitent varier leur look intelligemment. Découvrez les façons de les porter et les tissus idéaux pour chaque style."
+      }
+    ],
+    "cta": "Je veux une consultation accessoires"
+  },
+  "cema": {
+    "title": "Méthode CEMA",
+    "subtitle": "Une analyse complète pour une image impeccable.",
+    "intro": "CEMA est une méthode de conseil exclusive qui intègre quatre piliers fondamentaux de l'image personnelle, créant une vision à 360° de votre potentiel visuel.",
+    "pillars": [
+      {
+        "letter": "C",
+        "name": "Colorimétrie",
+        "desc": "Identification des couleurs qui s'harmonisent le mieux avec votre peau, vos yeux et vos cheveux, créant une palette personnelle qui sublime votre beauté naturelle et transmet les bonnes émotions."
+      },
+      {
+        "letter": "E",
+        "name": "Style",
+        "desc": "Cartographie de votre essence visuelle et identification de votre catégorie de style prédominante, créant une identité cohésive et authentique pour chaque sphère de votre vie."
+      },
+      {
+        "letter": "M",
+        "name": "Maquillage",
+        "desc": "Guidance sur les techniques, produits et palettes qui mettent en valeur vos caractéristiques uniques, axée sur l'expression de votre personnalité et les exigences de votre quotidien."
+      },
+      {
+        "letter": "A",
+        "name": "Accessoires",
+        "desc": "Curatelle des pièces adaptées pour compléter chaque composition — des bijoux aux sacs, des chaussures aux foulards — avec harmonie, proportion et intention."
+      }
+    ],
+    "cta": "Je veux la méthode CEMA complète"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Chaque service est conçu pour délivrer des résultats réels et transformateurs.",
+    "items": [
+      {
+        "slug": "tri-du-dressing",
+        "title": "Tri du Dressing",
+        "desc": "Une session pratique et révélatrice où nous analysons pièce par pièce votre garde-robe. Nous identifions ce qui reste, ce qui part et ce qui manque — construisant un dressing fonctionnel, harmonieux et aligné avec qui vous êtes aujourd'hui.",
+        "highlights": ["Analyse de chaque pièce", "Critères de tri intelligents", "Liste des pièces clés pour compléter la garde-robe", "Guidance sur la polyvalence et les associations"]
+      },
+      {
+        "slug": "palette-de-couleurs",
+        "title": "Palette de Couleurs",
+        "desc": "Grâce à l'analyse de colorimétrie, j'identifie les couleurs qui favorisent le plus votre peau, vos yeux et vos cheveux. Vous recevez votre palette personnalisée avec des conseils sur la façon de l'appliquer au quotidien.",
+        "highlights": ["Test de colorimétrie en présentiel", "Palette personnalisée imprimée", "Guide d'utilisation et d'associations", "Application pour la mode, le maquillage et les accessoires"]
+      },
+      {
+        "slug": "journee-couleurs",
+        "title": "Journée Couleurs",
+        "desc": "Une immersion complète dans l'univers des couleurs. Tout au long de la journée, nous expérimentons en pratique comment différentes teintes impactent votre apparence et votre énergie — une expérience transformatrice et très spéciale.",
+        "highlights": ["Journée complète dédiée à votre image", "Tests pratiques avec différentes palettes", "Enregistrement photographique", "Rapport personnalisé à la fin"]
+      },
+      {
+        "slug": "evenements",
+        "title": "Styling Événements",
+        "desc": "Pour les moments où chaque détail compte. Nous prenons soin de votre look complet — des vêtements aux accessoires — pour que vous apparaissiez avec confiance, sophistication et total alignement avec l'événement.",
+        "highlights": ["Briefing de l'événement et dress code", "Sélection ou shopping personnalisé", "Composition complète du look", "Ajustements finaux et conseils d'utilisation"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Construisons ensemble une image qui représente le meilleur de vous.",
+    "form": {
+      "name": "Nom",
+      "email": "E-mail",
+      "phone": "Téléphone (optionnel)",
+      "service": "Service d'intérêt",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "placeholder_name": "Votre nom complet",
+      "placeholder_email": "votre@email.com",
+      "placeholder_phone": "+55 (11) 99999-9999",
+      "placeholder_message": "Parlez-moi un peu de vous et de ce que vous recherchez...",
+      "select_service": "Sélectionner un service",
+      "success": "Message envoyé ! Je vous contacterai sous peu.",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "info": {
+      "instagram": "Instagram",
+      "response_time": "Réponse sous 24 heures",
+      "location": "Consultations en présentiel et en ligne"
+    }
+  },
+  "footer": {
+    "tagline": "Consultante en Image",
+    "rights": "Tous droits réservés.",
+    "links_title": "Navigation",
+    "follow": "Suivre sur les réseaux"
+  }
+}
