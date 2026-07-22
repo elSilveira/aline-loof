@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -76,20 +77,16 @@ export default async function HomePage({ params }: Props) {
       {/* About */}
       <section className="section-padding px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Image placeholder */}
+          {/* Image example */}
           <div className="relative">
             <div className="aspect-[3/4] bg-[#E8E0D0] relative overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-[#6B6560]">
-                  <Sparkles size={32} className="mx-auto mb-3 opacity-40" />
-                  <p
-                    className="text-[10px] tracking-[0.3em] uppercase opacity-40"
-                    style={{ fontFamily: "var(--font-inter)" }}
-                  >
-                    Aline Loof
-                  </p>
-                </div>
-              </div>
+              <Image
+                src="/aline-loof/globe.svg"
+                alt="Example illustration"
+                fill
+                className="object-contain p-16"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
             </div>
             {/* Decorative gold border offset */}
             <div className="absolute -bottom-4 -right-4 w-full h-full border border-[#B8942A] opacity-30 pointer-events-none" />
