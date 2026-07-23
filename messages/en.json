@@ -5,13 +5,14 @@
     "accessories": "Accessories",
     "cema": "CEMA",
     "services": "Services",
+    "faq": "FAQ",
     "contact": "Contact",
     "menu": "Menu"
   },
   "home": {
     "hero": {
       "tagline": "Transform your image.",
-      "subtitle": "Discover the best version of yourself with exclusive image consulting for those who value elegance, authenticity, and presence.",
+      "subtitle": "Reveal your essence with image consulting that brings together elegance, authenticity, and confidence.",
       "cta_primary": "Explore Services",
       "cta_secondary": "Get in Touch"
     },
@@ -167,13 +168,38 @@
       "placeholder_message": "Tell me a little about yourself and what you are looking for...",
       "select_service": "Select a service",
       "success": "Message sent! I will get back to you shortly.",
-      "error": "An error occurred. Please try again."
+      "error": "An error occurred. Please try again.",
+      "services": {
+        "closet": "Closet Cleanse",
+        "palette": "Color Palette",
+        "colorday": "Color Day Session",
+        "events": "Events",
+        "cema": "Complete CEMA"
+      },
+      "validation": {
+        "name_required": "Please enter your name.",
+        "email_required": "Please enter your email.",
+        "email_invalid": "Please enter a valid email.",
+        "message_required": "Please write a message.",
+        "message_min": "The message must be at least {min} characters long."
+      }
     },
     "info": {
       "instagram": "Instagram",
       "response_time": "Response within 24 hours",
       "location": "In-person and online consultations"
     }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Find answers about image consulting, services, and appointments.",
+    "items": [
+      { "question": "How does the first consultation work?", "answer": "We begin with a conversation to understand your goals, routine, and the image challenges you want to address." },
+      { "question": "Are online appointments available?", "answer": "Yes. In-person and online options are available depending on the selected service and your location." },
+      { "question": "How long does a consultation take?", "answer": "The duration depends on the service. The schedule and every stage are presented before we begin." },
+      { "question": "Do I need to buy new clothes?", "answer": "Not necessarily. The consultation prioritizes making the most of what you already own and recommends new pieces only when useful." },
+      { "question": "How do I choose the right service?", "answer": "Send a message through the contact form. Based on your goals, we will recommend the most suitable option." }
+    ]
   },
   "footer": {
     "tagline": "Image Consultant",

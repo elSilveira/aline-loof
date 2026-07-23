@@ -13,6 +13,7 @@ export default async function Footer() {
     { href: "/acessorios", label: nav("accessories") },
     { href: "/cema", label: nav("cema") },
     { href: "/servicos", label: nav("services") },
+    { href: "/faq", label: nav("faq") },
     { href: "/contato", label: nav("contact") },
   ];
 

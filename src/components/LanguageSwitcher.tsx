@@ -37,6 +37,14 @@ export default function LanguageSwitcher({ scrolled = true }: { scrolled?: boole
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, []);
+
   const switchLocale = (newLocale: string) => {
     router.replace(pathname, { locale: newLocale as typeof routing.locales[number] });
     setOpen(false);
@@ -53,16 +61,24 @@ export default function LanguageSwitcher({ scrolled = true }: { scrolled?: boole
         }`}
         style={{ fontFamily: "var(--font-inter)" }}
         aria-label="Switch language"
+        aria-expanded={open}
+        aria-controls="language-options"
+        aria-haspopup="menu"
       >
         {localeLabels[locale]}
         <ChevronDown size={11} className={`transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-1 bg-[#FDFAF4] border border-[#D4C9A8] shadow-lg min-w-[120px] z-50">
+        <div
+          id="language-options"
+          role="menu"
+          className="absolute right-0 top-full mt-1 bg-[#FDFAF4] border border-[#D4C9A8] shadow-lg min-w-[120px] z-50"
+        >
           {routing.locales.map((l) => (
             <button
               key={l}
+              role="menuitem"
               onClick={() => switchLocale(l)}
               className={`w-full text-left px-4 py-2.5 text-[10px] tracking-[0.15em] uppercase transition-colors hover:bg-[#F0E8D8] hover:text-[#B8942A] ${
                 l === locale ? "text-[#B8942A] bg-[#F8F3E8]" : "text-[#1C1C1C]"

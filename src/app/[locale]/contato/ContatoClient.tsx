@@ -4,6 +4,11 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Instagram, Clock, MapPin } from "lucide-react";
 
+type FieldName = "name" | "email" | "message";
+type FormErrors = Partial<Record<FieldName, string>>;
+
+const MIN_MESSAGE_LENGTH = 20;
+
 export default function ContatoClient() {
   const t = useTranslations("contact");
 
@@ -16,13 +21,14 @@ export default function ContatoClient() {
   });
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const services = [
-    { pt: "Limpeza de Closet", key: "closet" },
-    { pt: "Paleta de Cores", key: "palette" },
-    { pt: "Color Day Session", key: "colorday" },
-    { pt: "Eventos", key: "events" },
-    { pt: "CEMA Completo", key: "cema" },
+    "closet",
+    "palette",
+    "colorday",
+    "events",
+    "cema",
   ];
 
   const handleChange = (
@@ -30,11 +36,33 @@ export default function ContatoClient() {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (name === "name" || name === "email" || name === "message") {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const nextErrors: FormErrors = {};
+    if (!form.name.trim()) nextErrors.name = t("form.validation.name_required");
+    if (!form.email.trim()) {
+      nextErrors.email = t("form.validation.email_required");
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      nextErrors.email = t("form.validation.email_invalid");
+    }
+    if (!form.message.trim()) {
+      nextErrors.message = t("form.validation.message_required");
+    } else if (form.message.trim().length < MIN_MESSAGE_LENGTH) {
+      nextErrors.message = t("form.validation.message_min", {
+        min: MIN_MESSAGE_LENGTH,
+      });
+    }
+
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) return;
+
     setLoading(true);
     // Simulate async submission
     await new Promise((r) => setTimeout(r, 1200));
@@ -172,37 +200,44 @@ export default function ContatoClient() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className={labelClass}>{t("form.name")}</label>
+                    <label htmlFor="contact-name" className={labelClass}>{t("form.name")}</label>
                     <input
+                      id="contact-name"
                       name="name"
                       type="text"
-                      required
+                      aria-invalid={Boolean(errors.name)}
+                      aria-describedby={errors.name ? "contact-name-error" : undefined}
                       value={form.name}
                       onChange={handleChange}
                       placeholder={t("form.placeholder_name")}
                       className={inputClass}
                       style={{ fontFamily: "var(--font-inter)" }}
                     />
+                    {errors.name && <p id="contact-name-error" className="mt-2 text-sm text-red-700">{errors.name}</p>}
                   </div>
                   <div>
-                    <label className={labelClass}>{t("form.email")}</label>
+                    <label htmlFor="contact-email" className={labelClass}>{t("form.email")}</label>
                     <input
+                      id="contact-email"
                       name="email"
                       type="email"
-                      required
+                      aria-invalid={Boolean(errors.email)}
+                      aria-describedby={errors.email ? "contact-email-error" : undefined}
                       value={form.email}
                       onChange={handleChange}
                       placeholder={t("form.placeholder_email")}
                       className={inputClass}
                       style={{ fontFamily: "var(--font-inter)" }}
                     />
+                    {errors.email && <p id="contact-email-error" className="mt-2 text-sm text-red-700">{errors.email}</p>}
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className={labelClass}>{t("form.phone")}</label>
+                    <label htmlFor="contact-phone" className={labelClass}>{t("form.phone")}</label>
                     <input
+                      id="contact-phone"
                       name="phone"
                       type="tel"
                       value={form.phone}
@@ -213,8 +248,9 @@ export default function ContatoClient() {
                     />
                   </div>
                   <div>
-                    <label className={labelClass}>{t("form.service")}</label>
+                    <label htmlFor="contact-service" className={labelClass}>{t("form.service")}</label>
                     <select
+                      id="contact-service"
                       name="service"
                       value={form.service}
                       onChange={handleChange}
@@ -222,9 +258,9 @@ export default function ContatoClient() {
                       style={{ fontFamily: "var(--font-inter)" }}
                     >
                       <option value="">{t("form.select_service")}</option>
-                      {services.map((s) => (
-                        <option key={s.key} value={s.key}>
-                          {s.pt}
+                      {services.map((service) => (
+                        <option key={service} value={service}>
+                          {t(`form.services.${service}`)}
                         </option>
                       ))}
                     </select>
@@ -232,10 +268,12 @@ export default function ContatoClient() {
                 </div>
 
                 <div>
-                  <label className={labelClass}>{t("form.message")}</label>
+                  <label htmlFor="contact-message" className={labelClass}>{t("form.message")}</label>
                   <textarea
+                    id="contact-message"
                     name="message"
-                    required
+                    aria-invalid={Boolean(errors.message)}
+                    aria-describedby={errors.message ? "contact-message-error" : undefined}
                     rows={5}
                     value={form.message}
                     onChange={handleChange}
@@ -243,6 +281,7 @@ export default function ContatoClient() {
                     className={`${inputClass} resize-none`}
                     style={{ fontFamily: "var(--font-inter)" }}
                   />
+                  {errors.message && <p id="contact-message-error" className="mt-2 text-sm text-red-700">{errors.message}</p>}
                 </div>
 
                 <button

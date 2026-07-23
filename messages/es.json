@@ -1,17 +1,18 @@
 {
   "nav": {
-    "home": "Inicio",
+    "home": "",
     "categories": "Categorías",
     "accessories": "Accesorios",
     "cema": "CEMA",
     "services": "Servicios",
+    "faq": "FAQ",
     "contact": "Contacto",
     "menu": "Menú"
   },
   "home": {
     "hero": {
       "tagline": "Transforma tu imagen.",
-      "subtitle": "Descubre la mejor versión de ti misma con una consultoría de imagen exclusiva para quienes valoran la elegancia, la autenticidad y la presencia.",
+      "subtitle": "Revela tu esencia con una consultoría de imagen que une elegancia, autenticidad y confianza.",
       "cta_primary": "Conoce los Servicios",
       "cta_secondary": "Contáctame"
     },
@@ -167,13 +168,38 @@
       "placeholder_message": "Cuéntame un poco sobre ti y lo que estás buscando...",
       "select_service": "Selecciona un servicio",
       "success": "¡Mensaje enviado! Me pondré en contacto pronto.",
-      "error": "Ocurrió un error. Por favor, inténtalo de nuevo."
+      "error": "Ocurrió un error. Por favor, inténtalo de nuevo.",
+      "services": {
+        "closet": "Limpieza de Armario",
+        "palette": "Paleta de Colores",
+        "colorday": "Sesión de Color",
+        "events": "Eventos",
+        "cema": "CEMA Completo"
+      },
+      "validation": {
+        "name_required": "Escribe tu nombre.",
+        "email_required": "Escribe tu correo electrónico.",
+        "email_invalid": "Escribe un correo electrónico válido.",
+        "message_required": "Escribe un mensaje.",
+        "message_min": "El mensaje debe tener al menos {min} caracteres."
+      }
     },
     "info": {
       "instagram": "Instagram",
       "response_time": "Respondo en hasta 24 horas",
       "location": "Atención presencial y online"
     }
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "subtitle": "Encuentra respuestas sobre la consultoría, los servicios y la atención.",
+    "items": [
+      { "question": "¿Cómo funciona la primera consulta?", "answer": "Comenzamos con una conversación para entender tus objetivos, tu rutina y los desafíos de imagen que quieres resolver." },
+      { "question": "¿Las consultas pueden ser online?", "answer": "Sí. Hay opciones presenciales y online, según el servicio elegido y tu ubicación." },
+      { "question": "¿Cuánto dura una consultoría?", "answer": "La duración varía según el servicio. El cronograma y todas las etapas se presentan antes de comenzar." },
+      { "question": "¿Necesito comprar ropa nueva?", "answer": "No necesariamente. La consultoría prioriza aprovechar lo que ya tienes y recomienda nuevas prendas solo cuando sea útil." },
+      { "question": "¿Cómo elijo el servicio ideal?", "answer": "Envía un mensaje mediante el formulario de contacto. Según tus objetivos, recomendaremos la opción más adecuada." }
+    ]
   },
   "footer": {
     "tagline": "Consultora de Imagen",

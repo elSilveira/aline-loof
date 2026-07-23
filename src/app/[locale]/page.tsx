@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import ServiceCard from "@/components/ServiceCard";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -152,35 +153,19 @@ export default async function HomePage({ params }: Props) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, idx) => (
-              <div
-                key={idx}
-                className="group border border-[#D4C9A8] p-8 hover:border-[#B8942A] transition-colors cursor-pointer"
-              >
-                <div className="text-[#B8942A] text-2xl font-serif mb-4 opacity-30 group-hover:opacity-60 transition-opacity"
-                  style={{ fontFamily: "var(--font-playfair)" }}>
-                  0{idx + 1}
-                </div>
-                <h3
-                  className="font-serif text-xl text-[#1C1C1C] mb-3"
-                  style={{ fontFamily: "var(--font-playfair)" }}
-                >
-                  {service.title}
-                </h3>
-                <div className="w-6 h-px bg-[#B8942A] mb-4 group-hover:w-10 transition-all" />
-                <p
-                  className="text-[#6B6560] text-sm leading-relaxed"
-                  style={{ fontFamily: "var(--font-inter)", fontWeight: 300 }}
-                >
-                  {service.desc}
-                </p>
-              </div>
+              <ServiceCard
+                key={service.title}
+                number={idx + 1}
+                title={service.title}
+                description={service.desc}
+              />
             ))}
           </div>
 
           <div className="text-center mt-12">
             <Link
               href="/servicos"
-              className="inline-flex items-center gap-2 bg-[#1C1C1C] text-[#F0E8D8] px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#B8942A] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#1C1C1C] text-[#F0E8D8] px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-gold-dark transition-colors"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               {t("hero.cta_primary")}

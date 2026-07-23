@@ -1,24 +1,25 @@
 {
   "nav": {
-    "home": "Início",
+    "home": "Entrada",
     "categories": "Categorias",
     "accessories": "Acessórios",
     "cema": "CEMA",
     "services": "Serviços",
+    "faq": "FAQ",
     "contact": "Contato",
     "menu": "Menu"
   },
   "home": {
     "hero": {
-      "tagline": "Transforme sua imagem.",
-      "subtitle": "Desperte o melhor de si com uma consultoria de imagem exclusiva para quem valoriza elegância, autenticidade e presença.",
-      "cta_primary": "Conheça os Serviços",
-      "cta_secondary": "Fale Comigo"
+      "tagline": "Se Transforme.",
+      "subtitle": "Revele sua essência com uma consultoria de imagem que une elegância, autenticidade e confiança.",
+      "cta_primary": "Conheça meus Serviços",
+      "cta_secondary": "Fale conosco"
     },
     "about": {
       "title": "Sobre Aline Loof",
       "text": "Sou consultora de imagem especializada em atender clientes exigentes que desejam alinhar aparência, personalidade e propósito. Com método exclusivo, analiso colorimetria, estilo, maquiagem e acessórios para criar uma identidade visual autêntica e impactante.",
-      "cta": "Saiba Mais"
+      "cta": "Saiba Mais!"
     },
     "services_preview": {
       "title": "O que posso fazer por você",
@@ -167,13 +168,38 @@
       "placeholder_message": "Conte-me um pouco sobre você e o que está buscando...",
       "select_service": "Selecione um serviço",
       "success": "Mensagem enviada! Entrarei em contato em breve.",
-      "error": "Ocorreu um erro. Por favor, tente novamente."
+      "error": "Ocorreu um erro. Por favor, tente novamente.",
+      "services": {
+        "closet": "Limpeza de Closet",
+        "palette": "Paleta de Cores",
+        "colorday": "Sessão de Cor",
+        "events": "Eventos",
+        "cema": "CEMA Completo"
+      },
+      "validation": {
+        "name_required": "Informe seu nome.",
+        "email_required": "Informe seu e-mail.",
+        "email_invalid": "Informe um e-mail válido.",
+        "message_required": "Escreva uma mensagem.",
+        "message_min": "A mensagem deve ter pelo menos {min} caracteres."
+      }
     },
     "info": {
       "instagram": "Instagram",
       "response_time": "Respondo em até 24 horas",
       "location": "Atendimento presencial e online"
     }
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "subtitle": "Encontre respostas sobre a consultoria, os serviços e o atendimento.",
+    "items": [
+      { "question": "Como funciona a primeira consulta?", "answer": "Começamos com uma conversa para entender seus objetivos, sua rotina e os desafios que deseja resolver com sua imagem." },
+      { "question": "Os atendimentos podem ser online?", "answer": "Sim. Há opções presenciais e online, definidas de acordo com o serviço escolhido e a sua localização." },
+      { "question": "Quanto tempo dura uma consultoria?", "answer": "A duração varia conforme o serviço. O cronograma e todas as etapas são apresentados antes do início." },
+      { "question": "Preciso comprar roupas novas?", "answer": "Não necessariamente. A consultoria prioriza o melhor aproveitamento do que você já possui e indica novas peças apenas quando fizer sentido." },
+      { "question": "Como escolho o serviço ideal?", "answer": "Envie uma mensagem pelo formulário de contato. A partir dos seus objetivos, indicaremos a opção mais adequada." }
+    ]
   },
   "footer": {
     "tagline": "Consultora de Imagem",
