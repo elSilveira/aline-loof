@@ -191,7 +191,7 @@
     }
   },
   "faq": {
-    "title": "Preguntas frecuentes",
+    "title": "F.A.Q.",
     "subtitle": "Encuentra respuestas sobre la consultoría, los servicios y la atención.",
     "items": [
       { "question": "¿Cómo funciona la primera consulta?", "answer": "Comenzamos con una conversación para entender tus objetivos, tu rutina y los desafíos de imagen que quieres resolver." },

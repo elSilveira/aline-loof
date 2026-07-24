@@ -191,7 +191,7 @@
     }
   },
   "faq": {
-    "title": "Questions fréquentes",
+    "title": "F.A.Q.",
     "subtitle": "Trouvez des réponses sur le conseil en image, les services et les rendez-vous.",
     "items": [
       { "question": "Comment se déroule la première consultation ?", "answer": "Nous commençons par un échange pour comprendre vos objectifs, votre quotidien et les défis d'image que vous souhaitez résoudre." },
