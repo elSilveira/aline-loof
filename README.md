@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000/aline-loof/pt/](http://localhost:3000/aline-loof/pt/) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
@@ -28,6 +28,23 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Estrutura do projeto
+
+- `src/app`: páginas e layouts do App Router. Cada rota localizada fica dentro
+  de `src/app/[locale]`, incluindo início, serviços, contato e FAQ.
+- `src/components`: componentes React reutilizáveis, como `Navbar`, `Footer`,
+  seletor de idiomas e cards de serviço.
+- `src/i18n`: configuração de rotas, navegação e carregamento de mensagens do
+  `next-intl`.
+- `messages`: traduções em JSON para português (`pt`), inglês (`en`), espanhol
+  (`es`) e francês (`fr`).
+- `public`: arquivos estáticos, como imagens e ícones, servidos diretamente
+  pela aplicação.
+
+Para localizar rapidamente um componente no VS Code, use `Ctrl+P`. Para
+encontrar todos os usos de um nome como `Navbar` ou `Footer`, use
+`Ctrl+Shift+F`.
 
 ## Deploy on Vercel
 

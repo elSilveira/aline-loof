@@ -5,13 +5,14 @@
     "accessories": "Accessoires",
     "cema": "CEMA",
     "services": "Services",
+    "faq": "FAQ",
     "contact": "Contact",
     "menu": "Menu"
   },
   "home": {
     "hero": {
       "tagline": "Transformez votre image.",
-      "subtitle": "Découvrez la meilleure version de vous-même grâce à un conseil en image exclusif pour celles qui valorisent l'élégance, l'authenticité et la présence.",
+      "subtitle": "Révélez votre essence grâce à un conseil en image qui unit élégance, authenticité et confiance.",
       "cta_primary": "Découvrir les Services",
       "cta_secondary": "Me Contacter"
     },
@@ -167,13 +168,38 @@
       "placeholder_message": "Parlez-moi un peu de vous et de ce que vous recherchez...",
       "select_service": "Sélectionner un service",
       "success": "Message envoyé ! Je vous contacterai sous peu.",
-      "error": "Une erreur s'est produite. Veuillez réessayer."
+      "error": "Une erreur s'est produite. Veuillez réessayer.",
+      "services": {
+        "closet": "Tri du Dressing",
+        "palette": "Palette de Couleurs",
+        "colorday": "Journée Couleurs",
+        "events": "Événements",
+        "cema": "CEMA Complet"
+      },
+      "validation": {
+        "name_required": "Saisissez votre nom.",
+        "email_required": "Saisissez votre e-mail.",
+        "email_invalid": "Saisissez une adresse e-mail valide.",
+        "message_required": "Écrivez un message.",
+        "message_min": "Le message doit contenir au moins {min} caractères."
+      }
     },
     "info": {
       "instagram": "Instagram",
       "response_time": "Réponse sous 24 heures",
       "location": "Consultations en présentiel et en ligne"
     }
+  },
+  "faq": {
+    "title": "F.A.Q.",
+    "subtitle": "Trouvez des réponses sur le conseil en image, les services et les rendez-vous.",
+    "items": [
+      { "question": "Comment se déroule la première consultation ?", "answer": "Nous commençons par un échange pour comprendre vos objectifs, votre quotidien et les défis d'image que vous souhaitez résoudre." },
+      { "question": "Les rendez-vous peuvent-ils avoir lieu en ligne ?", "answer": "Oui. Des options en présentiel et en ligne sont proposées selon le service choisi et votre localisation." },
+      { "question": "Combien de temps dure une consultation ?", "answer": "La durée varie selon le service. Le calendrier et toutes les étapes sont présentés avant de commencer." },
+      { "question": "Dois-je acheter de nouveaux vêtements ?", "answer": "Pas nécessairement. La consultation privilégie ce que vous possédez déjà et recommande de nouvelles pièces uniquement lorsque cela est utile." },
+      { "question": "Comment choisir le service adapté ?", "answer": "Envoyez un message via le formulaire de contact. Selon vos objectifs, nous vous recommanderons l'option la plus adaptée." }
+    ]
   },
   "footer": {
     "tagline": "Consultante en Image",

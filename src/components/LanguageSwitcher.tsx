@@ -1,7 +1,6 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
@@ -22,8 +21,6 @@ const localeNames: Record<string, string> = {
 
 export default function LanguageSwitcher({ scrolled = true }: { scrolled?: boolean }) {
   const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -37,9 +34,29 @@ export default function LanguageSwitcher({ scrolled = true }: { scrolled?: boole
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const switchLocale = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale as typeof routing.locales[number] });
-    setOpen(false);
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, []);
+
+  const switchLocale = (newLocale: (typeof routing.locales)[number]) => {
+    const url = new URL(window.location.href);
+    const segments = url.pathname.split("/");
+    const localeIndex = segments.findIndex((segment) =>
+      routing.locales.includes(segment as (typeof routing.locales)[number])
+    );
+
+    if (localeIndex >= 0) {
+      segments[localeIndex] = newLocale;
+    } else {
+      segments.push(newLocale);
+    }
+
+    url.pathname = segments.join("/");
+    window.location.assign(url.toString());
   };
 
   return (
@@ -53,18 +70,29 @@ export default function LanguageSwitcher({ scrolled = true }: { scrolled?: boole
         }`}
         style={{ fontFamily: "var(--font-inter)" }}
         aria-label="Switch language"
+        aria-expanded={open}
+        aria-controls="language-options"
+        aria-haspopup="menu"
       >
         {localeLabels[locale]}
         <ChevronDown size={11} className={`transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-1 bg-[#FDFAF4] border border-[#D4C9A8] shadow-lg min-w-[120px] z-50">
+        <div
+          id="language-options"
+          role="menu"
+          className="absolute right-0 top-full mt-1 bg-[#FDFAF4] border border-[#D4C9A8] shadow-lg min-w-[120px] z-50"
+        >
           {routing.locales.map((l) => (
             <button
               key={l}
+              type="button"
+              role="menuitem"
+              aria-current={l === locale ? "page" : undefined}
               onClick={() => switchLocale(l)}
-              className={`w-full text-left px-4 py-2.5 text-[10px] tracking-[0.15em] uppercase transition-colors hover:bg-[#F0E8D8] hover:text-[#B8942A] ${
+              disabled={l === locale}
+              className={`block w-full text-left px-4 py-2.5 text-[10px] tracking-[0.15em] uppercase transition-colors hover:bg-[#F0E8D8] hover:text-[#B8942A] disabled:cursor-default ${
                 l === locale ? "text-[#B8942A] bg-[#F8F3E8]" : "text-[#1C1C1C]"
               }`}
               style={{ fontFamily: "var(--font-inter)" }}

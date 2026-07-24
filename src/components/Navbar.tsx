@@ -19,12 +19,21 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, []);
+
   const links = [
     { href: "/", label: t("home") },
     { href: "/categorias", label: t("categories") },
     { href: "/acessorios", label: t("accessories") },
     { href: "/cema", label: t("cema") },
     { href: "/servicos", label: t("services") },
+    { href: "/faq", label: t("faq") },
     { href: "/contato", label: t("contact") },
   ];
 
@@ -91,6 +100,8 @@ export default function Navbar() {
               }`}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={t("menu")}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
             >
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -101,7 +112,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="lg:hidden bg-[#FDFAF4] border-t border-[#E8E0D0]">
-          <nav className="flex flex-col px-6 py-6 gap-5">
+          <nav id="mobile-navigation" className="flex flex-col px-6 py-6 gap-5">
             {links.map((link) => (
               <Link
                 key={link.href}
