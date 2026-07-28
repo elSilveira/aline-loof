@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import FaqList, { type FaqItem } from "@/components/faq/FaqList";
 
 type Props = { params: Promise<{ locale: string }> };
-type FaqItem = { question: string; answer: string };
 
 export default async function FaqPage({ params }: Props) {
   const { locale } = await params;
@@ -25,24 +25,13 @@ export default async function FaqPage({ params }: Props) {
       </section>
 
       <section className="section-padding px-6">
-        <div className="max-w-3xl mx-auto space-y-4">
-          {items.map((item) => (
-            <details
-              key={item.question}
-              className="group border border-[#D4C9A8] bg-[#FDFAF4] open:border-[#B8942A]"
-            >
-              <summary className="cursor-pointer list-none flex items-center justify-between gap-6 p-6 font-serif text-lg text-[#1C1C1C]">
-                {item.question}
-                <span aria-hidden="true" className="text-[#B8942A] text-2xl group-open:rotate-45 transition-transform">
-                  +
-                </span>
-              </summary>
-              <p className="px-6 pb-6 text-[#6B6560] leading-relaxed">
-                {item.answer}
-              </p>
-            </details>
-          ))}
-        </div>
+        <FaqList
+          items={items}
+          searchLabel={t("searchLabel")}
+          searchPlaceholder={t("searchPlaceholder")}
+          rankLabel={t("rankLabel")}
+          noResultsMessage={t("noResults")}
+        />
       </section>
     </>
   );

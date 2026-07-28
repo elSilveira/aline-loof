@@ -193,6 +193,10 @@
   "faq": {
     "title": "F.A.Q.",
     "subtitle": "Trouvez des réponses sur le conseil en image, les services et les rendez-vous.",
+    "searchLabel": "Rechercher dans la foire aux questions",
+    "searchPlaceholder": "Saisissez une question ou un mot-clé",
+    "rankLabel": "Classement",
+    "noResults": "Aucune question trouvée.",
     "items": [
       { "question": "Comment se déroule la première consultation ?", "answer": "Nous commençons par un échange pour comprendre vos objectifs, votre quotidien et les défis d'image que vous souhaitez résoudre." },
       { "question": "Les rendez-vous peuvent-ils avoir lieu en ligne ?", "answer": "Oui. Des options en présentiel et en ligne sont proposées selon le service choisi et votre localisation." },
