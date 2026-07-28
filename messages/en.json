@@ -193,6 +193,10 @@
   "faq": {
     "title": "F.A.Q.",
     "subtitle": "Find answers about image consulting, services, and appointments.",
+    "searchLabel": "Search frequently asked questions",
+    "searchPlaceholder": "Type a question or keyword",
+    "rankLabel": "Ranking",
+    "noResults": "No questions found.",
     "items": [
       { "question": "How does the first consultation work?", "answer": "We begin with a conversation to understand your goals, routine, and the image challenges you want to address." },
       { "question": "Are online appointments available?", "answer": "Yes. In-person and online options are available depending on the selected service and your location." },
