@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
+import { isRouteActive } from "@/lib/navigation/isRouteActive";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Menu, X } from "lucide-react";
 
@@ -36,11 +37,6 @@ export default function Navbar() {
     { href: "/faq", label: t("faq") },
     { href: "/contato", label: t("contact") },
   ];
-
-  const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    return pathname.startsWith(href);
-  };
 
   return (
     <header
@@ -78,7 +74,7 @@ export default function Navbar() {
                 href={link.href}
                 locale={locale}
                 className={`text-[11px] tracking-[0.18em] uppercase transition-colors duration-200 ${
-                  isActive(link.href)
+                  isRouteActive(pathname, link.href)
                     ? "text-[#B8942A]"
                     : scrolled
                     ? "text-[#1C1C1C] hover:text-[#B8942A]"
@@ -120,7 +116,7 @@ export default function Navbar() {
                 locale={locale}
                 onClick={() => setMenuOpen(false)}
                 className={`text-[11px] tracking-[0.18em] uppercase transition-colors duration-200 ${
-                  isActive(link.href)
+                  isRouteActive(pathname, link.href)
                     ? "text-[#B8942A]"
                     : "text-[#1C1C1C] hover:text-[#B8942A]"
                 }`}

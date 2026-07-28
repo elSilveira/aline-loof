@@ -193,6 +193,10 @@
   "faq": {
     "title": "F.A.Q.",
     "subtitle": "Encuentra respuestas sobre la consultoría, los servicios y la atención.",
+    "searchLabel": "Buscar en las preguntas frecuentes",
+    "searchPlaceholder": "Escribe una pregunta o palabra clave",
+    "rankLabel": "Ranking",
+    "noResults": "No se encontraron preguntas.",
     "items": [
       { "question": "¿Cómo funciona la primera consulta?", "answer": "Comenzamos con una conversación para entender tus objetivos, tu rutina y los desafíos de imagen que quieres resolver." },
       { "question": "¿Las consultas pueden ser online?", "answer": "Sí. Hay opciones presenciales y online, según el servicio elegido y tu ubicación." },
