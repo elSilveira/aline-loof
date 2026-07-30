@@ -177,11 +177,20 @@
         "cema": "CEMA Completo"
       },
       "validation": {
-        "name_required": "Escribe tu nombre.",
-        "email_required": "Escribe tu correo electrónico.",
-        "email_invalid": "Escribe un correo electrónico válido.",
-        "message_required": "Escribe un mensaje.",
-        "message_min": "El mensaje debe tener al menos {min} caracteres."
+        "name": {
+          "required": "Escribe tu nombre."
+        },
+        "email": {
+          "required": "Escribe tu correo electrónico.",
+          "invalid": "Escribe un correo electrónico válido."
+        },
+        "phone": {
+          "invalid": "Escribe un teléfono válido con código de área."
+        },
+        "message": {
+          "required": "Escribe un mensaje.",
+          "tooShort": "El mensaje debe tener al menos {min} caracteres."
+        }
       }
     },
     "info": {

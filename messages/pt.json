@@ -177,11 +177,20 @@
         "cema": "CEMA Completo"
       },
       "validation": {
-        "name_required": "Informe seu nome.",
-        "email_required": "Informe seu e-mail.",
-        "email_invalid": "Informe um e-mail válido.",
-        "message_required": "Escreva uma mensagem.",
-        "message_min": "A mensagem deve ter pelo menos {min} caracteres."
+        "name": {
+          "required": "Informe seu nome."
+        },
+        "email": {
+          "required": "Informe seu e-mail.",
+          "invalid": "Informe um e-mail válido."
+        },
+        "phone": {
+          "invalid": "Informe um telefone válido com DDD."
+        },
+        "message": {
+          "required": "Escreva uma mensagem.",
+          "tooShort": "A mensagem deve ter pelo menos {min} caracteres."
+        }
       }
     },
     "info": {

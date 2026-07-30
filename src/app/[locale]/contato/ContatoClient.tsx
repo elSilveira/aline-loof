@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Instagram, Clock, MapPin } from "lucide-react";
-
-type FieldName = "name" | "email" | "message";
-type FormErrors = Partial<Record<FieldName, string>>;
-
-const MIN_MESSAGE_LENGTH = 20;
+import {
+  MIN_MESSAGE_LENGTH,
+  validateContactForm,
+  type ContactFormErrors,
+} from "@/lib/contact/validateContactForm";
+import { normalizePhone } from "@/lib/contact/normalizePhone";
 
 export default function ContatoClient() {
   const t = useTranslations("contact");
@@ -21,7 +22,7 @@ export default function ContatoClient() {
   });
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState<FormErrors>({});
+  const [errors, setErrors] = useState<ContactFormErrors>({});
 
   const services = [
     "closet",
@@ -38,34 +39,43 @@ export default function ContatoClient() {
   ) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    if (name === "name" || name === "email" || name === "message") {
-      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    if (
+      name === "name" ||
+      name === "email" ||
+      name === "phone" ||
+      name === "message"
+    ) {
+      setErrors((prev) => {
+        const nextErrors = { ...prev };
+        delete nextErrors[name];
+        return nextErrors;
+      });
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const nextErrors: FormErrors = {};
-    if (!form.name.trim()) nextErrors.name = t("form.validation.name_required");
-    if (!form.email.trim()) {
-      nextErrors.email = t("form.validation.email_required");
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      nextErrors.email = t("form.validation.email_invalid");
-    }
-    if (!form.message.trim()) {
-      nextErrors.message = t("form.validation.message_required");
-    } else if (form.message.trim().length < MIN_MESSAGE_LENGTH) {
-      nextErrors.message = t("form.validation.message_min", {
-        min: MIN_MESSAGE_LENGTH,
-      });
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ) => {
+    event.preventDefault();
+    const validationErrors = validateContactForm(form);
+
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) {
+      return;
     }
 
-    setErrors(nextErrors);
-    if (Object.keys(nextErrors).length > 0) return;
+    // Primeiro validamos o valor original. Somente depois criamos a versão
+    // normalizada que seria enviada para a API.
+    const payload = {
+      ...form,
+      phone: normalizePhone(form.phone),
+    };
 
     setLoading(true);
     // Simulate async submission
     await new Promise((r) => setTimeout(r, 1200));
+    // Mantém no estado a mesma representação usada no envio simulado.
+    setForm(payload);
     setStatus("success");
     setLoading(false);
   };
@@ -206,14 +216,24 @@ export default function ContatoClient() {
                       name="name"
                       type="text"
                       aria-invalid={Boolean(errors.name)}
-                      aria-describedby={errors.name ? "contact-name-error" : undefined}
+                      aria-describedby={
+                        errors.name ? "contact-name-error" : undefined
+                      }
                       value={form.name}
                       onChange={handleChange}
                       placeholder={t("form.placeholder_name")}
                       className={inputClass}
                       style={{ fontFamily: "var(--font-inter)" }}
                     />
-                    {errors.name && <p id="contact-name-error" className="mt-2 text-sm text-red-700">{errors.name}</p>}
+                    {errors.name === "required" && (
+                      <p
+                        id="contact-name-error"
+                        role="alert"
+                        className="mt-2 text-sm text-red-700"
+                      >
+                        {t("form.validation.name.required")}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <label htmlFor="contact-email" className={labelClass}>{t("form.email")}</label>
@@ -222,14 +242,33 @@ export default function ContatoClient() {
                       name="email"
                       type="email"
                       aria-invalid={Boolean(errors.email)}
-                      aria-describedby={errors.email ? "contact-email-error" : undefined}
+                      aria-describedby={
+                        errors.email ? "contact-email-error" : undefined
+                      }
                       value={form.email}
                       onChange={handleChange}
                       placeholder={t("form.placeholder_email")}
                       className={inputClass}
                       style={{ fontFamily: "var(--font-inter)" }}
                     />
-                    {errors.email && <p id="contact-email-error" className="mt-2 text-sm text-red-700">{errors.email}</p>}
+                    {errors.email === "required" && (
+                      <p
+                        id="contact-email-error"
+                        role="alert"
+                        className="mt-2 text-sm text-red-700"
+                      >
+                        {t("form.validation.email.required")}
+                      </p>
+                    )}
+                    {errors.email === "invalid" && (
+                      <p
+                        id="contact-email-error"
+                        role="alert"
+                        className="mt-2 text-sm text-red-700"
+                      >
+                        {t("form.validation.email.invalid")}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -240,12 +279,25 @@ export default function ContatoClient() {
                       id="contact-phone"
                       name="phone"
                       type="tel"
+                      aria-invalid={Boolean(errors.phone)}
+                      aria-describedby={
+                        errors.phone ? "contact-phone-error" : undefined
+                      }
                       value={form.phone}
                       onChange={handleChange}
                       placeholder={t("form.placeholder_phone")}
                       className={inputClass}
                       style={{ fontFamily: "var(--font-inter)" }}
                     />
+                    {errors.phone === "invalid" && (
+                      <p
+                        id="contact-phone-error"
+                        role="alert"
+                        className="mt-2 text-sm text-red-700"
+                      >
+                        {t("form.validation.phone.invalid")}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <label htmlFor="contact-service" className={labelClass}>{t("form.service")}</label>
@@ -273,7 +325,9 @@ export default function ContatoClient() {
                     id="contact-message"
                     name="message"
                     aria-invalid={Boolean(errors.message)}
-                    aria-describedby={errors.message ? "contact-message-error" : undefined}
+                    aria-describedby={
+                      errors.message ? "contact-message-error" : undefined
+                    }
                     rows={5}
                     value={form.message}
                     onChange={handleChange}
@@ -281,7 +335,26 @@ export default function ContatoClient() {
                     className={`${inputClass} resize-none`}
                     style={{ fontFamily: "var(--font-inter)" }}
                   />
-                  {errors.message && <p id="contact-message-error" className="mt-2 text-sm text-red-700">{errors.message}</p>}
+                  {errors.message === "required" && (
+                    <p
+                      id="contact-message-error"
+                      role="alert"
+                      className="mt-2 text-sm text-red-700"
+                    >
+                      {t("form.validation.message.required")}
+                    </p>
+                  )}
+                  {errors.message === "tooShort" && (
+                    <p
+                      id="contact-message-error"
+                      role="alert"
+                      className="mt-2 text-sm text-red-700"
+                    >
+                      {t("form.validation.message.tooShort", {
+                        min: MIN_MESSAGE_LENGTH,
+                      })}
+                    </p>
+                  )}
                 </div>
 
                 <button
