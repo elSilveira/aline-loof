@@ -177,11 +177,17 @@
         "cema": "CEMA Complet"
       },
       "validation": {
-        "name_required": "Saisissez votre nom.",
-        "email_required": "Saisissez votre e-mail.",
-        "email_invalid": "Saisissez une adresse e-mail valide.",
-        "message_required": "Écrivez un message.",
-        "message_min": "Le message doit contenir au moins {min} caractères."
+        "name": {
+          "required": "Saisissez votre nom."
+        },
+        "email": {
+          "required": "Saisissez votre e-mail.",
+          "invalid": "Saisissez une adresse e-mail valide."
+        },
+        "message": {
+          "required": "Écrivez un message.",
+          "tooShort": "Le message doit contenir au moins {min} caractères."
+        }
       }
     },
     "info": {
