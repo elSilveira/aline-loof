@@ -220,6 +220,69 @@
       { "question": "Como escolho o serviço ideal?", "answer": "Envie uma mensagem pelo formulário de contato. A partir dos seus objetivos, indicaremos a opção mais adequada." }
     ]
   },
+  "StyleQuiz": {
+    "eyebrow": "Quiz de estilo",
+    "title": "Descubra o seu estilo",
+    "description": "Responda às quatro perguntas e conheça os estilos que mais combinam com você.",
+    "progress": "Pergunta {current} de {total}",
+    "back": "Voltar",
+    "next": "Avançar",
+    "viewResult": "Ver resultado",
+    "restart": "Refazer o quiz",
+    "questions": {
+      "occasion": {
+        "title": "Qual imagem você mais gosta de transmitir?",
+        "alternatives": {
+          "refined": "Refinada e sofisticada",
+          "relaxed": "Leve e descontraída",
+          "romantic": "Delicada e romântica",
+          "bold": "Marcante e ousada"
+        }
+      },
+      "palette": {
+        "title": "Quais cores mais aparecem nas suas escolhas?",
+        "alternatives": {
+          "neutral": "Tons neutros e discretos",
+          "soft": "Cores suaves e delicadas",
+          "vibrant": "Cores vivas e inesperadas",
+          "contrast": "Contrastes fortes e impactantes"
+        }
+      },
+      "silhouette": {
+        "title": "Qual tipo de modelagem mais representa você?",
+        "alternatives": {
+          "minimal": "Linhas limpas e minimalistas",
+          "classic": "Cortes clássicos e estruturados",
+          "comfortable": "Peças confortáveis e funcionais",
+          "fluid": "Formas fluidas e detalhes suaves"
+        }
+      },
+      "finish": {
+        "title": "Como você prefere finalizar um look?",
+        "alternatives": {
+          "polished": "Com acabamento impecável",
+          "timeless": "Com peças atemporais",
+          "practical": "Com praticidade e conforto",
+          "creative": "Com um detalhe autoral e criativo"
+        }
+      }
+    },
+    "result": {
+      "eyebrow": "Resultado",
+      "title": "Seus estilos predominantes",
+      "first": "Primeiro estilo",
+      "second": "Segundo estilo",
+      "percentage": "{value}% de afinidade"
+    },
+    "styles": {
+      "tradicional": { "name": "Tradicional", "description": "Clássico, organizado e atemporal." },
+      "elegante": { "name": "Elegante", "description": "Refinado, harmonioso e sofisticado." },
+      "esportivo": { "name": "Esportivo", "description": "Prático, confortável e descontraído." },
+      "romantico": { "name": "Romântico", "description": "Delicado, suave e acolhedor." },
+      "criativo": { "name": "Criativo", "description": "Original, expressivo e cheio de personalidade." },
+      "dramatico": { "name": "Dramático", "description": "Marcante, moderno e impactante." }
+    }
+  },
   "footer": {
     "tagline": "Consultora de Imagem",
     "rights": "Todos os direitos reservados.",

@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
+import StyleQuiz from "@/components/style-quiz/StyleQuiz";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -172,6 +173,13 @@ export default async function HomePage({ params }: Props) {
               <ArrowRight size={14} />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Style Quiz */}
+      <section className="py-16">
+        <div className="mx-auto max-w-3xl px-6">
+          <StyleQuiz />
         </div>
       </section>
 

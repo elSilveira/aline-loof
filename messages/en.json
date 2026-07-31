@@ -214,6 +214,69 @@
       { "question": "How do I choose the right service?", "answer": "Send a message through the contact form. Based on your goals, we will recommend the most suitable option." }
     ]
   },
+  "StyleQuiz": {
+    "eyebrow": "Style quiz",
+    "title": "Discover your style",
+    "description": "Answer four questions to discover the styles that suit you best.",
+    "progress": "Question {current} of {total}",
+    "back": "Back",
+    "next": "Next",
+    "viewResult": "View result",
+    "restart": "Retake the quiz",
+    "questions": {
+      "occasion": {
+        "title": "What image do you most like to convey?",
+        "alternatives": {
+          "refined": "Refined and sophisticated",
+          "relaxed": "Light and relaxed",
+          "romantic": "Delicate and romantic",
+          "bold": "Striking and bold"
+        }
+      },
+      "palette": {
+        "title": "Which colors appear most in your choices?",
+        "alternatives": {
+          "neutral": "Neutral and understated tones",
+          "soft": "Soft and delicate colors",
+          "vibrant": "Vibrant and unexpected colors",
+          "contrast": "Strong and striking contrasts"
+        }
+      },
+      "silhouette": {
+        "title": "Which silhouette represents you best?",
+        "alternatives": {
+          "minimal": "Clean and minimal lines",
+          "classic": "Classic and structured cuts",
+          "comfortable": "Comfortable and functional pieces",
+          "fluid": "Fluid shapes and soft details"
+        }
+      },
+      "finish": {
+        "title": "How do you prefer to finish an outfit?",
+        "alternatives": {
+          "polished": "With a polished finish",
+          "timeless": "With timeless pieces",
+          "practical": "With practicality and comfort",
+          "creative": "With a personal, creative detail"
+        }
+      }
+    },
+    "result": {
+      "eyebrow": "Result",
+      "title": "Your leading styles",
+      "first": "First style",
+      "second": "Second style",
+      "percentage": "{value}% affinity"
+    },
+    "styles": {
+      "tradicional": { "name": "Traditional", "description": "Classic, organized, and timeless." },
+      "elegante": { "name": "Elegant", "description": "Refined, harmonious, and sophisticated." },
+      "esportivo": { "name": "Sporty", "description": "Practical, comfortable, and relaxed." },
+      "romantico": { "name": "Romantic", "description": "Delicate, soft, and welcoming." },
+      "criativo": { "name": "Creative", "description": "Original, expressive, and full of personality." },
+      "dramatico": { "name": "Dramatic", "description": "Striking, modern, and impactful." }
+    }
+  },
   "footer": {
     "tagline": "Image Consultant",
     "rights": "All rights reserved.",
