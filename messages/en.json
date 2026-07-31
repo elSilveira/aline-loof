@@ -177,11 +177,20 @@
         "cema": "Complete CEMA"
       },
       "validation": {
-        "name_required": "Please enter your name.",
-        "email_required": "Please enter your email.",
-        "email_invalid": "Please enter a valid email.",
-        "message_required": "Please write a message.",
-        "message_min": "The message must be at least {min} characters long."
+        "name": {
+          "required": "Please enter your name."
+        },
+        "email": {
+          "required": "Please enter your email.",
+          "invalid": "Please enter a valid email."
+        },
+        "phone": {
+          "invalid": "Please enter a valid phone number with area code."
+        },
+        "message": {
+          "required": "Please write a message.",
+          "tooShort": "The message must be at least {min} characters long."
+        }
       }
     },
     "info": {
