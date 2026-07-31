@@ -31,7 +31,7 @@ export default function QuizQuestion({
           <label
             key={alternative.id}
             htmlFor={inputId}
-            className="flex cursor-pointer items-center gap-3 border border-[#D4C9A8] px-4 py-3 text-left text-[#1C1C1C] transition-colors has-checked:border-[#B8942A] has-checked:bg-[#F5EED8]"
+            className="flex cursor-pointer items-center gap-3 border border-[#D4C9A8] px-4 py-3 text-left text-[#1C1C1C] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#B8942A] hover:bg-[#F8F3E8] hover:shadow-md has-checked:border-[#B8942A] has-checked:bg-[#F5EED8] has-focus-visible:ring-2 has-focus-visible:ring-[#B8942A] has-focus-visible:ring-offset-2"
           >
             <input
               id={inputId}

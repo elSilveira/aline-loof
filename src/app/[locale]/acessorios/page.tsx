@@ -62,7 +62,7 @@ export default async function AcessoriosPage({ params }: Props) {
             return (
               <div
                 key={idx}
-                className="group flex gap-8 border border-[#D4C9A8] p-10 hover:border-[#B8942A] transition-all"
+                className="group flex gap-8 border border-[#D4C9A8] p-10 transition-all duration-300 hover:-translate-y-1 hover:border-[#B8942A] hover:shadow-lg"
               >
                 <div className="flex-shrink-0">
                   <div className="w-14 h-14 border border-[#D4C9A8] group-hover:border-[#B8942A] flex items-center justify-center transition-colors">

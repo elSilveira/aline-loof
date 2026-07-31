@@ -75,7 +75,7 @@ export default async function CEMAPage({ params }: Props) {
             {pillars.map((pillar, idx) => (
               <div
                 key={idx}
-                className="group border border-[#D4C9A8] p-10 hover:border-[#B8942A] transition-all relative overflow-hidden"
+                className="group relative overflow-hidden border border-[#D4C9A8] p-10 transition-all duration-300 hover:-translate-y-1 hover:border-[#B8942A] hover:shadow-lg"
               >
                 <div
                   className="absolute top-0 right-0 text-[100px] font-serif font-bold text-[#B8942A] opacity-5 leading-none -mt-4 -mr-2 select-none"

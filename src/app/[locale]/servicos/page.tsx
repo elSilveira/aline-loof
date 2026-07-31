@@ -48,7 +48,7 @@ export default async function ServicosPage({ params }: Props) {
           {items.map((item, idx) => (
             <div
               key={item.slug}
-              className={`group grid grid-cols-1 lg:grid-cols-2 gap-0 border border-[#D4C9A8] hover:border-[#B8942A] transition-all overflow-hidden ${
+              className={`group grid grid-cols-1 gap-0 overflow-hidden border border-[#D4C9A8] transition-all duration-300 hover:-translate-y-1 hover:border-[#B8942A] hover:shadow-lg lg:grid-cols-2 ${
                 idx % 2 === 1 ? "lg:grid-flow-col-dense" : ""
               }`}
             >

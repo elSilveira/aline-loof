@@ -67,7 +67,7 @@ export default async function CategoriasPage({ params }: Props) {
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="group border border-[#D4C9A8] p-10 hover:border-[#B8942A] transition-all hover:shadow-lg"
+              className="group border border-[#D4C9A8] p-10 transition-all duration-300 hover:-translate-y-1 hover:border-[#B8942A] hover:shadow-lg"
             >
               <div
                 className="text-[#B8942A] text-5xl font-serif opacity-20 mb-6 group-hover:opacity-40 transition-opacity"

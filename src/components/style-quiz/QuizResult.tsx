@@ -46,7 +46,7 @@ export default function QuizResult({ ranking, onRestart }: Props) {
       <button
         type="button"
         onClick={onRestart}
-        className="mt-8 bg-[#1C1C1C] px-8 py-3 text-[11px] uppercase tracking-[0.2em] text-[#F0E8D8] transition-colors hover:bg-[#B8942A] hover:text-[#1C1C1C]"
+        className="mt-8 cursor-pointer bg-[#1C1C1C] px-8 py-3 text-[11px] uppercase tracking-[0.2em] text-[#F0E8D8] transition-all duration-300 hover:scale-105 hover:bg-[#B8942A] hover:text-[#1C1C1C] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2"
       >
         {t("restart")}
       </button>

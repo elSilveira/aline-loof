@@ -51,7 +51,7 @@ export default async function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[11px] tracking-[0.1em] uppercase text-[#C8B99A] hover:text-[#F0E8D8] transition-colors"
+                  className="cursor-pointer text-[11px] uppercase tracking-[0.1em] text-[#C8B99A] transition-colors duration-300 hover:text-[#F0E8D8] focus-visible:outline-none focus-visible:text-[#B8942A]"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {link.label}
@@ -72,7 +72,7 @@ export default async function Footer() {
               href="https://www.instagram.com/alineloof.consultoria"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 text-[#C8B99A] hover:text-[#F0E8D8] transition-colors group"
+              className="group inline-flex cursor-pointer items-center gap-3 text-[#C8B99A] transition-colors duration-300 hover:text-[#F0E8D8] focus-visible:outline-none focus-visible:text-[#B8942A]"
             >
               <Instagram size={18} className="group-hover:text-[#B8942A] transition-colors" />
               <span
