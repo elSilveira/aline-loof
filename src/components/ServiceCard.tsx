@@ -10,7 +10,7 @@ export default function ServiceCard({
   description,
 }: ServiceCardProps) {
   return (
-    <article className="group border border-[#D4C9A8] p-8 hover:border-[#B8942A] transition-colors">
+    <article className="group border border-[#D4C9A8] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#B8942A] hover:shadow-lg">
       <div
         className="text-[#B8942A] text-2xl font-serif mb-4 opacity-30 group-hover:opacity-60 transition-opacity"
         style={{ fontFamily: "var(--font-playfair)" }}

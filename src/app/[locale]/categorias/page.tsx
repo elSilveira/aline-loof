@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
+import StyleQuiz from "@/components/style-quiz/StyleQuiz";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -53,13 +54,20 @@ export default async function CategoriasPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Style Quiz */}
+      <section className="py-16">
+        <div className="mx-auto max-w-3xl px-6">
+          <StyleQuiz />
+        </div>
+      </section>
+
       {/* Categories Grid */}
       <section className="pb-24 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="group border border-[#D4C9A8] p-10 hover:border-[#B8942A] transition-all hover:shadow-lg"
+              className="group border border-[#D4C9A8] p-10 transition-all duration-300 hover:-translate-y-1 hover:border-[#B8942A] hover:shadow-lg"
             >
               <div
                 className="text-[#B8942A] text-5xl font-serif opacity-20 mb-6 group-hover:opacity-40 transition-opacity"

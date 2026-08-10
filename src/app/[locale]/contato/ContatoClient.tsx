@@ -360,7 +360,7 @@ export default function ContatoClient() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full md:w-auto bg-[#1C1C1C] text-[#F0E8D8] px-12 py-4 text-[11px] tracking-[0.25em] uppercase hover:bg-[#B8942A] hover:text-[#1C1C1C] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full cursor-pointer bg-[#1C1C1C] px-12 py-4 text-[11px] uppercase tracking-[0.25em] text-[#F0E8D8] transition-all duration-300 hover:scale-105 hover:bg-[#B8942A] hover:text-[#1C1C1C] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none disabled:active:scale-100 md:w-auto"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {loading ? "..." : t("form.submit")}

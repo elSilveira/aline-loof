@@ -53,9 +53,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" locale={locale} className="flex flex-col leading-tight">
+          <Link
+            href="/"
+            locale={locale}
+            className="group flex cursor-pointer flex-col leading-tight transition-all duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2"
+          >
             <span
-              className={`font-serif text-xl font-semibold tracking-wide transition-colors duration-300 ${
+              className={`font-serif text-xl font-semibold tracking-wide transition-colors duration-300 group-hover:text-[#B8942A] ${
                 scrolled ? "text-[#1C1C1C]" : "text-[#F0E8D8]"
               }`}
               style={{ fontFamily: "var(--font-playfair)" }}
@@ -77,7 +81,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 locale={locale}
-                className={`text-[11px] tracking-[0.18em] uppercase transition-colors duration-200 ${
+                className={`cursor-pointer text-[11px] uppercase tracking-[0.18em] transition-colors duration-300 focus-visible:outline-none focus-visible:text-[#B8942A] ${
                   isActive(link.href)
                     ? "text-[#B8942A]"
                     : scrolled
@@ -95,7 +99,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <LanguageSwitcher scrolled={scrolled} />
             <button
-              className={`lg:hidden hover:text-[#B8942A] transition-colors duration-300 ${
+              className={`cursor-pointer lg:hidden transition-all duration-300 hover:scale-105 hover:text-[#B8942A] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2 ${
                 scrolled ? "text-[#1C1C1C]" : "text-[#F0E8D8]"
               }`}
               onClick={() => setMenuOpen(!menuOpen)}
@@ -119,7 +123,7 @@ export default function Navbar() {
                 href={link.href}
                 locale={locale}
                 onClick={() => setMenuOpen(false)}
-                className={`text-[11px] tracking-[0.18em] uppercase transition-colors duration-200 ${
+                className={`cursor-pointer text-[11px] uppercase tracking-[0.18em] transition-colors duration-300 focus-visible:outline-none focus-visible:text-[#B8942A] ${
                   isActive(link.href)
                     ? "text-[#B8942A]"
                     : "text-[#1C1C1C] hover:text-[#B8942A]"
