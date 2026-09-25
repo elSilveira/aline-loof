@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import "../../globals.css";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
@@ -18,6 +20,18 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
 });
 
+export const metadata: Metadata = {
+  title: "Aline Loof | Consultora de Imagem",
+  description:
+    "Consultoria de imagem exclusiva para quem valoriza elegância, autenticidade e presença.",
+  openGraph: {
+    title: "Aline Loof | Image Consultant",
+    description:
+      "Exclusive image consulting for those who value elegance, authenticity, and presence.",
+    type: "website",
+  },
+};
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -37,7 +51,7 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
 
-  const messages = (await import(`../../../messages/${locale}.json`)).default;
+  const messages = (await import(`../../../../messages/${locale}.json`)).default;
 
   return (
     <html lang={locale}>

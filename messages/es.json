@@ -11,10 +11,17 @@
   },
   "home": {
     "hero": {
-      "tagline": "Transforma tu imagen.",
-      "subtitle": "Revela tu esencia con una consultoría de imagen que une elegancia, autenticidad y confianza.",
+      "tagline": "Consultoría de Imagen y Estilo con Aline Loof",
+      "subtitle": "Aline Loof es consultora de imagen y estilo y ofrece asesorías personalizadas para ayudar a cada cliente a construir una imagen alineada con su personalidad, rutina y objetivos.",
       "cta_primary": "Conoce los Servicios",
-      "cta_secondary": "Contáctame"
+      "cta_secondary": "Contáctame",
+      "cta_schedule": "Agendar una consultoría",
+      "cta_learn": "Conocer la consultoría"
+    },
+    "image_consulting": {
+      "title": "¿Qué es la consultoría de imagen?",
+      "answer": "La consultoría de imagen es un proceso personalizado que ayuda a alinear el estilo, la ropa, los colores y la presentación personal con la identidad, la rutina y los objetivos de cada persona.",
+      "explanation": "En la práctica, se tienen en cuenta el guardarropa, la paleta de colores y las elecciones de estilo para crear una imagen auténtica y funcional en el día a día."
     },
     "about": {
       "title": "Sobre Aline Loof",
@@ -22,7 +29,7 @@
       "cta": "Saber Más"
     },
     "services_preview": {
-      "title": "Lo que puedo hacer por ti",
+      "title": "Conoce los servicios",
       "subtitle": "Servicios pensados para elevar tu presencia en cada detalle.",
       "items": [
         { "title": "Limpieza de Armario", "desc": "Organiza y selecciona las prendas que realmente realzan tu imagen." },
@@ -30,7 +37,37 @@
         { "title": "Sesión de Color", "desc": "Una inmersión práctica y transformadora en tu paleta personal." },
         { "title": "Eventos", "desc": "Styling personalizado para momentos especiales que requieren sofisticación." }
       ]
+    },
+    "process": {
+      "title": "Cómo funciona la consultoría",
+      "text": "Comenzamos con una conversación sobre tu rutina, tus objetivos y la imagen que deseas construir.",
+      "cta": "Conoce los servicios"
+    },
+    "faq_preview": {
+      "title": "Preguntas frecuentes",
+      "text": "Encuentra respuestas sobre los servicios, la atención y las etapas de la consultoría.",
+      "cta": "Ver preguntas frecuentes"
+    },
+    "closing": {
+      "title": "Una imagen que representa quién eres"
     }
+  },
+  "image_consulting_page": {
+    "title": "Consultoría de Imagen",
+    "intro": "La consultoría de imagen ayuda a construir una imagen personal alineada con la identidad, la rutina y los objetivos de cada cliente.",
+    "what": {
+      "title": "¿Qué es la consultoría de imagen?",
+      "answer": "Es un proceso personalizado de análisis y orientación sobre estilo, colores, ropa y presentación personal."
+    },
+    "how": {
+      "title": "¿Cómo funciona?",
+      "answer": "El proceso se adapta a las necesidades y objetivos de cada cliente."
+    },
+    "for_whom": {
+      "title": "¿Para quién está indicada?",
+      "answer": "Para personas que desean comprender mejor su imagen, su estilo y sus elecciones de vestuario."
+    },
+    "cta": "Agendar una consultoría"
   },
   "categories": {
     "title": "Categorías de Estilo",

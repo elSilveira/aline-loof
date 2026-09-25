@@ -11,10 +11,17 @@
   },
   "home": {
     "hero": {
-      "tagline": "Transformez votre image.",
-      "subtitle": "Révélez votre essence grâce à un conseil en image qui unit élégance, authenticité et confiance.",
+      "tagline": "Conseil en Image et en Style avec Aline Loof",
+      "subtitle": "Aline Loof est conseillère en image et en style. Elle propose un accompagnement personnalisé pour aider chaque client à créer une image en accord avec sa personnalité, son quotidien et ses objectifs.",
       "cta_primary": "Découvrir les Services",
-      "cta_secondary": "Me Contacter"
+      "cta_secondary": "Me Contacter",
+      "cta_schedule": "Réserver un conseil en image",
+      "cta_learn": "Découvrir le conseil en image"
+    },
+    "image_consulting": {
+      "title": "Qu'est-ce que le conseil en image ?",
+      "answer": "Le conseil en image est un accompagnement personnalisé qui aide à harmoniser le style, les vêtements, les couleurs et la présentation personnelle avec l'identité, le quotidien et les objectifs de chacun.",
+      "explanation": "Concrètement, il prend en compte la garde-robe, la palette de couleurs et les choix de style pour créer une image authentique et adaptée à la vie de tous les jours."
     },
     "about": {
       "title": "À propos d'Aline Loof",
@@ -22,7 +29,7 @@
       "cta": "En Savoir Plus"
     },
     "services_preview": {
-      "title": "Ce que je peux faire pour vous",
+      "title": "Découvrez les services",
       "subtitle": "Des services pensés pour élever votre présence dans chaque détail.",
       "items": [
         { "title": "Tri du Dressing", "desc": "Organisez et sélectionnez les pièces qui valorisent vraiment votre image." },
@@ -30,7 +37,37 @@
         { "title": "Journée Couleurs", "desc": "Une immersion pratique et transformatrice dans votre palette personnelle." },
         { "title": "Événements", "desc": "Styling personnalisé pour des moments spéciaux qui requièrent sophistication." }
       ]
+    },
+    "process": {
+      "title": "Comment se déroule le conseil en image",
+      "text": "Nous commençons par échanger sur votre quotidien, vos objectifs et l'image que vous souhaitez construire.",
+      "cta": "Découvrez les services"
+    },
+    "faq_preview": {
+      "title": "Questions fréquentes",
+      "text": "Trouvez des réponses sur les services, les rendez-vous et les étapes du conseil en image.",
+      "cta": "Voir les questions fréquentes"
+    },
+    "closing": {
+      "title": "Une image qui reflète qui vous êtes"
     }
+  },
+  "image_consulting_page": {
+    "title": "Conseil en Image",
+    "intro": "Le conseil en image aide à construire une image personnelle en accord avec l'identité, le quotidien et les objectifs de chaque client.",
+    "what": {
+      "title": "Qu'est-ce que le conseil en image ?",
+      "answer": "C'est un accompagnement personnalisé qui analyse et guide les choix de style, de couleurs, de vêtements et de présentation personnelle."
+    },
+    "how": {
+      "title": "Comment cela fonctionne-t-il ?",
+      "answer": "Le processus est adapté aux besoins et aux objectifs de chaque client."
+    },
+    "for_whom": {
+      "title": "À qui s'adresse-t-il ?",
+      "answer": "Aux personnes qui souhaitent mieux comprendre leur image, leur style et leurs choix vestimentaires."
+    },
+    "cta": "Réserver un conseil en image"
   },
   "categories": {
     "title": "Catégories de Style",

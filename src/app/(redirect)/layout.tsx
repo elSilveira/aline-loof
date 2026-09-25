@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 
 export const metadata: Metadata = {
   title: "Aline Loof | Consultora de Imagem",
@@ -18,5 +18,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <html lang="pt">
+      <body>{children}</body>
+    </html>
+  );
 }

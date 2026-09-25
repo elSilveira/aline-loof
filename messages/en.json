@@ -11,10 +11,17 @@
   },
   "home": {
     "hero": {
-      "tagline": "Transform your image.",
-      "subtitle": "Reveal your essence with image consulting that brings together elegance, authenticity, and confidence.",
+      "tagline": "Image and Style Consulting with Aline Loof",
+      "subtitle": "Aline Loof is an image and style consultant who offers personalized sessions to help each client build an image that reflects their personality, daily life, and goals.",
       "cta_primary": "Explore Services",
-      "cta_secondary": "Get in Touch"
+      "cta_secondary": "Get in Touch",
+      "cta_schedule": "Book a consultation",
+      "cta_learn": "Explore the consultation"
+    },
+    "image_consulting": {
+      "title": "What is image consulting?",
+      "answer": "Image consulting is a personalized process that helps align style, clothing, colors, and personal presentation with each person's identity, routine, and goals.",
+      "explanation": "In practice, the consultation considers your wardrobe, color palette, and style choices to create an authentic, practical image for everyday life."
     },
     "about": {
       "title": "About Aline Loof",
@@ -22,7 +29,7 @@
       "cta": "Learn More"
     },
     "services_preview": {
-      "title": "What I can do for you",
+      "title": "Explore the services",
       "subtitle": "Services designed to elevate your presence in every detail.",
       "items": [
         { "title": "Closet Cleanse", "desc": "Organize and curate the pieces that truly enhance your image." },
@@ -30,7 +37,37 @@
         { "title": "Color Day Session", "desc": "A practical and transformative immersion into your personal palette." },
         { "title": "Event Styling", "desc": "Personalized styling for special moments that call for sophistication." }
       ]
+    },
+    "process": {
+      "title": "How the consultation works",
+      "text": "We begin with a conversation about your routine, your goals, and the image you want to create.",
+      "cta": "Explore the services"
+    },
+    "faq_preview": {
+      "title": "Frequently asked questions",
+      "text": "Find answers about the services, appointments, and steps of the consultation.",
+      "cta": "View frequently asked questions"
+    },
+    "closing": {
+      "title": "An image that reflects who you are"
     }
+  },
+  "image_consulting_page": {
+    "title": "Image Consulting",
+    "intro": "Image consulting helps build a personal image aligned with each client's identity, routine, and goals.",
+    "what": {
+      "title": "What is image consulting?",
+      "answer": "It is a personalized process of analysis and guidance on style, colors, clothing, and personal presentation."
+    },
+    "how": {
+      "title": "How does it work?",
+      "answer": "The process is adapted to each client's needs and goals."
+    },
+    "for_whom": {
+      "title": "Who is it for?",
+      "answer": "For people who want to better understand their image, style, and clothing choices."
+    },
+    "cta": "Book a consultation"
   },
   "categories": {
     "title": "Style Categories",

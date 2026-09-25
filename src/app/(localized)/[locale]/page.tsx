@@ -1,9 +1,34 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import StyleQuiz from "@/components/style-quiz/StyleQuiz";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Aline Loof",
+  jobTitle: "Consultora de Imagem",
+  url: "https://alineloof.com/",
+};
+
+export const metadata: Metadata = {
+  title: "Aline Loof | Consultoria de Imagem e Estilo",
+  description:
+    "Conheça o trabalho de Aline Loof com consultoria de imagem e estilo, pensado para alinhar sua imagem pessoal à sua rotina, personalidade e objetivos.",
+  alternates: {
+    canonical: "https://alineloof.com/",
+  },
+  openGraph: {
+    title: "Aline Loof | Consultoria de Imagem e Estilo",
+    description: "Consultoria de imagem e estilo personalizada com Aline Loof.",
+    type: "website",
+    url: "https://alineloof.com/",
+    images: ["https://alineloof.com/images/aline-loof.webp"],
+  },
+};
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -21,6 +46,10 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1C1C1C]">
         {/* Background texture overlay */}
@@ -40,7 +69,7 @@ export default async function HomePage({ params }: Props) {
             Aline Loof
           </p>
           <h1
-            className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium text-[#F0E8D8] leading-tight mb-8"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-medium text-[#F0E8D8] leading-tight mb-8"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             {t("hero.tagline")}
@@ -54,25 +83,49 @@ export default async function HomePage({ params }: Props) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/servicos"
+              href="/contato"
               className="inline-flex items-center gap-2 bg-[#B8942A] text-[#1C1C1C] px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#D4AF50] transition-colors"
               style={{ fontFamily: "var(--font-inter)" }}
             >
-              {t("hero.cta_primary")}
+              {t("hero.cta_schedule")}
               <ArrowRight size={14} />
             </Link>
             <Link
-              href="/contato"
+              href="/consultoria-de-imagem"
               className="inline-flex items-center gap-2 border border-[#B8942A] text-[#B8942A] px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#B8942A] hover:text-[#1C1C1C] transition-colors"
               style={{ fontFamily: "var(--font-inter)" }}
             >
-              {t("hero.cta_secondary")}
+              {t("hero.cta_learn")}
             </Link>
           </div>
         </div>
         {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
           <div className="w-px h-12 bg-[#B8942A] animate-pulse" />
+        </div>
+      </section>
+
+      {/* Direct answer about image consulting */}
+      <section className="section-padding bg-[#F5EED8]/30 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2
+            className="text-3xl md:text-4xl font-serif font-medium text-[#1C1C1C] leading-tight mb-6"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            {t("image_consulting.title")}
+          </h2>
+          <p
+            className="text-lg text-[#1C1C1C] leading-relaxed mb-5"
+            style={{ fontFamily: "var(--font-inter)" }}
+          >
+            {t("image_consulting.answer")}
+          </p>
+          <p
+            className="text-[#6B6560] leading-relaxed"
+            style={{ fontFamily: "var(--font-inter)" }}
+          >
+            {t("image_consulting.explanation")}
+          </p>
         </div>
       </section>
 
@@ -176,6 +229,40 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
+      {/* Consultation and FAQ */}
+      <section className="section-padding px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+          <div>
+            <h2
+              className="text-3xl md:text-4xl font-serif font-medium text-[#1C1C1C] mb-6"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              {t("process.title")}
+            </h2>
+            <p className="text-[#6B6560] leading-relaxed mb-6" style={{ fontFamily: "var(--font-inter)" }}>
+              {t("process.text")}
+            </p>
+            <Link href="/servicos" className="inline-flex items-center gap-2 text-[#B8942A] hover:gap-4 transition-all">
+              {t("process.cta")} <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div>
+            <h2
+              className="text-3xl md:text-4xl font-serif font-medium text-[#1C1C1C] mb-6"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              {t("faq_preview.title")}
+            </h2>
+            <p className="text-[#6B6560] leading-relaxed mb-6" style={{ fontFamily: "var(--font-inter)" }}>
+              {t("faq_preview.text")}
+            </p>
+            <Link href="/faq" className="inline-flex items-center gap-2 text-[#B8942A] hover:gap-4 transition-all">
+              {t("faq_preview.cta")} <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Style Quiz */}
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-6">
@@ -195,7 +282,7 @@ export default async function HomePage({ params }: Props) {
           className="text-3xl md:text-5xl font-serif font-medium text-[#F0E8D8] mb-8 max-w-2xl mx-auto leading-tight"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
-          {t("hero.tagline")}
+          {t("closing.title")}
         </h2>
         <Link
           href="/contato"
