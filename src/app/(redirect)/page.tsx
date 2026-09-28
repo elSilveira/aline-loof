@@ -5,8 +5,8 @@
 export default function RootPage() {
   return (
     <>
-      <meta httpEquiv="refresh" content="0; url=/aline-loof/pt/" />
-      <link rel="canonical" href="/aline-loof/pt/" />
+      <meta httpEquiv="refresh" content="0; url=/pt/" />
+      <link rel="canonical" href="https://alineloof.com/pt/" />
       <p>Redirecionando… / Redirecting…</p>
     </>
   );

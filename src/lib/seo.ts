@@ -1,4 +1,4 @@
-export const siteBaseUrl = "https://elsilveira.github.io/aline-loof";
+export const siteBaseUrl = "https://alineloof.com";
 
 export function canonicalUrl(locale: string, path = "") {
   return `${siteBaseUrl}/${locale}/${path ? `${path}/` : ""}`;
