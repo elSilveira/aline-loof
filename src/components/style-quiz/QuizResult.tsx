@@ -15,7 +15,7 @@ export default function QuizResult({ ranking, onRestart }: Props) {
 
   return (
     <div className="text-center" aria-live="polite" aria-atomic="true">
-      <p className="mb-3 text-[10px] uppercase tracking-[0.35em] text-[#B8942A]">
+      <p className="mb-3 text-[10px] uppercase tracking-[0.35em] text-[#8A6B20]">
         {t("result.eyebrow")}
       </p>
       <h2 className="mb-8 font-serif text-3xl text-[#1C1C1C]">
@@ -25,7 +25,7 @@ export default function QuizResult({ ranking, onRestart }: Props) {
       <div className="grid gap-4 sm:grid-cols-2">
         {ranking.map((item, index) => (
           <article key={item.styleId} className="border border-[#D4C9A8] p-6">
-            <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-[#B8942A]">
+            <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-[#8A6B20]">
               {index === 0 ? t("result.first") : t("result.second")}
             </p>
             <h3 className="mb-2 font-serif text-2xl text-[#1C1C1C]">
@@ -34,7 +34,7 @@ export default function QuizResult({ ranking, onRestart }: Props) {
             <p className="mb-4 text-sm leading-relaxed text-[#6B6560]">
               {t(`styles.${item.styleId}.description`)}
             </p>
-            <p className="font-medium text-[#B8942A]">
+            <p className="font-medium text-[#8A6B20]">
               {t("result.percentage", {
                 value: item.percentage.toFixed(1),
               })}

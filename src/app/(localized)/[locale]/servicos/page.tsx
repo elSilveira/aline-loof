@@ -113,11 +113,11 @@ export default async function ServicosPage({ params }: Props) {
                 </ul>
 
                 <Link
-                  href="/contato"
+                  href="/consultoria-de-imagem"
                   className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-[#B8942A] hover:gap-4 transition-all"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
-                  Saiba mais
+                  {t("learn_more")}
                   <ArrowRight size={13} />
                 </Link>
               </div>
@@ -145,7 +145,7 @@ export default async function ServicosPage({ params }: Props) {
           className="inline-flex items-center gap-2 bg-[#B8942A] text-[#1C1C1C] px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#D4AF50] transition-colors"
           style={{ fontFamily: "var(--font-inter)" }}
         >
-          Agendar Consulta
+          {t("schedule")}
           <ArrowRight size={14} />
         </Link>
       </section>

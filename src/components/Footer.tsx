@@ -9,6 +9,7 @@ export default async function Footer() {
 
   const links = [
     { href: "/", label: nav("home") },
+    { href: "/sobre", label: nav("about") },
     { href: "/categorias", label: nav("categories") },
     { href: "/acessorios", label: nav("accessories") },
     { href: "/cema", label: nav("cema") },

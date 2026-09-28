@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "about": "About",
     "categories": "Categories",
     "accessories": "Accessories",
     "cema": "CEMA",
@@ -9,14 +10,24 @@
     "contact": "Contact",
     "menu": "Menu"
   },
+  "entity": {
+    "name_label": "Name",
+    "profession_label": "Profession",
+    "profession": "Image consultant",
+    "area_label": "Field",
+    "area": "Image and style",
+    "service_label": "Service",
+    "service": "Image and style consulting"
+  },
   "home": {
     "hero": {
       "tagline": "Image and Style Consulting with Aline Loof",
-      "subtitle": "Aline Loof is an image and style consultant who offers personalized sessions to help each client build an image that reflects their personality, daily life, and goals.",
+      "profession": "Image consultant",
+      "subtitle": "Explore Aline’s work in image and style and see how to start your consultation.",
       "cta_primary": "Explore Services",
       "cta_secondary": "Get in Touch",
-      "cta_schedule": "Book a consultation",
-      "cta_learn": "Explore the consultation"
+      "cta_schedule": "Talk to Aline",
+      "cta_learn": "Explore image consulting"
     },
     "image_consulting": {
       "title": "What is image consulting?",
@@ -25,17 +36,17 @@
     },
     "about": {
       "title": "About Aline Loof",
-      "text": "I am an image consultant specializing in working with discerning clients who wish to align their appearance, personality, and purpose. Through my exclusive method, I analyze colorimetry, style, makeup, and accessories to craft an authentic and impactful visual identity.",
-      "cta": "Learn More"
+      "text": "Aline Loof is an image consultant working in image and style. Her consultations consider each client’s identity, daily routine, and goals.",
+      "cta": "Meet Aline"
     },
     "services_preview": {
-      "title": "Explore the services",
-      "subtitle": "Services designed to elevate your presence in every detail.",
+      "title": "Image and style consulting",
+      "subtitle": "Personalized guidance to align your image with your identity, routine, and goals.",
       "items": [
-        { "title": "Closet Cleanse", "desc": "Organize and curate the pieces that truly enhance your image." },
-        { "title": "Color Palette", "desc": "Discover the colors that harmonize with your natural colorimetry." },
-        { "title": "Color Day Session", "desc": "A practical and transformative immersion into your personal palette." },
-        { "title": "Event Styling", "desc": "Personalized styling for special moments that call for sophistication." }
+        {
+          "title": "Image and style consulting",
+          "desc": "Individual guidance to build an image that fits who you are and your daily life."
+        }
       ]
     },
     "process": {
@@ -52,6 +63,15 @@
       "title": "An image that reflects who you are"
     }
   },
+  "about_page": {
+    "title": "About Aline Loof",
+    "intro": "Aline Loof works in image and style consulting, helping clients build an image that reflects their identity, routine, and goals.",
+    "how": {
+      "title": "How does her work happen?",
+      "answer": "Each consultation is personalized and considers the needs and characteristics of every client."
+    },
+    "cta": "Explore the services"
+  },
   "image_consulting_page": {
     "title": "Image Consulting",
     "intro": "Image consulting helps build a personal image aligned with each client's identity, routine, and goals.",
@@ -67,7 +87,7 @@
       "title": "Who is it for?",
       "answer": "For people who want to better understand their image, style, and clothing choices."
     },
-    "cta": "Book a consultation"
+    "cta": "Talk to Aline"
   },
   "categories": {
     "title": "Style Categories",
@@ -161,57 +181,43 @@
   },
   "services": {
     "title": "Services",
-    "subtitle": "Each service is designed to deliver real and transformative results.",
+    "subtitle": "Explore Aline Loof’s image and style consulting.",
+    "learn_more": "Explore the consultation",
+    "schedule": "Book a consultation",
     "items": [
       {
-        "slug": "closet-cleanse",
-        "title": "Closet Cleanse",
-        "desc": "A practical and revealing session where we analyze each piece in your wardrobe. We identify what stays, what goes, and what is missing — building a functional, harmonious closet aligned with who you are today.",
-        "highlights": ["Analysis of each garment", "Smart decluttering criteria", "Key wardrobe pieces list", "Versatility and styling guidance"]
-      },
-      {
-        "slug": "color-palette",
-        "title": "Color Palette",
-        "desc": "Through colorimetry analysis, I identify the colors that best favor your skin, eyes, and hair. You receive your personalized palette with guidance on how to apply it in everyday life.",
-        "highlights": ["In-person colorimetry test", "Printed personalized palette", "Usage and combinations guide", "Application for fashion, makeup, and accessories"]
-      },
-      {
-        "slug": "color-day-session",
-        "title": "Color Day Session",
-        "desc": "A complete immersion in the world of color. Throughout the day, we experience in practice how different tones impact your appearance and energy — a transformative and very special experience.",
-        "highlights": ["Full day dedicated to your image", "Practical tests with different palettes", "Photographic record", "Personalized report at the end"]
-      },
-      {
-        "slug": "events",
-        "title": "Event Styling",
-        "desc": "For moments when every detail matters. We take care of your complete look — from clothing to accessories — so you appear with confidence, sophistication, and full alignment with the event.",
-        "highlights": ["Event briefing and dress code", "Custom selection or personal shopping", "Complete look composition", "Final adjustments and usage guidance"]
+        "slug": "consultoria-de-imagem",
+        "title": "Image and style consulting",
+        "desc": "Each consultation considers the client’s identity, routine, and goals to guide image and style choices.",
+        "highlights": [
+          "Personalized consultation",
+          "Image and style guidance",
+          "Considers each client’s routine and goals"
+        ]
       }
     ]
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Let us build together an image that represents the best of you.",
+    "title": "Contact Aline Loof",
+    "subtitle": "Get in touch to learn more about the services and book a consultation.",
+    "whatsapp_cta": "Talk on WhatsApp",
     "form": {
+      "heading": "Send a message",
       "name": "Name",
       "email": "Email",
       "phone": "Phone (optional)",
       "service": "Service of interest",
       "message": "Message",
-      "submit": "Send message",
+      "submit": "Continue on WhatsApp",
+      "whatsapp_intro": "Hello, Aline! I would like to learn more about the consultation.",
+      "whatsapp_note": "You can review and send the message in WhatsApp.",
       "placeholder_name": "Your full name",
       "placeholder_email": "your@email.com",
       "placeholder_phone": "+55 (11) 99999-9999",
       "placeholder_message": "Tell me a little about yourself and what you are looking for...",
       "select_service": "Select a service",
-      "success": "Message sent! I will get back to you shortly.",
-      "error": "An error occurred. Please try again.",
       "services": {
-        "closet": "Closet Cleanse",
-        "palette": "Color Palette",
-        "colorday": "Color Day Session",
-        "events": "Events",
-        "cema": "Complete CEMA"
+        "consulting": "Image and style consulting"
       },
       "validation": {
         "name": {
@@ -231,6 +237,7 @@
       }
     },
     "info": {
+      "heading": "Other ways to get in touch",
       "instagram": "Instagram",
       "response_time": "Response within 24 hours",
       "location": "In-person and online consultations"

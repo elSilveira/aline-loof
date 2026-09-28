@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Entrada",
+    "about": "Sobre",
     "categories": "Categorias",
     "accessories": "Acessórios",
     "cema": "CEMA",
@@ -9,14 +10,24 @@
     "contact": "Contato",
     "menu": "Menu"
   },
+  "entity": {
+    "name_label": "Nome",
+    "profession_label": "Profissão",
+    "profession": "Consultora de imagem",
+    "area_label": "Área",
+    "area": "Imagem e estilo",
+    "service_label": "Serviço",
+    "service": "Consultoria de imagem e estilo"
+  },
   "home": {
     "hero": {
       "tagline": "Consultoria de Imagem e Estilo com Aline Loof",
-      "subtitle": "Aline Loof é consultora de imagem e estilo e trabalha com atendimentos personalizados para ajudar cada cliente a construir uma imagem alinhada à sua personalidade, rotina e objetivos.",
+      "profession": "Consultora de imagem",
+      "subtitle": "Conheça o trabalho de Aline em imagem e estilo e saiba como começar sua consultoria.",
       "cta_primary": "Conheça meus Serviços",
       "cta_secondary": "Fale conosco",
-      "cta_schedule": "Agendar consultoria",
-      "cta_learn": "Conhecer a consultoria"
+      "cta_schedule": "Falar com Aline",
+      "cta_learn": "Conheça a consultoria de imagem"
     },
     "image_consulting": {
       "title": "O que é consultoria de imagem?",
@@ -25,17 +36,17 @@
     },
     "about": {
       "title": "Sobre Aline Loof",
-      "text": "Sou consultora de imagem especializada em atender clientes exigentes que desejam alinhar aparência, personalidade e propósito. Com método exclusivo, analiso colorimetria, estilo, maquiagem e acessórios para criar uma identidade visual autêntica e impactante.",
-      "cta": "Saiba Mais!"
+      "text": "Aline Loof é consultora de imagem e atua na área de imagem e estilo. Seu atendimento considera a identidade, a rotina e os objetivos de cada cliente.",
+      "cta": "Conhecer Aline"
     },
     "services_preview": {
-      "title": "Conheça os serviços",
-      "subtitle": "Serviços pensados para elevar sua presença em cada detalhe.",
+      "title": "Consultoria de imagem e estilo",
+      "subtitle": "Atendimento personalizado para alinhar sua imagem à identidade, à rotina e aos objetivos.",
       "items": [
-        { "title": "Limpeza de Closet", "desc": "Organize e selecione as peças que realmente valorizam sua imagem." },
-        { "title": "Paleta de Cores", "desc": "Descubra as cores que harmonizam com sua colorimetria natural." },
-        { "title": "Sessão de Cor", "desc": "Uma imersão prática e transformadora na sua paleta pessoal." },
-        { "title": "Eventos", "desc": "Styling personalizado para momentos especiais que pedem sofisticação." }
+        {
+          "title": "Consultoria de imagem e estilo",
+          "desc": "Orientação individual para construir uma imagem coerente com quem você é e com sua rotina."
+        }
       ]
     },
     "process": {
@@ -52,6 +63,15 @@
       "title": "Uma imagem que representa quem você é"
     }
   },
+  "about_page": {
+    "title": "Sobre Aline Loof",
+    "intro": "Aline Loof atua com consultoria de imagem e estilo, ajudando clientes a construírem uma imagem coerente com sua identidade, rotina e objetivos.",
+    "how": {
+      "title": "Como funciona seu trabalho?",
+      "answer": "O atendimento é personalizado e considera as necessidades e características de cada cliente."
+    },
+    "cta": "Conheça os serviços"
+  },
   "image_consulting_page": {
     "title": "Consultoria de Imagem",
     "intro": "A consultoria de imagem ajuda a construir uma imagem pessoal alinhada à identidade, rotina e objetivos de cada cliente.",
@@ -67,7 +87,7 @@
       "title": "Para quem é indicada?",
       "answer": "Para pessoas que desejam compreender melhor sua imagem, estilo e escolhas de vestuário."
     },
-    "cta": "Agendar consultoria"
+    "cta": "Falar com Aline"
   },
   "categories": {
     "title": "Categorias de Estilo",
@@ -161,57 +181,43 @@
   },
   "services": {
     "title": "Serviços",
-    "subtitle": "Cada serviço foi pensado para entregar resultados reais e transformadores.",
+    "subtitle": "Conheça a consultoria de imagem e estilo de Aline Loof.",
+    "learn_more": "Conhecer a consultoria",
+    "schedule": "Agendar consultoria",
     "items": [
       {
-        "slug": "limpeza-de-closet",
-        "title": "Limpeza de Closet",
-        "desc": "Uma sessão prática e reveladora onde analisamos peça por peça do seu guarda-roupa. Identificamos o que fica, o que sai e o que falta — construindo um closet funcional, harmônico e alinhado com quem você é hoje.",
-        "highlights": ["Análise de cada peça", "Critérios de descarte inteligente", "Lista de peças-chave para completar o guarda-roupa", "Orientação sobre versatilidade e combinações"]
-      },
-      {
-        "slug": "paleta-de-cores",
-        "title": "Paleta de Cores",
-        "desc": "Através da análise de colorimetria, identifico as cores que mais favorecem sua pele, olhos e cabelo. Você recebe sua paleta personalizada com orientações de como aplicá-la no dia a dia.",
-        "highlights": ["Teste de colorimetria presencial", "Paleta personalizada impressa", "Guia de uso e combinações", "Aplicação para moda, maquiagem e acessórios"]
-      },
-      {
-        "slug": "sessao-de-cor",
-        "title": "Color Day Session",
-        "desc": "Uma imersão completa no universo das cores. Durante o dia, vivenciamos na prática como diferentes tons impactam sua aparência e sua energia — uma experiência transformadora e muito especial.",
-        "highlights": ["Dia completo dedicado à sua imagem", "Testes práticos com diferentes paletas", "Registro fotográfico", "Relatório personalizado ao final"]
-      },
-      {
-        "slug": "eventos",
-        "title": "Styling para Eventos",
-        "desc": "Para os momentos em que cada detalhe importa. Cuidamos do seu look completo — da roupa aos acessórios — para que você apareça com confiança, sofisticação e total alinhamento com o evento.",
-        "highlights": ["Briefing do evento e dress code", "Seleção ou shopping personalizado", "Composição completa do look", "Ajustes finais e orientações de uso"]
+        "slug": "consultoria-de-imagem",
+        "title": "Consultoria de imagem e estilo",
+        "desc": "O atendimento é personalizado e considera a identidade, a rotina e os objetivos de cada cliente para orientar escolhas de imagem e estilo.",
+        "highlights": [
+          "Atendimento personalizado",
+          "Orientação de imagem e estilo",
+          "Considera a rotina e os objetivos de cada cliente"
+        ]
       }
     ]
   },
   "contact": {
-    "title": "Contato",
-    "subtitle": "Vamos construir juntos uma imagem que representa o melhor de você.",
+    "title": "Entre em contato com Aline Loof",
+    "subtitle": "Entre em contato para saber mais sobre os serviços e agendar uma consultoria.",
+    "whatsapp_cta": "Falar pelo WhatsApp",
     "form": {
+      "heading": "Envie uma mensagem",
       "name": "Nome",
       "email": "E-mail",
       "phone": "Telefone (opcional)",
       "service": "Serviço de interesse",
       "message": "Mensagem",
-      "submit": "Enviar mensagem",
+      "submit": "Continuar no WhatsApp",
+      "whatsapp_intro": "Olá, Aline! Gostaria de saber mais sobre a consultoria.",
+      "whatsapp_note": "Você poderá revisar e enviar a mensagem no WhatsApp.",
       "placeholder_name": "Seu nome completo",
       "placeholder_email": "seu@email.com",
       "placeholder_phone": "+55 (11) 99999-9999",
       "placeholder_message": "Conte-me um pouco sobre você e o que está buscando...",
       "select_service": "Selecione um serviço",
-      "success": "Mensagem enviada! Entrarei em contato em breve.",
-      "error": "Ocorreu um erro. Por favor, tente novamente.",
       "services": {
-        "closet": "Limpeza de Closet",
-        "palette": "Paleta de Cores",
-        "colorday": "Sessão de Cor",
-        "events": "Eventos",
-        "cema": "CEMA Completo"
+        "consulting": "Consultoria de imagem e estilo"
       },
       "validation": {
         "name": {
@@ -231,6 +237,7 @@
       }
     },
     "info": {
+      "heading": "Outras formas de contato",
       "instagram": "Instagram",
       "response_time": "Respondo em até 24 horas",
       "location": "Atendimento presencial e online"

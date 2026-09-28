@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Consultoria de Imagem | Aline Loof",
-  description:
-    "Conheça a consultoria de imagem da Aline Loof e entenda como alinhar estilo, imagem pessoal, rotina e objetivos.",
-  alternates: {
-    canonical: "https://alineloof.com/consultoria-de-imagem",
-  },
-};
-
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "image_consulting_page" });
+
+  return {
+    title: t("title"),
+    description: t("intro"),
+    alternates: { canonical: canonicalUrl(locale, "consultoria-de-imagem") },
+  };
+}
+
 
 export default async function ConsultoriaDeImagemPage({ params }: Props) {
   const { locale } = await params;

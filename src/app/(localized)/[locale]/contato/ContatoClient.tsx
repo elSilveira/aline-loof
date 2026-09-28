@@ -20,17 +20,9 @@ export default function ContatoClient() {
     service: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-  const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<ContactFormErrors>({});
 
-  const services = [
-    "closet",
-    "palette",
-    "colorday",
-    "events",
-    "cema",
-  ];
+  const services = ["consulting"];
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -53,31 +45,32 @@ export default function ContatoClient() {
     }
   };
 
-  const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement>,
-  ) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const validationErrors = validateContactForm(form);
-
     setErrors(validationErrors);
-    if (Object.keys(validationErrors).length > 0) {
-      return;
-    }
+    if (Object.keys(validationErrors).length > 0) return;
 
-    // Primeiro validamos o valor original. Somente depois criamos a versão
-    // normalizada que seria enviada para a API.
-    const payload = {
-      ...form,
-      phone: normalizePhone(form.phone),
-    };
+    const message = [
+      t("form.whatsapp_intro"),
+      `${t("form.name")}: ${form.name.trim()}`,
+      `${t("form.email")}: ${form.email.trim()}`,
+      form.phone.trim()
+        ? `${t("form.phone")}: ${normalizePhone(form.phone)}`
+        : null,
+      form.service
+        ? `${t("form.service")}: ${t(`form.services.${form.service}`)}`
+        : null,
+      `${t("form.message")}: ${form.message.trim()}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
 
-    setLoading(true);
-    // Simulate async submission
-    await new Promise((r) => setTimeout(r, 1200));
-    // Mantém no estado a mesma representação usada no envio simulado.
-    setForm(payload);
-    setStatus("success");
-    setLoading(false);
+    window.open(
+      `https://wa.me/554591525773?text=${encodeURIComponent(message)}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
   };
 
   const inputClass =
@@ -108,6 +101,14 @@ export default function ContatoClient() {
         >
           {t("subtitle")}
         </p>
+        <a
+          href="https://wa.me/554591525773"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-10 inline-flex items-center bg-[#B8942A] px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] transition-colors hover:bg-[#D4AF50]"
+        >
+          {t("whatsapp_cta")}
+        </a>
       </section>
 
       {/* Contact Content */}
@@ -115,12 +116,12 @@ export default function ContatoClient() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16">
           {/* Info */}
           <div className="lg:col-span-1">
-            <p
-              className="text-[10px] tracking-[0.3em] uppercase text-[#B8942A] mb-8"
-              style={{ fontFamily: "var(--font-inter)" }}
+            <h2
+              className="mb-8 font-serif text-2xl text-[#1C1C1C] md:text-3xl"
+              style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Info
-            </p>
+              {t("info.heading")}
+            </h2>
 
             <div className="space-y-8">
               <div className="flex items-start gap-4">
@@ -195,18 +196,9 @@ export default function ContatoClient() {
 
           {/* Form */}
           <div className="lg:col-span-2">
-            {status === "success" ? (
-              <div className="border border-[#B8942A] p-12 text-center">
-                <div className="text-3xl mb-4">✦</div>
-                <p
-                  className="font-serif text-2xl text-[#1C1C1C] mb-4"
-                  style={{ fontFamily: "var(--font-playfair)" }}
-                >
-                  {t("form.success")}
-                </p>
-                <div className="w-10 h-px bg-[#B8942A] mx-auto" />
-              </div>
-            ) : (
+            <h2 className="mb-8 font-serif text-3xl text-[#1C1C1C] md:text-4xl">
+              {t("form.heading")}
+            </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -359,14 +351,15 @@ export default function ContatoClient() {
 
                 <button
                   type="submit"
-                  disabled={loading}
                   className="w-full cursor-pointer bg-[#1C1C1C] px-12 py-4 text-[11px] uppercase tracking-[0.25em] text-[#F0E8D8] transition-all duration-300 hover:scale-105 hover:bg-[#B8942A] hover:text-[#1C1C1C] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none disabled:active:scale-100 md:w-auto"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
-                  {loading ? "..." : t("form.submit")}
+                  {t("form.submit")}
                 </button>
+                <p className="text-sm leading-relaxed text-[#6B6560]">
+                  {t("form.whatsapp_note")}
+                </p>
               </form>
-            )}
           </div>
         </div>
       </section>

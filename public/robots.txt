@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alineloof.com.br/sitemap.xml
+Sitemap: https://elsilveira.github.io/aline-loof/sitemap.xml

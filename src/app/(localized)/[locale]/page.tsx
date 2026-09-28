@@ -1,36 +1,29 @@
 import type { Metadata } from "next";
+import { alinePersonSchema, canonicalUrl } from "@/lib/seo";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
+import EntityFacts from "@/components/EntityFacts";
 import StyleQuiz from "@/components/style-quiz/StyleQuiz";
 
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Aline Loof",
-  jobTitle: "Consultora de Imagem",
-  url: "https://alineloof.com/",
-};
-
-export const metadata: Metadata = {
-  title: "Aline Loof | Consultoria de Imagem e Estilo",
-  description:
-    "Conheça o trabalho de Aline Loof com consultoria de imagem e estilo, pensado para alinhar sua imagem pessoal à sua rotina, personalidade e objetivos.",
-  alternates: {
-    canonical: "https://alineloof.com/",
-  },
-  openGraph: {
-    title: "Aline Loof | Consultoria de Imagem e Estilo",
-    description: "Consultoria de imagem e estilo personalizada com Aline Loof.",
-    type: "website",
-    url: "https://alineloof.com/",
-    images: ["https://alineloof.com/images/aline-loof.webp"],
-  },
-};
-
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "home" });
+  const title = t("hero.tagline");
+  const description = t("hero.subtitle");
+  const url = canonicalUrl(locale);
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, type: "website", url },
+  };
+}
+
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
@@ -38,6 +31,7 @@ export default async function HomePage({ params }: Props) {
 
   const t = await getTranslations("home");
   const tNav = await getTranslations("nav");
+  const tEntity = await getTranslations("entity");
 
   const services = t.raw("services_preview.items") as Array<{
     title: string;
@@ -48,10 +42,17 @@ export default async function HomePage({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(
+          alinePersonSchema(
+            locale,
+            tEntity("profession"),
+            tEntity("area"),
+            tEntity("service"),
+          ),
+        ) }}
       />
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1C1C1C]">
+      <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#1C1C1C] px-4 pb-8 pt-24 sm:px-6 sm:pb-16 sm:pt-32">
         {/* Background texture overlay */}
         <div
           className="absolute inset-0 opacity-5"
@@ -61,46 +62,46 @@ export default async function HomePage({ params }: Props) {
             backgroundSize: "20px 20px",
           }}
         />
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
           <p
-            className="text-[10px] tracking-[0.5em] uppercase text-[#B8942A] mb-8"
+            className="mb-4 text-[10px] uppercase tracking-[0.25em] text-[#B8942A] sm:mb-7 sm:tracking-[0.5em]"
             style={{ fontFamily: "var(--font-inter)" }}
           >
-            Aline Loof
+            Aline Loof <span className="mx-2">·</span> {t("hero.profession")}
           </p>
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-medium text-[#F0E8D8] leading-tight mb-8"
+            className="mb-4 font-serif text-[1.875rem] font-medium leading-[1.15] text-[#F0E8D8] sm:mb-8 sm:text-5xl md:text-6xl lg:text-7xl"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             {t("hero.tagline")}
           </h1>
-          <div className="w-16 h-px bg-[#B8942A] mx-auto mb-8" />
+          <div className="mx-auto mb-4 h-px w-16 bg-[#B8942A] sm:mb-8" />
           <p
-            className="text-[#C8B99A] text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-12"
+            className="mx-auto mb-6 max-w-2xl text-sm leading-relaxed text-[#C8B99A] sm:mb-12 sm:text-base md:text-lg"
             style={{ fontFamily: "var(--font-inter)", fontWeight: 300 }}
           >
             {t("hero.subtitle")}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contato"
-              className="inline-flex items-center gap-2 bg-[#B8942A] text-[#1C1C1C] px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#D4AF50] transition-colors"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
-              {t("hero.cta_schedule")}
-              <ArrowRight size={14} />
-            </Link>
+          <div className="flex flex-col justify-center gap-2.5 sm:flex-row sm:gap-4">
             <Link
               href="/consultoria-de-imagem"
-              className="inline-flex items-center gap-2 border border-[#B8942A] text-[#B8942A] px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#B8942A] hover:text-[#1C1C1C] transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#B8942A] min-h-11 px-4 py-3 text-[10px] font-medium uppercase tracking-[0.08em] text-[#1C1C1C] transition-colors hover:bg-[#D4AF50] sm:px-8 sm:py-4 sm:text-[11px] sm:tracking-[0.2em]"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               {t("hero.cta_learn")}
+              <ArrowRight size={14} />
+            </Link>
+            <Link
+              href="/contato"
+              className="inline-flex items-center justify-center gap-2 border border-[#B8942A] min-h-11 px-4 py-3 text-[10px] font-medium uppercase tracking-[0.08em] text-[#B8942A] transition-colors hover:bg-[#B8942A] hover:text-[#1C1C1C] sm:px-8 sm:py-4 sm:text-[11px] sm:tracking-[0.2em]"
+              style={{ fontFamily: "var(--font-inter)" }}
+            >
+              {t("hero.cta_schedule")}
             </Link>
           </div>
         </div>
         {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+        <div className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 opacity-50 sm:bottom-10 sm:flex">
           <div className="w-px h-12 bg-[#B8942A] animate-pulse" />
         </div>
       </section>
@@ -132,25 +133,22 @@ export default async function HomePage({ params }: Props) {
       {/* About */}
       <section className="section-padding px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Image example */}
-          <div className="relative">
-            <div className="aspect-[3/4] bg-[#E8E0D0] relative overflow-hidden">
-              <Image
-                src="/aline-loof/globe.svg"
-                alt="Example illustration"
-                fill
-                className="object-contain p-16"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
+          {/* Decorative monogram until a portrait is available */}
+          <div className="relative" aria-hidden="true">
+            <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-[#E8E0D0] lg:aspect-[3/4]">
+              <div className="absolute inset-5 border border-[#B8942A]/40" />
+              <span className="font-serif text-[6rem] tracking-[-0.08em] text-[#B8942A]/70 md:text-[8rem]">
+                AL
+              </span>
+              <div className="absolute bottom-8 h-px w-16 bg-[#B8942A]" />
             </div>
-            {/* Decorative gold border offset */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full border border-[#B8942A] opacity-30 pointer-events-none" />
+            <div className="pointer-events-none absolute -bottom-4 -right-4 h-full w-full border border-[#B8942A] opacity-30" />
           </div>
 
           {/* Text */}
           <div>
             <p
-              className="text-[10px] tracking-[0.4em] uppercase text-[#B8942A] mb-6"
+              className="text-[10px] tracking-[0.4em] uppercase text-[#8A6B20] mb-6"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               {t("about.title")}
@@ -168,9 +166,17 @@ export default async function HomePage({ params }: Props) {
             >
               {t("about.text")}
             </p>
+            <div className="mb-10">
+              <EntityFacts facts={[
+                { label: tEntity("name_label"), value: "Aline Loof" },
+                { label: tEntity("profession_label"), value: tEntity("profession") },
+                { label: tEntity("area_label"), value: tEntity("area") },
+                { label: tEntity("service_label"), value: tEntity("service") },
+              ]} />
+            </div>
             <Link
-              href="/cema"
-              className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-[#B8942A] hover:gap-4 transition-all"
+              href="/sobre"
+              className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-[#8A6B20] hover:gap-4 transition-all"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               {t("about.cta")}
@@ -185,7 +191,7 @@ export default async function HomePage({ params }: Props) {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p
-              className="text-[10px] tracking-[0.4em] uppercase text-[#B8942A] mb-4"
+              className="text-[10px] tracking-[0.4em] uppercase text-[#8A6B20] mb-4"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               {tNav("services")}
@@ -205,7 +211,7 @@ export default async function HomePage({ params }: Props) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="mx-auto grid max-w-xl grid-cols-1 gap-8">
             {services.map((service, idx) => (
               <ServiceCard
                 key={service.title}
@@ -218,7 +224,7 @@ export default async function HomePage({ params }: Props) {
 
           <div className="text-center mt-12">
             <Link
-              href="/servicos"
+              href="/consultoria-de-imagem"
               className="inline-flex items-center gap-2 bg-[#1C1C1C] text-[#F0E8D8] px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-gold-dark transition-colors"
               style={{ fontFamily: "var(--font-inter)" }}
             >
@@ -242,7 +248,7 @@ export default async function HomePage({ params }: Props) {
             <p className="text-[#6B6560] leading-relaxed mb-6" style={{ fontFamily: "var(--font-inter)" }}>
               {t("process.text")}
             </p>
-            <Link href="/servicos" className="inline-flex items-center gap-2 text-[#B8942A] hover:gap-4 transition-all">
+            <Link href="/consultoria-de-imagem" className="inline-flex items-center gap-2 text-[#8A6B20] hover:gap-4 transition-all">
               {t("process.cta")} <ArrowRight size={14} />
             </Link>
           </div>
@@ -256,7 +262,7 @@ export default async function HomePage({ params }: Props) {
             <p className="text-[#6B6560] leading-relaxed mb-6" style={{ fontFamily: "var(--font-inter)" }}>
               {t("faq_preview.text")}
             </p>
-            <Link href="/faq" className="inline-flex items-center gap-2 text-[#B8942A] hover:gap-4 transition-all">
+            <Link href="/faq" className="inline-flex items-center gap-2 text-[#8A6B20] hover:gap-4 transition-all">
               {t("faq_preview.cta")} <ArrowRight size={14} />
             </Link>
           </div>

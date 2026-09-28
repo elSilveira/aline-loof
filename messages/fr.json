@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Accueil",
+    "about": "À propos",
     "categories": "Catégories",
     "accessories": "Accessoires",
     "cema": "CEMA",
@@ -9,13 +10,23 @@
     "contact": "Contact",
     "menu": "Menu"
   },
+  "entity": {
+    "name_label": "Nom",
+    "profession_label": "Profession",
+    "profession": "Conseillère en image",
+    "area_label": "Domaine",
+    "area": "Image et style",
+    "service_label": "Service",
+    "service": "Conseil en image et en style"
+  },
   "home": {
     "hero": {
       "tagline": "Conseil en Image et en Style avec Aline Loof",
-      "subtitle": "Aline Loof est conseillère en image et en style. Elle propose un accompagnement personnalisé pour aider chaque client à créer une image en accord avec sa personnalité, son quotidien et ses objectifs.",
+      "profession": "Conseillère en image",
+      "subtitle": "Découvrez le travail d’Aline en image et en style et comment commencer votre accompagnement.",
       "cta_primary": "Découvrir les Services",
       "cta_secondary": "Me Contacter",
-      "cta_schedule": "Réserver un conseil en image",
+      "cta_schedule": "Parler à Aline",
       "cta_learn": "Découvrir le conseil en image"
     },
     "image_consulting": {
@@ -25,17 +36,17 @@
     },
     "about": {
       "title": "À propos d'Aline Loof",
-      "text": "Je suis consultante en image spécialisée dans l'accompagnement de clients exigeants qui souhaitent aligner leur apparence, leur personnalité et leur objectif. Grâce à ma méthode exclusive, j'analyse la colorimétrie, le style, le maquillage et les accessoires pour créer une identité visuelle authentique et percutante.",
-      "cta": "En Savoir Plus"
+      "text": "Aline Loof est conseillère en image dans le domaine de l’image et du style. Son accompagnement tient compte de l’identité, du quotidien et des objectifs de chaque client.",
+      "cta": "Découvrir Aline"
     },
     "services_preview": {
-      "title": "Découvrez les services",
-      "subtitle": "Des services pensés pour élever votre présence dans chaque détail.",
+      "title": "Conseil en image et en style",
+      "subtitle": "Un accompagnement personnalisé pour accorder votre image à votre identité, votre quotidien et vos objectifs.",
       "items": [
-        { "title": "Tri du Dressing", "desc": "Organisez et sélectionnez les pièces qui valorisent vraiment votre image." },
-        { "title": "Palette de Couleurs", "desc": "Découvrez les couleurs qui s'harmonisent avec votre colorimétrie naturelle." },
-        { "title": "Journée Couleurs", "desc": "Une immersion pratique et transformatrice dans votre palette personnelle." },
-        { "title": "Événements", "desc": "Styling personnalisé pour des moments spéciaux qui requièrent sophistication." }
+        {
+          "title": "Conseil en image et en style",
+          "desc": "Un accompagnement individuel pour construire une image fidèle à votre identité et à votre quotidien."
+        }
       ]
     },
     "process": {
@@ -52,6 +63,15 @@
       "title": "Une image qui reflète qui vous êtes"
     }
   },
+  "about_page": {
+    "title": "À propos d’Aline Loof",
+    "intro": "Aline Loof propose du conseil en image et en style pour aider ses clients à construire une image fidèle à leur identité, à leur quotidien et à leurs objectifs.",
+    "how": {
+      "title": "Comment se déroule son travail ?",
+      "answer": "L’accompagnement est personnalisé et tient compte des besoins et des caractéristiques de chaque client."
+    },
+    "cta": "Découvrir les services"
+  },
   "image_consulting_page": {
     "title": "Conseil en Image",
     "intro": "Le conseil en image aide à construire une image personnelle en accord avec l'identité, le quotidien et les objectifs de chaque client.",
@@ -67,7 +87,7 @@
       "title": "À qui s'adresse-t-il ?",
       "answer": "Aux personnes qui souhaitent mieux comprendre leur image, leur style et leurs choix vestimentaires."
     },
-    "cta": "Réserver un conseil en image"
+    "cta": "Parler à Aline"
   },
   "categories": {
     "title": "Catégories de Style",
@@ -161,57 +181,43 @@
   },
   "services": {
     "title": "Services",
-    "subtitle": "Chaque service est conçu pour délivrer des résultats réels et transformateurs.",
+    "subtitle": "Découvrez le conseil en image et en style d’Aline Loof.",
+    "learn_more": "Découvrir le conseil",
+    "schedule": "Réserver une consultation",
     "items": [
       {
-        "slug": "tri-du-dressing",
-        "title": "Tri du Dressing",
-        "desc": "Une session pratique et révélatrice où nous analysons pièce par pièce votre garde-robe. Nous identifions ce qui reste, ce qui part et ce qui manque — construisant un dressing fonctionnel, harmonieux et aligné avec qui vous êtes aujourd'hui.",
-        "highlights": ["Analyse de chaque pièce", "Critères de tri intelligents", "Liste des pièces clés pour compléter la garde-robe", "Guidance sur la polyvalence et les associations"]
-      },
-      {
-        "slug": "palette-de-couleurs",
-        "title": "Palette de Couleurs",
-        "desc": "Grâce à l'analyse de colorimétrie, j'identifie les couleurs qui favorisent le plus votre peau, vos yeux et vos cheveux. Vous recevez votre palette personnalisée avec des conseils sur la façon de l'appliquer au quotidien.",
-        "highlights": ["Test de colorimétrie en présentiel", "Palette personnalisée imprimée", "Guide d'utilisation et d'associations", "Application pour la mode, le maquillage et les accessoires"]
-      },
-      {
-        "slug": "journee-couleurs",
-        "title": "Journée Couleurs",
-        "desc": "Une immersion complète dans l'univers des couleurs. Tout au long de la journée, nous expérimentons en pratique comment différentes teintes impactent votre apparence et votre énergie — une expérience transformatrice et très spéciale.",
-        "highlights": ["Journée complète dédiée à votre image", "Tests pratiques avec différentes palettes", "Enregistrement photographique", "Rapport personnalisé à la fin"]
-      },
-      {
-        "slug": "evenements",
-        "title": "Styling Événements",
-        "desc": "Pour les moments où chaque détail compte. Nous prenons soin de votre look complet — des vêtements aux accessoires — pour que vous apparaissiez avec confiance, sophistication et total alignement avec l'événement.",
-        "highlights": ["Briefing de l'événement et dress code", "Sélection ou shopping personnalisé", "Composition complète du look", "Ajustements finaux et conseils d'utilisation"]
+        "slug": "consultoria-de-imagem",
+        "title": "Conseil en image et en style",
+        "desc": "L’accompagnement est personnalisé et tient compte de l’identité, du quotidien et des objectifs de chaque client pour guider ses choix d’image et de style.",
+        "highlights": [
+          "Accompagnement personnalisé",
+          "Conseils en image et en style",
+          "Prend en compte le quotidien et les objectifs de chaque client"
+        ]
       }
     ]
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Construisons ensemble une image qui représente le meilleur de vous.",
+    "title": "Contactez Aline Loof",
+    "subtitle": "Contactez-nous pour en savoir plus sur les services et réserver une consultation.",
+    "whatsapp_cta": "Parler sur WhatsApp",
     "form": {
+      "heading": "Envoyer un message",
       "name": "Nom",
       "email": "E-mail",
       "phone": "Téléphone (optionnel)",
       "service": "Service d'intérêt",
       "message": "Message",
-      "submit": "Envoyer le message",
+      "submit": "Continuer sur WhatsApp",
+      "whatsapp_intro": "Bonjour Aline ! Je souhaite en savoir plus sur votre accompagnement.",
+      "whatsapp_note": "Vous pourrez vérifier et envoyer le message dans WhatsApp.",
       "placeholder_name": "Votre nom complet",
       "placeholder_email": "votre@email.com",
       "placeholder_phone": "+55 (11) 99999-9999",
       "placeholder_message": "Parlez-moi un peu de vous et de ce que vous recherchez...",
       "select_service": "Sélectionner un service",
-      "success": "Message envoyé ! Je vous contacterai sous peu.",
-      "error": "Une erreur s'est produite. Veuillez réessayer.",
       "services": {
-        "closet": "Tri du Dressing",
-        "palette": "Palette de Couleurs",
-        "colorday": "Journée Couleurs",
-        "events": "Événements",
-        "cema": "CEMA Complet"
+        "consulting": "Conseil en image et en style"
       },
       "validation": {
         "name": {
@@ -231,6 +237,7 @@
       }
     },
     "info": {
+      "heading": "Autres moyens de contact",
       "instagram": "Instagram",
       "response_time": "Réponse sous 24 heures",
       "location": "Consultations en présentiel et en ligne"
