@@ -1,0 +1,7 @@
+[mcp_servers.aline_loof_site]
+command = "node"
+args = ["mcp/site-editor/server.mjs"]
+enabled = true
+startup_timeout_sec = 15
+tool_timeout_sec = 300
+default_tools_approval_mode = "writes"

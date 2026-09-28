@@ -61,7 +61,7 @@ export default function StyleQuiz() {
       ) : (
         <>
           <header className="mb-8 text-center">
-            <p className="mb-3 text-[10px] uppercase tracking-[0.4em] text-[#B8942A]">
+            <p className="mb-3 text-[10px] uppercase tracking-[0.4em] text-[#8A6B20]">
               {t("eyebrow")}
             </p>
             <h2 className="mb-3 font-serif text-3xl text-[#1C1C1C] md:text-4xl">
@@ -87,7 +87,7 @@ export default function StyleQuiz() {
               type="button"
               onClick={() => setQuestionIndex((current) => current - 1)}
               disabled={questionIndex === 0}
-              className="cursor-pointer border border-[#D4C9A8] px-6 py-3 text-[11px] uppercase tracking-[0.2em] text-[#1C1C1C] transition-all duration-300 hover:scale-105 hover:bg-[#F0E8D8] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:scale-100 disabled:hover:shadow-none disabled:active:scale-100"
+              className="min-h-11 cursor-pointer border border-[#D4C9A8] px-6 py-3 text-[11px] uppercase tracking-[0.2em] text-[#1C1C1C] transition-all duration-300 hover:scale-105 hover:bg-[#F0E8D8] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:scale-100 disabled:hover:shadow-none disabled:active:scale-100"
             >
               {t("back")}
             </button>
@@ -95,7 +95,7 @@ export default function StyleQuiz() {
               type="button"
               onClick={advance}
               disabled={!selectedAlternativeId}
-              className="cursor-pointer bg-[#B8942A] px-6 py-3 text-[11px] uppercase tracking-[0.2em] text-[#1C1C1C] transition-all duration-300 hover:scale-105 hover:bg-[#D4AF50] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:scale-100 disabled:hover:shadow-none disabled:active:scale-100"
+              className="min-h-11 cursor-pointer bg-[#B8942A] px-6 py-3 text-[11px] uppercase tracking-[0.2em] text-[#1C1C1C] transition-all duration-300 hover:scale-105 hover:bg-[#D4AF50] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:scale-100 disabled:hover:shadow-none disabled:active:scale-100"
             >
               {isLastQuestion ? t("viewResult") : t("next")}
             </button>

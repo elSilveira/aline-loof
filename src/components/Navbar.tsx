@@ -29,6 +29,7 @@ export default function Navbar() {
 
   const links = [
     { href: "/", label: t("home") },
+    { href: "/sobre", label: t("about") },
     { href: "/categorias", label: t("categories") },
     { href: "/acessorios", label: t("accessories") },
     { href: "/cema", label: t("cema") },
@@ -50,7 +51,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link
@@ -59,7 +60,7 @@ export default function Navbar() {
             className="group flex cursor-pointer flex-col leading-tight transition-all duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2"
           >
             <span
-              className={`font-serif text-xl font-semibold tracking-wide transition-colors duration-300 group-hover:text-[#B8942A] ${
+              className={`font-serif text-lg sm:text-xl font-semibold tracking-wide transition-colors duration-300 group-hover:text-[#B8942A] ${
                 scrolled ? "text-[#1C1C1C]" : "text-[#F0E8D8]"
               }`}
               style={{ fontFamily: "var(--font-playfair)" }}
@@ -75,7 +76,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-5">
             {links.map((link) => (
               <Link
                 key={link.href}
@@ -96,10 +97,10 @@ export default function Navbar() {
           </nav>
 
           {/* Right side: Language Switcher + mobile menu */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <LanguageSwitcher scrolled={scrolled} />
             <button
-              className={`cursor-pointer lg:hidden transition-all duration-300 hover:scale-105 hover:text-[#B8942A] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2 ${
+              className={`inline-flex h-11 w-11 cursor-pointer items-center justify-center lg:hidden transition-all duration-300 hover:scale-105 hover:text-[#B8942A] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2 ${
                 scrolled ? "text-[#1C1C1C]" : "text-[#F0E8D8]"
               }`}
               onClick={() => setMenuOpen(!menuOpen)}
@@ -116,14 +117,14 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="lg:hidden bg-[#FDFAF4] border-t border-[#E8E0D0]">
-          <nav id="mobile-navigation" className="flex flex-col px-6 py-6 gap-5">
+          <nav id="mobile-navigation" className="flex flex-col gap-1 px-4 py-4 sm:px-6">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 locale={locale}
                 onClick={() => setMenuOpen(false)}
-                className={`cursor-pointer text-[11px] uppercase tracking-[0.18em] transition-colors duration-300 focus-visible:outline-none focus-visible:text-[#B8942A] ${
+                className={`flex min-h-11 cursor-pointer items-center text-[11px] uppercase tracking-[0.18em] transition-colors duration-300 focus-visible:outline-none focus-visible:text-[#B8942A] ${
                   isActive(link.href)
                     ? "text-[#B8942A]"
                     : "text-[#1C1C1C] hover:text-[#B8942A]"

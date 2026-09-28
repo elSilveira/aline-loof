@@ -63,7 +63,7 @@ export default function LanguageSwitcher({ scrolled = true }: { scrolled?: boole
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen(!open)}
-        className={`flex cursor-pointer items-center gap-1 border px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] transition-all duration-300 hover:scale-105 hover:border-[#B8942A] hover:bg-[#F5EED8]/10 hover:text-[#B8942A] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2 ${
+        className={`flex min-h-11 cursor-pointer items-center gap-1 border px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] transition-all duration-300 hover:scale-105 hover:border-[#B8942A] hover:bg-[#F5EED8]/10 hover:text-[#B8942A] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2 ${
           scrolled
             ? "text-[#1C1C1C] border-[#D4C9A8]"
             : "text-[#F0E8D8] border-[#F0E8D8]/40"
@@ -92,7 +92,7 @@ export default function LanguageSwitcher({ scrolled = true }: { scrolled?: boole
               aria-current={l === locale ? "page" : undefined}
               onClick={() => switchLocale(l)}
               disabled={l === locale}
-              className={`block w-full cursor-pointer px-4 py-2.5 text-left text-[10px] uppercase tracking-[0.15em] transition-all duration-300 hover:scale-105 hover:bg-[#F0E8D8] hover:text-[#B8942A] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-inset disabled:cursor-default disabled:hover:scale-100 disabled:hover:shadow-none disabled:active:scale-100 ${
+              className={`block min-h-11 w-full cursor-pointer px-4 py-2.5 text-left text-[10px] uppercase tracking-[0.15em] transition-all duration-300 hover:scale-105 hover:bg-[#F0E8D8] hover:text-[#B8942A] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-inset disabled:cursor-default disabled:hover:scale-100 disabled:hover:shadow-none disabled:active:scale-100 ${
                 l === locale ? "text-[#B8942A] bg-[#F8F3E8]" : "text-[#1C1C1C]"
               }`}
               style={{ fontFamily: "var(--font-inter)" }}
