@@ -1,0 +1,128 @@
+const OWNER = process.env.GITHUB_OWNER || "elSilveira";
+const REPO = process.env.GITHUB_REPO || "aline-loof";
+const BRANCH = process.env.GITHUB_BRANCH || "main";
+const API = "https://api.github.com";
+
+const editableRoots = ["src/", "messages/", "public/", "docs/"];
+const editableFiles = new Set([
+  "package.json",
+  "next.config.ts",
+  "README.md",
+  "CNAME",
+]);
+
+function assertEditable(path) {
+  if (typeof path !== "string" || path.includes("\\") || path.includes("..") || path.startsWith("/")) {
+    throw new Error("Caminho inválido.");
+  }
+  if (!editableRoots.some((root) => path.startsWith(root)) && !editableFiles.has(path)) {
+    throw new Error(`Arquivo fora das áreas editáveis: ${path}`);
+  }
+  return path;
+}
+
+function headers({ write = false } = {}) {
+  const result = {
+    Accept: "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
+    "User-Agent": "aline-loof-site-admin-mcp",
+  };
+  if (process.env.GITHUB_TOKEN) result.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  if (write && !process.env.GITHUB_TOKEN) {
+    throw new Error("GITHUB_TOKEN ainda não foi configurado no Railway; alterações estão bloqueadas.");
+  }
+  return result;
+}
+
+async function github(path, options = {}) {
+  const response = await fetch(`${API}${path}`, {
+    ...options,
+    headers: { ...headers({ write: options.method && options.method !== "GET" }), ...options.headers },
+  });
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new Error(`GitHub respondeu ${response.status}: ${detail.slice(0, 500)}`);
+  }
+  return response.status === 204 ? null : response.json();
+}
+
+export function repositoryConfig() {
+  return {
+    repository: `${OWNER}/${REPO}`,
+    branch: BRANCH,
+    writesEnabled: Boolean(process.env.GITHUB_TOKEN),
+  };
+}
+
+export async function listFiles() {
+  const tree = await github(`/repos/${OWNER}/${REPO}/git/trees/${encodeURIComponent(BRANCH)}?recursive=1`);
+  return tree.tree
+    .filter((item) => item.type === "blob")
+    .map((item) => item.path)
+    .filter((path) => editableRoots.some((root) => path.startsWith(root)) || editableFiles.has(path));
+}
+
+export async function readFile(path) {
+  assertEditable(path);
+  const item = await github(`/repos/${OWNER}/${REPO}/contents/${path.split("/").map(encodeURIComponent).join("/")}?ref=${encodeURIComponent(BRANCH)}`);
+  if (Array.isArray(item) || item.type !== "file") throw new Error(`${path} não é um arquivo.`);
+  const content = Buffer.from(item.content.replace(/\n/g, ""), "base64").toString("utf8");
+  return { path, sha: item.sha, content, size: item.size };
+}
+
+export async function writeFile({ path, content, expectedSha, message }) {
+  assertEditable(path);
+  if (typeof content !== "string") throw new Error("O conteúdo precisa ser texto.");
+
+  let current = null;
+  try {
+    current = await readFile(path);
+  } catch (error) {
+    if (!String(error.message).includes("404")) throw error;
+  }
+  if (current && !expectedSha) throw new Error("Leia o arquivo antes e envie expectedSha para evitar sobrescrever outra alteração.");
+  if (current && current.sha !== expectedSha) throw new Error("O arquivo mudou desde a leitura. Leia novamente antes de salvar.");
+
+  const body = {
+    message: message || `Atualiza ${path} pelo MCP`,
+    content: Buffer.from(content, "utf8").toString("base64"),
+    branch: BRANCH,
+    ...(current ? { sha: current.sha } : {}),
+  };
+  const result = await github(`/repos/${OWNER}/${REPO}/contents/${path.split("/").map(encodeURIComponent).join("/")}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  return { path, commit: result.commit.sha, url: result.commit.html_url, sha: result.content.sha };
+}
+
+export async function setTranslation({ locale, key, value, message }) {
+  const path = `messages/${locale}.json`;
+  const file = await readFile(path);
+  const data = JSON.parse(file.content);
+  const parts = key.split(".").filter(Boolean);
+  if (!parts.length) throw new Error("Informe uma chave como home.hero.title.");
+  let cursor = data;
+  for (const part of parts.slice(0, -1)) {
+    if (!cursor[part] || typeof cursor[part] !== "object" || Array.isArray(cursor[part])) cursor[part] = {};
+    cursor = cursor[part];
+  }
+  cursor[parts.at(-1)] = value;
+  return writeFile({
+    path,
+    content: `${JSON.stringify(data, null, 2)}\n`,
+    expectedSha: file.sha,
+    message: message || `Atualiza texto ${key} (${locale}) pelo MCP`,
+  });
+}
+
+export async function replaceText({ path, oldText, newText, expectedSha, message, dryRun }) {
+  const file = await readFile(path);
+  if (expectedSha && file.sha !== expectedSha) throw new Error("O arquivo mudou desde a leitura.");
+  const occurrences = file.content.split(oldText).length - 1;
+  if (occurrences !== 1) throw new Error(`Era esperada 1 ocorrência, mas foram encontradas ${occurrences}.`);
+  const content = file.content.replace(oldText, newText);
+  if (dryRun) return { path, changed: true, occurrences, beforeSha: file.sha, preview: content.slice(0, 4000) };
+  return writeFile({ path, content, expectedSha: file.sha, message });
+}
