@@ -29,7 +29,6 @@ export default async function FaqPage({ params }: Props) {
           items={items}
           searchLabel={t("searchLabel")}
           searchPlaceholder={t("searchPlaceholder")}
-          rankLabel={t("rankLabel")}
           noResultsMessage={t("noResults")}
         />
       </section>

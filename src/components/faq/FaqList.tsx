@@ -13,7 +13,6 @@ type FaqListProps = {
   items: FaqItem[];
   searchLabel: string;
   searchPlaceholder: string;
-  rankLabel: string;
   noResultsMessage: string;
 };
 
@@ -99,7 +98,6 @@ export default function FaqList({
   items,
   searchLabel,
   searchPlaceholder,
-  rankLabel,
   noResultsMessage,
 }: FaqListProps) {
   const [query, setQuery] = useState("");
@@ -128,13 +126,6 @@ export default function FaqList({
             className="min-w-0 border border-[#D4C9A8] bg-[#FDFAF4] px-5 py-4 text-[#1C1C1C] outline-none transition-colors placeholder:text-[#9A9288] focus:border-[#B8942A]"
           />
 
-          <span
-            className="sr-only"
-            role="status"
-            aria-live="polite"
-          >
-            {rankLabel}: {rankedItems.length}
-          </span>
         </div>
       </div>
 
