@@ -25,3 +25,9 @@ As ferramentas de escrita ficam bloqueadas quando `GITHUB_TOKEN` não está conf
 - `set_home_about_image`: exibe, oculta ou aponta a seção Sobre da Home para outra imagem.
 - `set_about_page_image`: exibe, oculta ou aponta a foto principal da página Sobre para outra imagem.
 - `delete_public_asset`: exclui uma imagem e impede a remoção enquanto ela estiver ativa no site.
+
+## Administração do quiz de estilo
+
+- `get_style_quiz`: consulta a visibilidade e todos os textos do quiz em um idioma.
+- `set_style_quiz_content`: edita títulos, perguntas, alternativas, botões e resultados do quiz.
+- `set_style_quiz_visibility`: exibe ou oculta o quiz inteiro na página principal.

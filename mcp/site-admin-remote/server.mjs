@@ -11,6 +11,7 @@ import {
   repositoryConfig,
   setAboutPageImage,
   setHomeAboutImage,
+  setStyleQuizVisibility,
   setTranslation,
   writeFile,
   writePublicAsset,
@@ -83,6 +84,26 @@ function createSiteServer() {
     return { locale, page, sha: file.sha, content: data[page] ?? null };
   });
 
+  register(server, "get_style_quiz", {
+    description: "Consulta a visibilidade e todo o conteúdo editável do quiz de estilo em um idioma.",
+    inputSchema: z.object({
+      locale: z.enum(["pt", "en", "es", "fr"]).default("pt"),
+    }),
+    annotations: { readOnlyHint: true },
+  }, async ({ locale }) => {
+    const [settingsFile, messagesFile] = await Promise.all([
+      readFile("src/content/site-settings.json"),
+      readFile(`messages/${locale}.json`),
+    ]);
+    const settings = JSON.parse(settingsFile.content);
+    const messages = JSON.parse(messagesFile.content);
+    return {
+      locale,
+      enabled: settings.home?.styleQuiz?.enabled !== false,
+      content: messages.StyleQuiz ?? null,
+    };
+  });
+
   register(server, "set_translation", {
     description: "Atualiza um texto do site por idioma e chave pontuada; publica um commit no GitHub.",
     inputSchema: z.object({
@@ -93,6 +114,22 @@ function createSiteServer() {
     }),
     annotations: { readOnlyHint: false, destructiveHint: false },
   }, setTranslation);
+
+  register(server, "set_style_quiz_content", {
+    description: "Edita um texto do quiz, incluindo títulos, perguntas, alternativas e resultados. Use uma chave relativa como questions.occasion.title.",
+    inputSchema: z.object({
+      locale: z.enum(["pt", "en", "es", "fr"]),
+      key: z.string().min(1),
+      value: z.union([z.string(), z.number(), z.boolean(), z.null()]),
+      message: z.string().min(1).max(120).optional(),
+    }),
+    annotations: { readOnlyHint: false, destructiveHint: false },
+  }, ({ locale, key, value, message }) => setTranslation({
+    locale,
+    key: `StyleQuiz.${key.replace(/^StyleQuiz\./, "")}`,
+    value,
+    message: message || `Atualiza conteúdo do quiz (${locale}) pelo MCP`,
+  }));
 
   register(server, "replace_text", {
     description: "Troca uma ocorrência exata em um arquivo. Use dryRun para revisar antes de publicar.",
@@ -156,6 +193,15 @@ function createSiteServer() {
     }),
     annotations: { readOnlyHint: false, destructiveHint: false },
   }, setAboutPageImage);
+
+  register(server, "set_style_quiz_visibility", {
+    description: "Exibe ou oculta o quiz de estilo inteiro na página principal.",
+    inputSchema: z.object({
+      enabled: z.boolean(),
+      message: z.string().min(1).max(120).optional(),
+    }),
+    annotations: { readOnlyHint: false, destructiveHint: false },
+  }, setStyleQuizVisibility);
 
   register(server, "delete_public_asset", {
     description: "Exclui uma imagem pública. Uma imagem em uso precisa ser ocultada antes para evitar link quebrado.",

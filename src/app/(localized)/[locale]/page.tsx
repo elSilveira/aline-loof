@@ -266,12 +266,13 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* Style Quiz */}
-      <section className="py-16">
-        <div className="mx-auto max-w-3xl px-6">
-          <StyleQuiz />
-        </div>
-      </section>
+      {siteSettings.home.styleQuiz.enabled && (
+        <section className="py-16">
+          <div className="mx-auto max-w-3xl px-6">
+            <StyleQuiz />
+          </div>
+        </section>
+      )}
 
       {/* CTA Banner */}
       <section className="py-24 bg-[#1C1C1C] text-center px-6">

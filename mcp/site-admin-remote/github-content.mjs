@@ -187,6 +187,20 @@ export async function setAboutPageImage({ enabled, src, alt, message }) {
   });
 }
 
+export async function setStyleQuizVisibility({ enabled, message }) {
+  const settingsPath = "src/content/site-settings.json";
+  const file = await readFile(settingsPath);
+  const settings = JSON.parse(file.content);
+  settings.home = settings.home || {};
+  settings.home.styleQuiz = { enabled };
+  return writeFile({
+    path: settingsPath,
+    content: `${JSON.stringify(settings, null, 2)}\n`,
+    expectedSha: file.sha,
+    message: message || `${enabled ? "Exibe" : "Oculta"} quiz de estilo na Home`,
+  });
+}
+
 export async function deletePublicAsset({ path, expectedSha, confirmation, message }) {
   if (confirmation !== "DELETE") throw new Error("Confirmação inválida.");
   if (!path.startsWith("public/")) throw new Error("Somente arquivos dentro de public/ podem ser excluídos.");
