@@ -5,5 +5,12 @@
       "src": "/images/aline-loof-sobre.png",
       "alt": "Aline Loof, consultora de imagem"
     }
+  },
+  "aboutPage": {
+    "heroImage": {
+      "enabled": true,
+      "src": "/images/aline-loof-sobre-cema.png",
+      "alt": "Aline Loof, consultora de imagem, com uma sacola CEMA"
+    }
   }
 }

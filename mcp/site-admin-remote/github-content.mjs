@@ -162,6 +162,31 @@ export async function setHomeAboutImage({ enabled, src, alt, message }) {
   });
 }
 
+export async function setAboutPageImage({ enabled, src, alt, message }) {
+  const settingsPath = "src/content/site-settings.json";
+  const file = await readFile(settingsPath);
+  const settings = JSON.parse(file.content);
+  const current = settings.aboutPage?.heroImage || {};
+  const next = {
+    enabled,
+    src: src ?? current.src,
+    alt: alt ?? current.alt,
+  };
+  if (next.enabled) {
+    if (!next.src?.startsWith("/")) throw new Error("src deve começar com /, por exemplo /images/foto.png.");
+    if (!next.alt?.trim()) throw new Error("Informe um texto alternativo para a imagem.");
+    await readFile(`public${next.src}`);
+  }
+  settings.aboutPage = settings.aboutPage || {};
+  settings.aboutPage.heroImage = next;
+  return writeFile({
+    path: settingsPath,
+    content: `${JSON.stringify(settings, null, 2)}\n`,
+    expectedSha: file.sha,
+    message: message || `${enabled ? "Exibe" : "Oculta"} foto principal da página Sobre`,
+  });
+}
+
 export async function deletePublicAsset({ path, expectedSha, confirmation, message }) {
   if (confirmation !== "DELETE") throw new Error("Confirmação inválida.");
   if (!path.startsWith("public/")) throw new Error("Somente arquivos dentro de public/ podem ser excluídos.");
@@ -169,9 +194,13 @@ export async function deletePublicAsset({ path, expectedSha, confirmation, messa
   if (file.sha !== expectedSha) throw new Error("A imagem mudou desde a leitura. Leia novamente antes de excluir.");
 
   const settings = JSON.parse((await readFile("src/content/site-settings.json")).content);
-  const activeImage = settings.home?.aboutImage;
-  if (activeImage?.enabled && `public${activeImage.src}` === path) {
-    throw new Error("A imagem ainda está visível na Home. Use set_home_about_image com enabled=false antes de excluí-la.");
+  const activeImages = [
+    { image: settings.home?.aboutImage, tool: "set_home_about_image", location: "Home" },
+    { image: settings.aboutPage?.heroImage, tool: "set_about_page_image", location: "página Sobre" },
+  ];
+  const activeUsage = activeImages.find(({ image }) => image?.enabled && `public${image.src}` === path);
+  if (activeUsage) {
+    throw new Error(`A imagem ainda está visível na ${activeUsage.location}. Use ${activeUsage.tool} com enabled=false antes de excluí-la.`);
   }
 
   const result = await github(`/repos/${OWNER}/${REPO}/contents/${path.split("/").map(encodeURIComponent).join("/")}`, {

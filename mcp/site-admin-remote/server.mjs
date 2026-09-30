@@ -9,6 +9,7 @@ import {
   readPublicAssetInfo,
   replaceText,
   repositoryConfig,
+  setAboutPageImage,
   setHomeAboutImage,
   setTranslation,
   writeFile,
@@ -144,6 +145,17 @@ function createSiteServer() {
     }),
     annotations: { readOnlyHint: false, destructiveHint: false },
   }, setHomeAboutImage);
+
+  register(server, "set_about_page_image", {
+    description: "Exibe, oculta ou troca a foto principal da página Sobre. Para trocar, envie a nova imagem antes com write_public_asset.",
+    inputSchema: z.object({
+      enabled: z.boolean(),
+      src: z.string().min(1).optional(),
+      alt: z.string().min(1).optional(),
+      message: z.string().min(1).max(120).optional(),
+    }),
+    annotations: { readOnlyHint: false, destructiveHint: false },
+  }, setAboutPageImage);
 
   register(server, "delete_public_asset", {
     description: "Exclui uma imagem pública. Uma imagem em uso precisa ser ocultada antes para evitar link quebrado.",

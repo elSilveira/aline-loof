@@ -23,4 +23,5 @@ As ferramentas de escrita ficam bloqueadas quando `GITHUB_TOKEN` não está conf
 - `read_public_asset_info`: consulta uma imagem e retorna seu SHA para alterações seguras.
 - `write_public_asset`: envia ou substitui imagens de até 8 MB em base64.
 - `set_home_about_image`: exibe, oculta ou aponta a seção Sobre da Home para outra imagem.
-- `delete_public_asset`: exclui uma imagem e impede a remoção quando ela ainda está ativa na Home.
+- `set_about_page_image`: exibe, oculta ou aponta a foto principal da página Sobre para outra imagem.
+- `delete_public_asset`: exclui uma imagem e impede a remoção enquanto ela estiver ativa no site.
