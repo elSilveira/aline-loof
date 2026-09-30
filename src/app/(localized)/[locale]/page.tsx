@@ -248,24 +248,9 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* Consultation and FAQ */}
+      {/* FAQ Preview */}
       <section className="section-padding px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-          <div>
-            <h2
-              className="text-3xl md:text-4xl font-serif font-medium text-[#1C1C1C] mb-6"
-              style={{ fontFamily: "var(--font-playfair)" }}
-            >
-              {t("process.title")}
-            </h2>
-            <p className="text-[#6B6560] leading-relaxed mb-6" style={{ fontFamily: "var(--font-inter)" }}>
-              {t("process.text")}
-            </p>
-            <Link href="/consultoria-de-imagem" className="inline-flex items-center gap-2 text-[#8A6B20] hover:gap-4 transition-all">
-              {t("process.cta")} <ArrowRight size={14} />
-            </Link>
-          </div>
-          <div>
+        <div className="mx-auto max-w-2xl text-center">
             <h2
               className="text-3xl md:text-4xl font-serif font-medium text-[#1C1C1C] mb-6"
               style={{ fontFamily: "var(--font-playfair)" }}
@@ -278,7 +263,6 @@ export default async function HomePage({ params }: Props) {
             <Link href="/faq" className="inline-flex items-center gap-2 text-[#8A6B20] hover:gap-4 transition-all">
               {t("faq_preview.cta")} <ArrowRight size={14} />
             </Link>
-          </div>
         </div>
       </section>
 
