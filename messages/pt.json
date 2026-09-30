@@ -3,7 +3,7 @@
     "home": "Entrada",
     "about": "Sobre",
     "categories": "Categorias",
-    "accessories": "Acessórios",
+    "events": "Eventos",
     "cema": "CEMA",
     "services": "Serviços",
     "faq": "FAQ",
@@ -151,29 +151,30 @@
     ],
     "cta": "Descubra sua categoria com uma consultoria"
   },
-  "accessories": {
-    "title": "Acessórios",
-    "subtitle": "Os detalhes que completam e elevam qualquer composição.",
-    "intro": "Acessórios não são extras — são a assinatura da sua imagem. Saber escolher e combinar bolsas, sapatos, joias, lenços e outros adornos pode transformar por completo um look.",
+  "events": {
+    "title": "Eventos",
+    "subtitle": "Consultoria de imagem para você se vestir com segurança e expressar sua melhor versão em cada ocasião.",
+    "intro_title": "Seu estilo, em cada momento.",
+    "intro": "Cada evento tem um contexto, um objetivo e uma mensagem. A consultoria de imagem te ajuda a escolher o look ideal para que você se sinta segura, elegante e alinhada à ocasião, valorizando sua identidade e transmitindo a impressão certa.",
     "sections": [
       {
-        "title": "Joias & Bijuterias",
-        "desc": "Da escolha do metal ao volume das peças, cada joia fala sobre quem você é. Aprenda a selecionar as peças certas para cada ocasião e para o seu estilo de vida."
+        "title": "Eventos Sociais",
+        "desc": "Looks sofisticados e adequados para casamentos, formaturas, jantares e celebrações especiais, com elegância e personalidade."
       },
       {
-        "title": "Bolsas",
-        "desc": "A bolsa é um dos acessórios mais estratégicos do guarda-roupa. Proporção, material e função — cada escolha conta."
+        "title": "Eventos Corporativos",
+        "desc": "Visuais alinhados ao ambiente profissional, transmitindo credibilidade, autoridade e estilo em palestras, reuniões e encontros de negócios."
       },
       {
-        "title": "Calçados",
-        "desc": "O sapato certo pode alongar a silhueta, transmitir autoridade ou comunicar leveza. Entenda como os calçados impactam sua linguagem visual."
+        "title": "Eventos do Dia a Dia",
+        "desc": "Orientação para composições práticas e estilosas em almoços, compromissos, viagens e ocasiões informais, sempre com coerência com sua imagem."
       },
       {
-        "title": "Lenços & Echarpes",
-        "desc": "Versáteis e elegantes, lenços são peças-chave para quem quer variar o look com inteligência. Veja as formas de usar e os tecidos ideais para cada estilo."
+        "title": "Preparação Personalizada",
+        "desc": "Análise do evento, dress code, seu estilo pessoal e objetivos para criar propostas de looks completos, com peças, cores e acessórios ideais para cada ocasião."
       }
     ],
-    "cta": "Quero uma consultoria de acessórios"
+    "cta": "Quero me preparar para um evento"
   },
   "cema": {
     "title": "Método CEMA",

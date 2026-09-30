@@ -3,7 +3,7 @@
     "home": "Home",
     "about": "About",
     "categories": "Categories",
-    "accessories": "Accessories",
+    "events": "Events",
     "cema": "CEMA",
     "services": "Services",
     "faq": "FAQ",
@@ -127,29 +127,30 @@
     ],
     "cta": "Discover your category with a consultation"
   },
-  "accessories": {
-    "title": "Accessories",
-    "subtitle": "The details that complete and elevate every composition.",
-    "intro": "Accessories are not extras — they are the signature of your image. Knowing how to choose and combine bags, shoes, jewelry, scarves, and other adornments can completely transform a look.",
+  "events": {
+    "title": "Events",
+    "subtitle": "Image consulting to help you dress with confidence and express your best self for every occasion.",
+    "intro_title": "Your style, for every moment.",
+    "intro": "Every event has a context, a purpose, and a message. Image consulting helps you choose the ideal look so you feel confident, elegant, and aligned with the occasion while expressing your identity and making the right impression.",
     "sections": [
       {
-        "title": "Jewelry & Fashion Jewelry",
-        "desc": "From metal choice to piece volume, every jewel speaks about who you are. Learn to select the right pieces for each occasion and your lifestyle."
+        "title": "Social Events",
+        "desc": "Sophisticated and appropriate looks for weddings, graduations, dinners, and special celebrations, with elegance and personality."
       },
       {
-        "title": "Bags",
-        "desc": "The bag is one of the most strategic accessories in your wardrobe. Proportion, material, and function — every choice counts."
+        "title": "Corporate Events",
+        "desc": "Looks aligned with professional settings, conveying credibility, authority, and style at talks, meetings, and business gatherings."
       },
       {
-        "title": "Footwear",
-        "desc": "The right shoe can elongate the silhouette, convey authority, or communicate lightness. Understand how footwear impacts your visual language."
+        "title": "Everyday Events",
+        "desc": "Guidance for practical and stylish outfits for lunches, appointments, trips, and informal occasions, always consistent with your image."
       },
       {
-        "title": "Scarves & Wraps",
-        "desc": "Versatile and elegant, scarves are key pieces for those who want to vary their look intelligently. Discover ways to wear them and the ideal fabrics for each style."
+        "title": "Personalized Preparation",
+        "desc": "Analysis of the event, dress code, personal style, and goals to create complete looks with ideal garments, colors, and accessories."
       }
     ],
-    "cta": "I want an accessories consultation"
+    "cta": "I want to prepare for an event"
   },
   "cema": {
     "title": "CEMA Method",

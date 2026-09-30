@@ -3,7 +3,7 @@
     "home": "",
     "about": "Sobre Aline",
     "categories": "Categorías",
-    "accessories": "Accesorios",
+    "events": "Eventos",
     "cema": "CEMA",
     "services": "Servicios",
     "faq": "FAQ",
@@ -127,29 +127,30 @@
     ],
     "cta": "Descubre tu categoría con una consultoría"
   },
-  "accessories": {
-    "title": "Accesorios",
-    "subtitle": "Los detalles que completan y elevan cualquier composición.",
-    "intro": "Los accesorios no son extras — son la firma de tu imagen. Saber elegir y combinar bolsos, zapatos, joyas, pañuelos y otros adornos puede transformar completamente un look.",
+  "events": {
+    "title": "Eventos",
+    "subtitle": "Consultoría de imagen para vestirte con seguridad y expresar tu mejor versión en cada ocasión.",
+    "intro_title": "Tu estilo, en cada momento.",
+    "intro": "Cada evento tiene un contexto, un objetivo y un mensaje. La consultoría de imagen te ayuda a elegir el look ideal para sentirte segura, elegante y alineada con la ocasión, valorando tu identidad y transmitiendo la impresión correcta.",
     "sections": [
       {
-        "title": "Joyas & Bisutería",
-        "desc": "Desde la elección del metal hasta el volumen de las piezas, cada joya habla sobre quién eres. Aprende a seleccionar las piezas correctas para cada ocasión y tu estilo de vida."
+        "title": "Eventos Sociales",
+        "desc": "Looks sofisticados y adecuados para bodas, graduaciones, cenas y celebraciones especiales, con elegancia y personalidad."
       },
       {
-        "title": "Bolsos",
-        "desc": "El bolso es uno de los accesorios más estratégicos del guardarropa. Proporción, material y función — cada elección cuenta."
+        "title": "Eventos Corporativos",
+        "desc": "Looks alineados con el entorno profesional que transmiten credibilidad, autoridad y estilo en charlas, reuniones y encuentros de negocios."
       },
       {
-        "title": "Calzado",
-        "desc": "El zapato correcto puede alargar la silueta, transmitir autoridad o comunicar ligereza. Entiende cómo el calzado impacta tu lenguaje visual."
+        "title": "Eventos del Día a Día",
+        "desc": "Orientación para composiciones prácticas y estilosas en almuerzos, compromisos, viajes y ocasiones informales, siempre coherentes con tu imagen."
       },
       {
-        "title": "Pañuelos & Echarpes",
-        "desc": "Versátiles y elegantes, los pañuelos son piezas clave para quienes quieren variar el look con inteligencia. Descubre las formas de usarlos y las telas ideales para cada estilo."
+        "title": "Preparación Personalizada",
+        "desc": "Análisis del evento, código de vestimenta, estilo personal y objetivos para crear propuestas completas con prendas, colores y accesorios ideales."
       }
     ],
-    "cta": "Quiero una consultoría de accesorios"
+    "cta": "Quiero prepararme para un evento"
   },
   "cema": {
     "title": "Método CEMA",

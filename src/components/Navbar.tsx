@@ -31,7 +31,7 @@ export default function Navbar() {
     { href: "/", label: t("home") },
     { href: "/sobre", label: t("about") },
     { href: "/categorias", label: t("categories") },
-    { href: "/acessorios", label: t("accessories") },
+    { href: "/eventos", label: t("events") },
     { href: "/cema", label: t("cema") },
     { href: "/servicos", label: t("services") },
     { href: "/faq", label: t("faq") },

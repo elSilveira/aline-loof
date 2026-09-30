@@ -3,7 +3,7 @@
     "home": "Accueil",
     "about": "À propos",
     "categories": "Catégories",
-    "accessories": "Accessoires",
+    "events": "Événements",
     "cema": "CEMA",
     "services": "Services",
     "faq": "FAQ",
@@ -127,29 +127,30 @@
     ],
     "cta": "Découvrez votre catégorie avec une consultation"
   },
-  "accessories": {
-    "title": "Accessoires",
-    "subtitle": "Les détails qui complètent et élèvent chaque composition.",
-    "intro": "Les accessoires ne sont pas des extras — ils sont la signature de votre image. Savoir choisir et combiner sacs, chaussures, bijoux, foulards et autres ornements peut transformer complètement un look.",
+  "events": {
+    "title": "Événements",
+    "subtitle": "Conseil en image pour vous habiller avec assurance et exprimer votre meilleure version à chaque occasion.",
+    "intro_title": "Votre style, à chaque instant.",
+    "intro": "Chaque événement a un contexte, un objectif et un message. Le conseil en image vous aide à choisir la tenue idéale pour vous sentir sûre de vous, élégante et en accord avec l'occasion, tout en valorisant votre identité.",
     "sections": [
       {
-        "title": "Bijoux & Fantaisies",
-        "desc": "Du choix du métal au volume des pièces, chaque bijou parle de qui vous êtes. Apprenez à sélectionner les bonnes pièces pour chaque occasion et votre style de vie."
+        "title": "Événements Sociaux",
+        "desc": "Des tenues sophistiquées et adaptées aux mariages, remises de diplômes, dîners et célébrations spéciales, avec élégance et personnalité."
       },
       {
-        "title": "Sacs",
-        "desc": "Le sac est l'un des accessoires les plus stratégiques de votre garde-robe. Proportion, matière et fonction — chaque choix compte."
+        "title": "Événements Professionnels",
+        "desc": "Des tenues adaptées au milieu professionnel, exprimant crédibilité, autorité et style lors de conférences, réunions et rencontres d'affaires."
       },
       {
-        "title": "Chaussures",
-        "desc": "La bonne chaussure peut allonger la silhouette, transmettre de l'autorité ou communiquer de la légèreté. Comprenez comment les chaussures impactent votre langage visuel."
+        "title": "Événements du Quotidien",
+        "desc": "Des conseils pour des tenues pratiques et élégantes lors de déjeuners, rendez-vous, voyages et occasions informelles, toujours cohérentes avec votre image."
       },
       {
-        "title": "Foulards & Écharpes",
-        "desc": "Polyvalents et élégants, les foulards sont des pièces clés pour celles qui souhaitent varier leur look intelligemment. Découvrez les façons de les porter et les tissus idéaux pour chaque style."
+        "title": "Préparation Personnalisée",
+        "desc": "Analyse de l'événement, du code vestimentaire, de votre style et de vos objectifs pour créer des tenues complètes avec les pièces, couleurs et accessoires idéaux."
       }
     ],
-    "cta": "Je veux une consultation accessoires"
+    "cta": "Je veux me préparer pour un événement"
   },
   "cema": {
     "title": "Méthode CEMA",
