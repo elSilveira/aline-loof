@@ -26,22 +26,22 @@ export default async function EventosPage({ params }: Props) {
   const sections = t.raw("sections") as Array<{ title: string; desc: string }>;
 
   return (
-    <main className="min-h-screen bg-[#FDFAF4] pt-20">
-      <section className="px-6 pb-20 pt-14 md:pb-28 md:pt-20">
-        <div className="mx-auto max-w-5xl">
-          <header className="mb-16 text-center md:mb-20">
+    <main className="min-h-screen bg-[#FDFAF4]">
+      <header className="bg-[#1C1C1C] px-6 pb-20 pt-36 text-center md:pt-40">
             <p className="mb-5 text-[10px] uppercase tracking-[0.5em] text-[#9B7A22]">
               Aline Loof
             </p>
-            <h1 className="font-serif text-5xl font-normal leading-none text-[#1C1C1C] md:text-7xl">
+            <h1 className="font-serif text-5xl font-normal leading-none text-[#F0E8D8] md:text-7xl">
               {t("title")}
             </h1>
             <div className="mx-auto my-6 h-px w-10 bg-[#B8942A]" />
-            <p className="mx-auto max-w-xl leading-relaxed text-[#6B6560]">
+            <p className="mx-auto max-w-xl leading-relaxed text-[#C8B99A]">
               {t("subtitle")}
             </p>
-          </header>
+      </header>
 
+      <section className="px-6 pb-20 pt-16 md:pb-28 md:pt-20">
+        <div className="mx-auto max-w-5xl">
           <div className="mb-12 text-center md:mb-16">
             <h2 className="font-serif text-3xl font-normal text-[#1C1C1C] md:text-4xl">
               {t("intro_title")}
