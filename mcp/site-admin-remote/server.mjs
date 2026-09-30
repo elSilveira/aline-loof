@@ -11,6 +11,7 @@ import {
   repositoryConfig,
   setAboutPageImage,
   setHomeAboutImage,
+  setServicesPageImage,
   setStyleQuizVisibility,
   setTranslation,
   writeFile,
@@ -193,6 +194,17 @@ function createSiteServer() {
     }),
     annotations: { readOnlyHint: false, destructiveHint: false },
   }, setAboutPageImage);
+
+  register(server, "set_services_page_image", {
+    description: "Exibe, oculta ou troca a imagem do card principal da página Serviços. Envie uma nova imagem antes com write_public_asset.",
+    inputSchema: z.object({
+      enabled: z.boolean(),
+      src: z.string().min(1).optional(),
+      alt: z.string().min(1).optional(),
+      message: z.string().min(1).max(120).optional(),
+    }),
+    annotations: { readOnlyHint: false, destructiveHint: false },
+  }, setServicesPageImage);
 
   register(server, "set_style_quiz_visibility", {
     description: "Exibe ou oculta o quiz de estilo inteiro na página principal.",

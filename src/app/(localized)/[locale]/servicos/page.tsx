@@ -1,6 +1,8 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import siteSettings from "@/content/site-settings.json";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -52,26 +54,21 @@ export default async function ServicosPage({ params }: Props) {
                 idx % 2 === 1 ? "lg:grid-flow-col-dense" : ""
               }`}
             >
-              {/* Number / Visual */}
+              {/* Service image */}
               <div
-                className={`bg-[#1C1C1C] flex items-center justify-center py-20 px-10 ${
+                className={`relative min-h-[32rem] overflow-hidden bg-[#F7F3EC] ${
                   idx % 2 === 1 ? "lg:order-2" : ""
                 }`}
               >
-                <div className="text-center">
-                  <span
-                    className="text-[120px] font-serif font-semibold text-[#B8942A] opacity-15 leading-none block"
-                    style={{ fontFamily: "var(--font-playfair)" }}
-                  >
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <p
-                    className="text-[10px] tracking-[0.3em] uppercase text-[#B8942A] -mt-4"
-                    style={{ fontFamily: "var(--font-inter)" }}
-                  >
-                    {item.title}
-                  </p>
-                </div>
+                {siteSettings.servicesPage.cardImage.enabled && (
+                  <Image
+                    src={siteSettings.servicesPage.cardImage.src}
+                    alt={siteSettings.servicesPage.cardImage.alt}
+                    fill
+                    sizes="(max-width: 1023px) 100vw, 50vw"
+                    className="object-cover object-center"
+                  />
+                )}
               </div>
 
               {/* Content */}

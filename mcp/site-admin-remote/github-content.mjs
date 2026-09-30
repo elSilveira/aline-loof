@@ -201,6 +201,31 @@ export async function setStyleQuizVisibility({ enabled, message }) {
   });
 }
 
+export async function setServicesPageImage({ enabled, src, alt, message }) {
+  const settingsPath = "src/content/site-settings.json";
+  const file = await readFile(settingsPath);
+  const settings = JSON.parse(file.content);
+  const current = settings.servicesPage?.cardImage || {};
+  const next = {
+    enabled,
+    src: src ?? current.src,
+    alt: alt ?? current.alt,
+  };
+  if (next.enabled) {
+    if (!next.src?.startsWith("/")) throw new Error("src deve começar com /, por exemplo /images/foto.png.");
+    if (!next.alt?.trim()) throw new Error("Informe um texto alternativo para a imagem.");
+    await readFile(`public${next.src}`);
+  }
+  settings.servicesPage = settings.servicesPage || {};
+  settings.servicesPage.cardImage = next;
+  return writeFile({
+    path: settingsPath,
+    content: `${JSON.stringify(settings, null, 2)}\n`,
+    expectedSha: file.sha,
+    message: message || `${enabled ? "Exibe" : "Oculta"} foto da página Serviços`,
+  });
+}
+
 export async function deletePublicAsset({ path, expectedSha, confirmation, message }) {
   if (confirmation !== "DELETE") throw new Error("Confirmação inválida.");
   if (!path.startsWith("public/")) throw new Error("Somente arquivos dentro de public/ podem ser excluídos.");
@@ -211,6 +236,7 @@ export async function deletePublicAsset({ path, expectedSha, confirmation, messa
   const activeImages = [
     { image: settings.home?.aboutImage, tool: "set_home_about_image", location: "Home" },
     { image: settings.aboutPage?.heroImage, tool: "set_about_page_image", location: "página Sobre" },
+    { image: settings.servicesPage?.cardImage, tool: "set_services_page_image", location: "página Serviços" },
   ];
   const activeUsage = activeImages.find(({ image }) => image?.enabled && `public${image.src}` === path);
   if (activeUsage) {

@@ -24,6 +24,7 @@ As ferramentas de escrita ficam bloqueadas quando `GITHUB_TOKEN` não está conf
 - `write_public_asset`: envia ou substitui imagens de até 8 MB em base64.
 - `set_home_about_image`: exibe, oculta ou aponta a seção Sobre da Home para outra imagem.
 - `set_about_page_image`: exibe, oculta ou aponta a foto principal da página Sobre para outra imagem.
+- `set_services_page_image`: exibe, oculta ou troca a imagem do card principal da página Serviços.
 - `delete_public_asset`: exclui uma imagem e impede a remoção enquanto ela estiver ativa no site.
 
 ## Administração do quiz de estilo

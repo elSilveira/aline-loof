@@ -15,5 +15,12 @@
       "src": "/images/aline-loof-sobre-cema.png",
       "alt": "Aline Loof, consultora de imagem, com uma sacola CEMA"
     }
+  },
+  "servicesPage": {
+    "cardImage": {
+      "enabled": true,
+      "src": "/images/cema-etiquetas.png",
+      "alt": "Etiquetas CEMA sobre tecido preto"
+    }
   }
 }
