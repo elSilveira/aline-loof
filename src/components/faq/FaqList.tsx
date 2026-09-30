@@ -116,7 +116,7 @@ export default function FaqList({
           {searchLabel}
         </label>
 
-        <div>
+        <div className="grid grid-cols-[minmax(0,1fr)_7rem] gap-3">
           <input
             id="faq-search"
             type="search"
@@ -125,6 +125,8 @@ export default function FaqList({
             placeholder={searchPlaceholder}
             className="w-full min-w-0 border border-[#D4C9A8] bg-[#FDFAF4] px-5 py-4 text-[#1C1C1C] outline-none transition-colors placeholder:text-[#9A9288] focus:border-[#B8942A]"
           />
+
+          <div aria-hidden="true" className="invisible min-w-28" />
 
         </div>
       </div>
