@@ -93,6 +93,14 @@ export default async function SobrePage({ params }: Props) {
                 sizes="(max-width: 1023px) 100vw, 48vw"
                 className="object-contain object-top"
               />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[12%] bg-gradient-to-r from-[#F7F3EC] to-transparent"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[12%] bg-gradient-to-l from-[#F7F3EC] to-transparent"
+              />
             </div>
           )}
         </div>
