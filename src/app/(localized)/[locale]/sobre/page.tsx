@@ -84,14 +84,14 @@ export default async function SobrePage({ params }: Props) {
           </div>
 
           {siteSettings.aboutPage.heroImage.enabled && (
-            <div className="relative min-h-[32rem] overflow-hidden sm:min-h-[42rem] lg:min-h-[calc(100svh-5rem)]">
+            <div className="relative aspect-[522/587] overflow-hidden bg-[#F7F3EC] lg:aspect-auto lg:min-h-[calc(100svh-5rem)]">
               <Image
                 src={siteSettings.aboutPage.heroImage.src}
                 alt={siteSettings.aboutPage.heroImage.alt}
                 fill
                 priority
                 sizes="(max-width: 1023px) 100vw, 48vw"
-                className="object-cover object-[45%_center]"
+                className="object-contain object-top"
               />
             </div>
           )}
