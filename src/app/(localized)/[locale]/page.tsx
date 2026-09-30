@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { alinePersonSchema, canonicalUrl } from "@/lib/seo";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -6,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import EntityFacts from "@/components/EntityFacts";
 import StyleQuiz from "@/components/style-quiz/StyleQuiz";
+import siteSettings from "@/content/site-settings.json";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -133,14 +135,25 @@ export default async function HomePage({ params }: Props) {
       {/* About */}
       <section className="section-padding px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Decorative monogram until a portrait is available */}
-          <div className="relative" aria-hidden="true">
-            <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-[#E8E0D0] lg:aspect-[3/4]">
-              <div className="absolute inset-5 border border-[#B8942A]/40" />
-              <span className="font-serif text-[6rem] tracking-[-0.08em] text-[#B8942A]/70 md:text-[8rem]">
-                AL
-              </span>
-              <div className="absolute bottom-8 h-px w-16 bg-[#B8942A]" />
+          <div className="relative">
+            <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-[#E8E0D0]">
+              {siteSettings.home.aboutImage.enabled ? (
+                <Image
+                  src={siteSettings.home.aboutImage.src}
+                  alt={siteSettings.home.aboutImage.alt}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="scale-[1.04] object-cover object-center"
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center" aria-hidden="true">
+                  <div className="absolute inset-5 border border-[#B8942A]/40" />
+                  <span className="font-serif text-[6rem] tracking-[-0.08em] text-[#B8942A]/70 md:text-[8rem]">
+                    AL
+                  </span>
+                  <div className="absolute bottom-8 h-px w-16 bg-[#B8942A]" />
+                </div>
+              )}
             </div>
             <div className="pointer-events-none absolute -bottom-4 -right-4 h-full w-full border border-[#B8942A] opacity-30" />
           </div>

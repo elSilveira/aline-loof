@@ -17,3 +17,10 @@ Servidor MCP HTTP para administrar o site Aline Loof a partir de clientes compat
 - `PUBLIC_SITE_URL`: endereço público; padrão `https://alineloof.com`.
 
 As ferramentas de escrita ficam bloqueadas quando `GITHUB_TOKEN` não está configurado.
+
+## Administração de imagens
+
+- `read_public_asset_info`: consulta uma imagem e retorna seu SHA para alterações seguras.
+- `write_public_asset`: envia ou substitui imagens de até 8 MB em base64.
+- `set_home_about_image`: exibe, oculta ou aponta a seção Sobre da Home para outra imagem.
+- `delete_public_asset`: exclui uma imagem e impede a remoção quando ela ainda está ativa na Home.

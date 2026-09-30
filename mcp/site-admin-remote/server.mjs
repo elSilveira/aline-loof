@@ -3,12 +3,16 @@ import { Readable } from "node:stream";
 import { createMcpHandler, McpServer } from "@modelcontextprotocol/server";
 import * as z from "zod/v4";
 import {
+  deletePublicAsset,
   listFiles,
   readFile,
+  readPublicAssetInfo,
   replaceText,
   repositoryConfig,
+  setHomeAboutImage,
   setTranslation,
   writeFile,
+  writePublicAsset,
 } from "./github-content.mjs";
 
 const jsonResult = (data) => ({
@@ -112,6 +116,45 @@ function createSiteServer() {
     }),
     annotations: { readOnlyHint: false, destructiveHint: false },
   }, writeFile);
+
+  register(server, "read_public_asset_info", {
+    description: "Consulta tamanho, extensão e SHA de uma imagem pública sem retornar seus dados binários.",
+    inputSchema: z.object({ path: z.string().min(1) }),
+    annotations: { readOnlyHint: true },
+  }, ({ path }) => readPublicAssetInfo(path));
+
+  register(server, "write_public_asset", {
+    description: "Envia ou substitui uma imagem pública em base64. Imagens existentes exigem o SHA obtido na leitura.",
+    inputSchema: z.object({
+      path: z.string().min(1),
+      base64: z.string().min(1),
+      expectedSha: z.string().optional(),
+      message: z.string().min(1).max(120).optional(),
+    }),
+    annotations: { readOnlyHint: false, destructiveHint: false },
+  }, writePublicAsset);
+
+  register(server, "set_home_about_image", {
+    description: "Exibe, oculta ou troca a imagem da seção Sobre na Home. Para trocar, envie a nova imagem antes com write_public_asset.",
+    inputSchema: z.object({
+      enabled: z.boolean(),
+      src: z.string().min(1).optional(),
+      alt: z.string().min(1).optional(),
+      message: z.string().min(1).max(120).optional(),
+    }),
+    annotations: { readOnlyHint: false, destructiveHint: false },
+  }, setHomeAboutImage);
+
+  register(server, "delete_public_asset", {
+    description: "Exclui uma imagem pública. Uma imagem em uso precisa ser ocultada antes para evitar link quebrado.",
+    inputSchema: z.object({
+      path: z.string().min(1),
+      expectedSha: z.string().min(1),
+      confirmation: z.literal("DELETE"),
+      message: z.string().min(1).max(120).optional(),
+    }),
+    annotations: { readOnlyHint: false, destructiveHint: true },
+  }, deletePublicAsset);
 
   return server;
 }

@@ -1,0 +1,9 @@
+{
+  "home": {
+    "aboutImage": {
+      "enabled": true,
+      "src": "/images/aline-loof-sobre.png",
+      "alt": "Aline Loof, consultora de imagem"
+    }
+  }
+}

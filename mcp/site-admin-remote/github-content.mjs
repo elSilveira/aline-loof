@@ -97,6 +97,95 @@ export async function writeFile({ path, content, expectedSha, message }) {
   return { path, commit: result.commit.sha, url: result.commit.html_url, sha: result.content.sha };
 }
 
+async function writeEncodedFile({ path, base64, expectedSha, message }) {
+  assertEditable(path);
+  let current = null;
+  try {
+    current = await readFile(path);
+  } catch (error) {
+    if (!String(error.message).includes("404")) throw error;
+  }
+  if (current && !expectedSha) throw new Error("Leia o arquivo antes e envie expectedSha para evitar sobrescrever outra alteração.");
+  if (current && current.sha !== expectedSha) throw new Error("O arquivo mudou desde a leitura. Leia novamente antes de salvar.");
+
+  const result = await github(`/repos/${OWNER}/${REPO}/contents/${path.split("/").map(encodeURIComponent).join("/")}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message: message || `Atualiza ${path} pelo MCP`,
+      content: base64,
+      branch: BRANCH,
+      ...(current ? { sha: current.sha } : {}),
+    }),
+  });
+  return { path, commit: result.commit.sha, url: result.commit.html_url, sha: result.content.sha };
+}
+
+export async function readPublicAssetInfo(path) {
+  if (!path.startsWith("public/")) throw new Error("Informe um arquivo dentro de public/.");
+  const file = await readFile(path);
+  return { path, sha: file.sha, size: file.size, extension: path.split(".").at(-1)?.toLowerCase() };
+}
+
+export async function writePublicAsset({ path, base64, expectedSha, message }) {
+  if (!path.startsWith("public/")) throw new Error("Imagens devem ficar dentro de public/.");
+  if (!/\.(avif|gif|jpe?g|png|webp)$/i.test(path)) throw new Error("Formato permitido: AVIF, GIF, JPG, PNG ou WebP.");
+  const normalized = base64.replace(/^data:image\/[a-zA-Z0-9.+-]+;base64,/, "").replace(/\s/g, "");
+  const bytes = Buffer.from(normalized, "base64");
+  if (!bytes.length) throw new Error("A imagem enviada está vazia.");
+  if (bytes.length > 8 * 1024 * 1024) throw new Error("A imagem excede o limite de 8 MB.");
+  return writeEncodedFile({ path, base64: bytes.toString("base64"), expectedSha, message });
+}
+
+export async function setHomeAboutImage({ enabled, src, alt, message }) {
+  const settingsPath = "src/content/site-settings.json";
+  const file = await readFile(settingsPath);
+  const settings = JSON.parse(file.content);
+  const current = settings.home?.aboutImage || {};
+  const next = {
+    enabled,
+    src: src ?? current.src,
+    alt: alt ?? current.alt,
+  };
+  if (next.enabled) {
+    if (!next.src?.startsWith("/")) throw new Error("src deve começar com /, por exemplo /images/foto.png.");
+    if (!next.alt?.trim()) throw new Error("Informe um texto alternativo para a imagem.");
+    await readFile(`public${next.src}`);
+  }
+  settings.home = settings.home || {};
+  settings.home.aboutImage = next;
+  return writeFile({
+    path: settingsPath,
+    content: `${JSON.stringify(settings, null, 2)}\n`,
+    expectedSha: file.sha,
+    message: message || `${enabled ? "Exibe" : "Oculta"} foto da seção Sobre na Home`,
+  });
+}
+
+export async function deletePublicAsset({ path, expectedSha, confirmation, message }) {
+  if (confirmation !== "DELETE") throw new Error("Confirmação inválida.");
+  if (!path.startsWith("public/")) throw new Error("Somente arquivos dentro de public/ podem ser excluídos.");
+  const file = await readFile(path);
+  if (file.sha !== expectedSha) throw new Error("A imagem mudou desde a leitura. Leia novamente antes de excluir.");
+
+  const settings = JSON.parse((await readFile("src/content/site-settings.json")).content);
+  const activeImage = settings.home?.aboutImage;
+  if (activeImage?.enabled && `public${activeImage.src}` === path) {
+    throw new Error("A imagem ainda está visível na Home. Use set_home_about_image com enabled=false antes de excluí-la.");
+  }
+
+  const result = await github(`/repos/${OWNER}/${REPO}/contents/${path.split("/").map(encodeURIComponent).join("/")}`, {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message: message || `Remove ${path} pelo MCP`,
+      sha: file.sha,
+      branch: BRANCH,
+    }),
+  });
+  return { path, deleted: true, commit: result.commit.sha, url: result.commit.html_url };
+}
+
 export async function setTranslation({ locale, key, value, message }) {
   const path = `messages/${locale}.json`;
   const file = await readFile(path);
