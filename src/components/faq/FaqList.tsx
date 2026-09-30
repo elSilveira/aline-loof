@@ -123,7 +123,7 @@ export default function FaqList({
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder={searchPlaceholder}
-            className="min-w-0 border border-[#D4C9A8] bg-[#FDFAF4] px-5 py-4 text-[#1C1C1C] outline-none transition-colors placeholder:text-[#9A9288] focus:border-[#B8942A]"
+            className="w-full min-w-0 border border-[#D4C9A8] bg-[#FDFAF4] px-5 py-4 text-[#1C1C1C] outline-none transition-colors placeholder:text-[#9A9288] focus:border-[#B8942A]"
           />
 
         </div>
