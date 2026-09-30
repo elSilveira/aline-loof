@@ -103,7 +103,6 @@ export default function FaqList({
   noResultsMessage,
 }: FaqListProps) {
   const [query, setQuery] = useState("");
-  const hasQuery = query.trim() !== "";
   const rankedItems = useMemo(
     () => searchAndRankFaqItems(items, query),
     [items, query],
@@ -119,7 +118,7 @@ export default function FaqList({
           {searchLabel}
         </label>
 
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-3">
+        <div>
           <input
             id="faq-search"
             type="search"
@@ -129,35 +128,25 @@ export default function FaqList({
             className="min-w-0 border border-[#D4C9A8] bg-[#FDFAF4] px-5 py-4 text-[#1C1C1C] outline-none transition-colors placeholder:text-[#9A9288] focus:border-[#B8942A]"
           />
 
-          <div
-            className="flex min-w-28 flex-col items-center justify-center border-2 border-[#B8942A] bg-[#1C1C1C] px-4 text-center"
+          <span
+            className="sr-only"
             role="status"
             aria-live="polite"
           >
-            <span className="text-[9px] uppercase tracking-[0.18em] text-[#C8B99A]">
-              {rankLabel}
-            </span>
-            <strong className="font-serif text-xl font-medium text-[#B8942A]">
-              {rankedItems.length}
-            </strong>
-          </div>
+            {rankLabel}: {rankedItems.length}
+          </span>
         </div>
       </div>
 
       {rankedItems.length > 0 ? (
         <div className="space-y-4">
-          {rankedItems.map((item, index) => (
+          {rankedItems.map((item) => (
             <details
               key={item.question}
               className="group border border-[#D4C9A8] bg-[#FDFAF4] open:border-[#B8942A]"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-6 p-6 font-serif text-lg text-[#1C1C1C]">
                 <span className="flex min-w-0 items-center gap-3">
-                  {hasQuery && (
-                    <span className="shrink-0 font-sans text-[10px] tracking-[0.12em] text-[#B8942A]">
-                      #{index + 1}
-                    </span>
-                  )}
                   <span>
                     <HighlightedText text={item.question} query={query} />
                   </span>
