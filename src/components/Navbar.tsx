@@ -10,6 +10,7 @@ export default function Navbar() {
   const t = useTranslations("nav");
   const locale = useLocale();
   const pathname = usePathname();
+  const hasLightHero = pathname.startsWith("/mentoria");
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -34,6 +35,7 @@ export default function Navbar() {
     { href: "/eventos", label: t("events") },
     { href: "/cema", label: t("cema") },
     { href: "/servicos", label: t("services") },
+    { href: "/mentoria", label: t("mentorship") },
     { href: "/faq", label: t("faq") },
     { href: "/links", label: t("links") },
     { href: "/contato", label: t("contact") },
@@ -62,7 +64,7 @@ export default function Navbar() {
           >
             <span
               className={`font-serif text-lg sm:text-xl font-semibold tracking-wide transition-colors duration-300 group-hover:text-[#B8942A] ${
-                scrolled ? "text-[#1C1C1C]" : "text-[#F0E8D8]"
+                scrolled || hasLightHero ? "text-[#1C1C1C]" : "text-[#F0E8D8]"
               }`}
               style={{ fontFamily: "var(--font-playfair)" }}
             >
@@ -86,7 +88,7 @@ export default function Navbar() {
                 className={`cursor-pointer text-[11px] uppercase tracking-[0.18em] transition-colors duration-300 focus-visible:outline-none focus-visible:text-[#B8942A] ${
                   isActive(link.href)
                     ? "text-[#B8942A]"
-                    : scrolled
+                    : scrolled || hasLightHero
                     ? "text-[#1C1C1C] hover:text-[#B8942A]"
                     : "text-[#F0E8D8] hover:text-[#B8942A]"
                 }`}
@@ -99,10 +101,10 @@ export default function Navbar() {
 
           {/* Right side: Language Switcher + mobile menu */}
           <div className="flex items-center gap-2 sm:gap-4">
-            <LanguageSwitcher scrolled={scrolled} />
+            <LanguageSwitcher scrolled={scrolled || hasLightHero} />
             <button
               className={`inline-flex h-11 w-11 cursor-pointer items-center justify-center lg:hidden transition-all duration-300 hover:scale-105 hover:text-[#B8942A] hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8942A] focus-visible:ring-offset-2 ${
-                scrolled ? "text-[#1C1C1C]" : "text-[#F0E8D8]"
+                scrolled || hasLightHero ? "text-[#1C1C1C]" : "text-[#F0E8D8]"
               }`}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={t("menu")}

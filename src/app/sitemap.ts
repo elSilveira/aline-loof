@@ -10,6 +10,7 @@ const paths = [
   "sobre",
   "contato",
   "servicos",
+  "mentoria",
   "faq",
   "cema",
   "categorias",

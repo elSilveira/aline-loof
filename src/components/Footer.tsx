@@ -14,6 +14,7 @@ export default async function Footer() {
     { href: "/eventos", label: nav("events") },
     { href: "/cema", label: nav("cema") },
     { href: "/servicos", label: nav("services") },
+    { href: "/mentoria", label: nav("mentorship") },
     { href: "/faq", label: nav("faq") },
     { href: "/links", label: nav("links") },
     { href: "/contato", label: nav("contact") },
