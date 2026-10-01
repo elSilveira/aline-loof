@@ -55,3 +55,10 @@ Data: 1 de outubro de 2026
 - Visibilidade em respostas de IA: citações e páginas referenciadas por consulta.
 
 Essas métricas dependem de tráfego, rastreamento e contas externas; não podem ser garantidas apenas pelo código.
+
+## Estado da publicação
+
+- O workflow do GitHub Pages concluiu com sucesso para o commit `9a98975`.
+- Em 1 de outubro de 2026, o domínio `alineloof.com` ainda servia uma versão anterior do site.
+- Na mesma verificação, `/pt/`, `/robots.txt` e `/sitemap.xml` retornavam 404 no domínio público.
+- O artefato local contém essas rotas corretamente. A associação do domínio ou a origem do GitHub Pages precisa apontar para o deployment deste repositório para que as melhorias entrem no ar.
