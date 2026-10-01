@@ -1,10 +1,18 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import siteSettings from "@/content/site-settings.json";
+import { pageMetadata, serviceSchema } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "services" });
+  return pageMetadata({ locale, path: "servicos", title: t("title"), description: t("subtitle") });
+}
 
 export default async function ServicosPage({ params }: Props) {
   const { locale } = await params;
@@ -21,6 +29,12 @@ export default async function ServicosPage({ params }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema(locale, items[0]?.title ?? t("title"), items[0]?.desc ?? t("subtitle"))),
+        }}
+      />
       {/* Page Header */}
       <section className="pt-40 pb-20 bg-[#1C1C1C] text-center px-6">
         <p

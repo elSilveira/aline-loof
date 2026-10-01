@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { alinePersonSchema, canonicalUrl } from "@/lib/seo";
+import { alinePersonSchema, pageMetadata } from "@/lib/seo";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
@@ -13,11 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "about_page" });
 
-  return {
-    title: t("title"),
-    description: t("intro"),
-    alternates: { canonical: canonicalUrl(locale, "sobre") },
-  };
+  return pageMetadata({ locale, path: "sobre", title: t("title"), description: t("intro") });
 }
 
 

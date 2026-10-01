@@ -21,7 +21,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aline Loof | Consultora de Imagem",
+  metadataBase: new URL("https://alineloof.com"),
+  title: {
+    default: "Aline Loof | Consultora de Imagem",
+    template: "%s | Aline Loof",
+  },
   description:
     "Consultoria de imagem exclusiva para quem valoriza elegância, autenticidade e presença.",
   openGraph: {
@@ -29,7 +33,9 @@ export const metadata: Metadata = {
     description:
       "Exclusive image consulting for those who value elegance, authenticity, and presence.",
     type: "website",
+    siteName: "Aline Loof",
   },
+  robots: { index: true, follow: true },
 };
 
 export function generateStaticParams() {

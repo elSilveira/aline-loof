@@ -2,18 +2,14 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
-import { canonicalUrl } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "links_page" });
-  return {
-    title: t("title"),
-    description: t("description"),
-    alternates: { canonical: canonicalUrl(locale, "links") },
-  };
+  return pageMetadata({ locale, path: "links", title: t("title"), description: t("description") });
 }
 
 export default async function LinksPage({ params }: Props) {
@@ -28,7 +24,7 @@ export default async function LinksPage({ params }: Props) {
   ];
 
   return (
-    <main className="min-h-screen bg-[#181818] px-5 pb-14 pt-32 text-[#F5F0E8]">
+    <div className="min-h-screen bg-[#181818] px-5 pb-14 pt-32 text-[#F5F0E8]">
       <div className="mx-auto max-w-3xl text-center">
         <header className="mb-10">
           <h1 className="font-serif text-5xl">Aline Loof</h1>
@@ -54,6 +50,6 @@ export default async function LinksPage({ params }: Props) {
         </div>
         <p className="mt-10 text-[10px] tracking-[0.2em] text-[#777]">ALINE LOOF · {t("profession")}</p>
       </div>
-    </main>
+    </div>
   );
 }

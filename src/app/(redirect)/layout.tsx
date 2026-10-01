@@ -11,6 +11,7 @@ export const metadata: Metadata = {
       "Exclusive image consulting for those who value elegance, authenticity, and presence.",
     type: "website",
   },
+  robots: { index: false, follow: true },
 };
 
 export default function RootLayout({

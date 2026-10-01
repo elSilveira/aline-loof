@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { canonicalUrl } from "@/lib/seo";
+import { pageMetadata, serviceSchema } from "@/lib/seo";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
@@ -10,11 +10,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "image_consulting_page" });
 
-  return {
-    title: t("title"),
-    description: t("intro"),
-    alternates: { canonical: canonicalUrl(locale, "consultoria-de-imagem") },
-  };
+  return pageMetadata({ locale, path: "consultoria-de-imagem", title: t("title"), description: t("intro") });
 }
 
 
@@ -26,6 +22,12 @@ export default async function ConsultoriaDeImagemPage({ params }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema(locale, t("title"), t("intro"))),
+        }}
+      />
       <section className="bg-[#1C1C1C] px-6 pb-20 pt-40 text-center">
         <p className="mb-4 text-[10px] uppercase tracking-[0.5em] text-[#B8942A]">
           Aline Loof

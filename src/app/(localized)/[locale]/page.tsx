@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { alinePersonSchema, canonicalUrl } from "@/lib/seo";
+import { alinePersonSchema, pageMetadata, websiteSchema } from "@/lib/seo";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
@@ -16,14 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "home" });
   const title = t("hero.tagline");
   const description = t("hero.subtitle");
-  const url = canonicalUrl(locale);
-
-  return {
-    title,
-    description,
-    alternates: { canonical: url },
-    openGraph: { title, description, type: "website", url },
-  };
+  return pageMetadata({ locale, title, description });
 }
 
 
@@ -52,6 +45,10 @@ export default async function HomePage({ params }: Props) {
             tEntity("service"),
           ),
         ) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema(locale)) }}
       />
       {/* Hero */}
       <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#1C1C1C] px-4 pb-8 pt-24 sm:px-6 sm:pb-16 sm:pt-32">

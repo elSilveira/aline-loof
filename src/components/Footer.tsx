@@ -89,7 +89,7 @@ export default async function Footer() {
 
         <div className="mt-16 pt-8 border-t border-[#2E2E2E] flex flex-col md:flex-row items-center justify-between gap-4">
           <p
-            className="text-[10px] tracking-[0.15em] uppercase text-[#6B6560]"
+            className="text-[10px] tracking-[0.15em] uppercase text-[#A69E94]"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             © {year} Aline Loof. {t("footer.rights")}
