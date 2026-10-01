@@ -35,6 +35,7 @@ export default function Navbar() {
     { href: "/cema", label: t("cema") },
     { href: "/servicos", label: t("services") },
     { href: "/faq", label: t("faq") },
+    { href: "/links", label: t("links") },
     { href: "/contato", label: t("contact") },
   ];
 
