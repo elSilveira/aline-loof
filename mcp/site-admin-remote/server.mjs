@@ -55,7 +55,7 @@ function createSiteServer() {
     ...repositoryConfig(),
     siteUrl: process.env.PUBLIC_SITE_URL || "https://alineloof.com",
     locales: ["pt", "en", "es", "fr"],
-    pages: ["home", "consultoria-de-imagem", "servicos", "sobre", "eventos", "contato", "faq", "quiz"],
+    pages: ["home", "consultoria-de-imagem", "servicos", "sobre", "eventos", "links", "contato", "faq", "quiz"],
     contentFiles: ["messages/pt.json", "messages/en.json", "messages/es.json", "messages/fr.json"],
     publication: "Cada alteração cria um commit na branch configurada e inicia o deploy do site.",
   }));

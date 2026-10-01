@@ -7,6 +7,7 @@
     "cema": "CEMA",
     "services": "Servicios",
     "faq": "FAQ",
+    "links": "Enlaces",
     "contact": "Contacto",
     "menu": "Menú"
   },
@@ -321,6 +322,18 @@
       "criativo": { "name": "Creativo", "description": "Original, expresivo y lleno de personalidad." },
       "dramatico": { "name": "Dramático", "description": "Impactante, moderno y llamativo." }
     }
+  },
+  "links_page": {
+    "title": "Enlaces de Aline Loof",
+    "profession": "CONSULTORA DE IMAGEN",
+    "description": "Consultoría de imagen para transformar la forma en que te ves, te vistes y te presentas al mundo.",
+    "schedule": "AGENDA TU CONSULTORÍA",
+    "services": "CONOCE MIS SERVICIOS",
+    "events": "CONSULTORÍA PARA EVENTOS",
+    "about": "SOBRE ALINE LOOF",
+    "cema": "CEMA",
+    "instagram": "INSTAGRAM",
+    "whatsapp": "HABLA CONMIGO POR WHATSAPP"
   },
   "footer": {
     "tagline": "Consultora de Imagen",

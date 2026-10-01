@@ -7,6 +7,7 @@
     "cema": "CEMA",
     "services": "Services",
     "faq": "FAQ",
+    "links": "Links",
     "contact": "Contact",
     "menu": "Menu"
   },
@@ -321,6 +322,18 @@
       "criativo": { "name": "Creative", "description": "Original, expressive, and full of personality." },
       "dramatico": { "name": "Dramatic", "description": "Striking, modern, and impactful." }
     }
+  },
+  "links_page": {
+    "title": "Aline Loof Links",
+    "profession": "IMAGE CONSULTANT",
+    "description": "Image consulting to transform how you see yourself, dress, and present yourself to the world.",
+    "schedule": "BOOK YOUR CONSULTATION",
+    "services": "DISCOVER MY SERVICES",
+    "events": "EVENT IMAGE CONSULTING",
+    "about": "ABOUT ALINE LOOF",
+    "cema": "CEMA",
+    "instagram": "INSTAGRAM",
+    "whatsapp": "TALK TO ME ON WHATSAPP"
   },
   "footer": {
     "tagline": "Image Consultant",
