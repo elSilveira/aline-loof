@@ -2,6 +2,16 @@
 
 Data: 28/09/2026
 
+## Lighthouse público — 01/10/2026
+
+Medição mobile da Home publicada em `https://alineloof.com/pt/`:
+
+| Performance | Accessibility | Best Practices | SEO | LCP | TBT | CLS |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 97 | 96 | 100 | 100 | 2,6 s | 30 ms | 0 |
+
+Esta é uma medição de laboratório e pode variar entre execuções.
+
 ## Lighthouse (mobile)
 
 Medição única por página com Lighthouse 13.5.0 no Chrome headless, usando o servidor local de desenvolvimento em `http://localhost:3000/aline-loof/pt/`. As pontuações são de laboratório e podem variar entre execuções. A Performance deve ser medida novamente no build de produção antes de ser usada como referência de publicação.
