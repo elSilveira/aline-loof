@@ -67,7 +67,7 @@ export default function ContatoClient() {
       .join("\n");
 
     window.open(
-      `https://wa.me/554591525773?text=${encodeURIComponent(message)}`,
+      `https://wa.me/5545999198058?text=${encodeURIComponent(message)}`,
       "_blank",
       "noopener,noreferrer",
     );
@@ -102,7 +102,7 @@ export default function ContatoClient() {
           {t("subtitle")}
         </p>
         <a
-          href="https://wa.me/554591525773"
+          href="https://wa.me/5545999198058"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-10 inline-flex items-center bg-[#B8942A] px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] transition-colors hover:bg-[#D4AF50]"

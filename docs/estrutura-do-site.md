@@ -407,7 +407,7 @@ Campos: `contact.*`.
 
 Valores ainda fixos no código:
 
-- WhatsApp: `554591525773`.
+- WhatsApp: `5545999198058`.
 - Instagram: `https://www.instagram.com/alineloof.consultoria`.
 - Lista técnica de serviços do formulário.
 

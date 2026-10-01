@@ -37,7 +37,7 @@ export default async function LinksPage({ params }: Props) {
         <p className="mx-auto mb-10 max-w-xl leading-7 text-[#CFC9BF]">{t("description")}</p>
 
         <div className="flex flex-col gap-4">
-          <a href="https://wa.me/554591525773" target="_blank" rel="noopener noreferrer" className="bg-[#C49A2C] px-6 py-5 text-xs font-semibold tracking-[0.25em] text-black transition hover:bg-[#D6AF45]">
+          <a href="https://wa.me/5545999198058" target="_blank" rel="noopener noreferrer" className="bg-[#C49A2C] px-6 py-5 text-xs font-semibold tracking-[0.25em] text-black transition hover:bg-[#D6AF45]">
             {t("schedule")}
           </a>
           {internalLinks.map((item) => (
@@ -48,7 +48,7 @@ export default async function LinksPage({ params }: Props) {
           <a href="https://www.instagram.com/alineloof.consultoria" target="_blank" rel="noopener noreferrer" className="border border-[#AAA49B] px-6 py-5 text-xs tracking-[0.25em] transition hover:border-[#C49A2C] hover:bg-[#C49A2C] hover:text-black">
             {t("instagram")}
           </a>
-          <a href="https://wa.me/554591525773" target="_blank" rel="noopener noreferrer" className="border border-[#AAA49B] px-6 py-5 text-xs tracking-[0.25em] transition hover:border-[#C49A2C] hover:bg-[#C49A2C] hover:text-black">
+          <a href="https://wa.me/5545999198058" target="_blank" rel="noopener noreferrer" className="border border-[#AAA49B] px-6 py-5 text-xs tracking-[0.25em] transition hover:border-[#C49A2C] hover:bg-[#C49A2C] hover:text-black">
             {t("whatsapp")}
           </a>
         </div>
