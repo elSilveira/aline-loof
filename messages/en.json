@@ -7,7 +7,7 @@
     "cema": "CEMA",
     "services": "Services",
     "faq": "FAQ",
-    "links": "Links",
+    "links": "Access",
     "contact": "Contact",
     "menu": "Menu"
   },
@@ -324,7 +324,7 @@
     }
   },
   "links_page": {
-    "title": "Aline Loof Links",
+    "title": "Aline Loof Access",
     "profession": "IMAGE CONSULTANT",
     "description": "Image consulting to transform how you see yourself, dress, and present yourself to the world.",
     "schedule": "BOOK YOUR CONSULTATION",

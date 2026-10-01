@@ -7,7 +7,7 @@
     "cema": "CEMA",
     "services": "Services",
     "faq": "FAQ",
-    "links": "Liens",
+    "links": "Accès",
     "contact": "Contact",
     "menu": "Menu"
   },
@@ -324,7 +324,7 @@
     }
   },
   "links_page": {
-    "title": "Liens d’Aline Loof",
+    "title": "Accès d’Aline Loof",
     "profession": "CONSEILLÈRE EN IMAGE",
     "description": "Conseil en image pour transformer la façon dont vous vous voyez, vous habillez et vous présentez au monde.",
     "schedule": "RÉSERVEZ VOTRE CONSULTATION",
