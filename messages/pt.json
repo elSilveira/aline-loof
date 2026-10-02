@@ -1,6 +1,6 @@
 {
   "nav": {
-    "home": "Entrada",
+    "home": "Home",
     "about": "Sobre",
     "categories": "Categorias",
     "events": "Eventos",
@@ -8,7 +8,7 @@
     "services": "Serviços",
     "mentorship": "Mentoria",
     "faq": "FAQ",
-    "links": "Acessos",
+    "links": "Links",
     "contact": "Contato",
     "menu": "Menu"
   },
@@ -406,7 +406,7 @@
     }
   },
   "links_page": {
-    "title": "Acessos de Aline Loof",
+    "title": "Links de Aline Loof",
     "profession": "CONSULTORA DE IMAGEM",
     "description": "Consultoria de imagem para transformar a forma como você se vê, se veste e se apresenta ao mundo.",
     "schedule": "AGENDE SUA CONSULTORIA",
